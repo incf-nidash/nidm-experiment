@@ -3,3 +3,15 @@
   width: 300px;
   border: 5px solid green;
 }
+
+details {
+  display: list-item;
+}
+
+details > summary {
+  /* list-style: none; */
+}
+
+a {
+  cursor: pointer;
+}
