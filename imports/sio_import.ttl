@@ -893,8 +893,7 @@ ns4:SIO_000179 rdf:type ns2:Class ;
                
                ns3:label "label"@en ;
                
-               ns3:subClassOf ns4:SIO_000179 ,
-                              ns4:SIO_000651 ;
+               ns3:subClassOf ns4:SIO_000651 ;
                
                ns0:identifier "SIO_000179" ;
                

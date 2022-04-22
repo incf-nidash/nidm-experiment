@@ -8,7 +8,7 @@ from nidm_owl_reader import OwlReader
 from nidm_constants import *
 from rdflib import RDF
 import markdown2
-import cgi
+import html
 import logging
 
 logging.basicConfig(filename='debug.log', level=logging.DEBUG, filemode='w')
@@ -28,10 +28,10 @@ TERMS_FOLDER = os.path.join(NIDM_ROOT, 'terms')
 RELEASED_TERMS_FOLDER = os.path.join(TERMS_FOLDER, 'releases')
 
 class OwlNidmHtml:
-    def __init__(self, owl_file, import_files, spec_name, subcomponents=None,
+    def __init__(self, owl_file, import_files, spec_name, 
                  used_by=None, generated_by=None, derived_from=None,
                  attributed_to=None, prefix=None, commentable=False,
-                 intro=None, term_prefix=None, schema_file=None):
+                 intro=None, term_prefix=None):
         self.owl = OwlReader(owl_file, import_files)
         self.owl.graph.bind('owl', 'http://www.w3.org/2002/07/owl#')
         self.owl.graph.bind('dct', 'http://purl.org/dc/terms/')
@@ -52,16 +52,11 @@ class OwlNidmHtml:
         #self.classes = self.split_process(owl_file)
         self.prefix = prefix
 
-        self.schema_file = schema_file
-        self.schema_text = "<div id=\""+term_prefix+"\"><h1>"+term_prefix+"</h1><ul class=\"term_list\">"
-        self.schema_done = []
-
         self.attributes_done = set()
         self.text = ""
-        self.create_specification(subcomponents, used_by, generated_by, derived_from, attributed_to, prefix, intro)
-        self.add_schema()
+        self.create_specification(used_by, generated_by, derived_from, attributed_to, prefix, intro)
 
-    def create_specification(self, subcomponents, used_by, generated_by,
+    def create_specification(self, used_by, generated_by,
                              derived_from, attributed_to, prefix, intro=None):
         self.create_title(self.name+": Types and relations", "definitions")
 
@@ -99,7 +94,7 @@ class OwlNidmHtml:
 
         self.text += "<h1 id='classes'>Classes</h1>"
 
-        print(self.get_top_uri(classes_by_types))
+        #print(self.get_top_uri(classes_by_types))
 
         for class_uri in all_classes:
             # uncomment this to see uri before processing
@@ -122,37 +117,6 @@ class OwlNidmHtml:
         #</section>"""
 
         self.close_sections()
-
-    def get_top_uri(self, classes_by_types):
-        all_classes = \
-            classes_by_types[PROV['Activity']] + \
-            classes_by_types[PROV['Entity']] + \
-            classes_by_types[PROV['Agent']] + \
-            classes_by_types[None]
-
-        prov_types = [PROV['Activity'], PROV['Entity'], PROV['Agent'], None]
-
-        top_uri = []
-        for prov in prov_types:
-            print('prov: '+str(prov))
-            for uri in classes_by_types[prov]:
-                print('-- '+self.owl.get_label(uri))
-                children = self.owl.get_direct_children(uri)
-                for child in children:
-                    print('---- '+self.owl.get_label(child))
-            print('')
-
-        # for uri in all_classes:
-        #     print(self.owl.get_label(uri))
-        #     parents = list(self.owl.get_direct_parents(uri))
-                
-        #     for p in parents:
-        #          print("parent -- "+self.owl.get_label(p))
-        #     #print(parents)
-        #     print('')
-        #     if len(parents) <= 0:
-        #         top_uri.append(self.owl.get_label(uri))
-        return top_uri
 
     def add_type_section(self, rdf_type, used_by, generated_by, derived_from, attributed_to):
         entries = self.get_type_entries(rdf_type)
@@ -291,35 +255,6 @@ class OwlNidmHtml:
 
         return term_link
 
-    def term_link_schema(self, term_uri, definition):
-        href = ""
-        if self.owl.is_external_namespace(term_uri):
-            href = " href =\""+str(term_uri)+"\""
-        else: #target link fix
-            term_uri_prefix = self.owl.get_label(term_uri).split(":")[0]
-            html_file = term_uri_prefix+".html"
-            if term_uri_prefix == "nidm":
-                html_file = "index.html"
-            href = " href =\"./"+html_file+"#"+self.owl.get_name(term_uri).lower()+"\""
-        
-        # if text is None:
-        #     text = self.owl.get_label(term_uri)
-
-        class_name = self.owl.get_label(term_uri)
-        term_link = "<a tag=\""+class_name+"\""+href+" description=\""+definition+"\" target=\"_blank\">"+class_name+"</a>"
-
-        self.owl.get_direct_children(term_uri)
-
-        #"""<a href="#Communicate" tag="Communicate"
-        # description="Convey knowledge of or information about something."
-        # role="button" class="list-group-item level-2" data-toggle="collapse"
-        # aria-expanded="true" name="schemaNode">Communicate</a>""""
-
-        self.schema_done.append(class_name)
-
-        return term_link
-
-
     def create_class_section(self, class_uri, definition, attributes,
                              used_by=None, generated_by=None,
                              derived_from=None, attributed_to=None,
@@ -341,12 +276,6 @@ class OwlNidmHtml:
 
         self.text += term_text
         self.text += "<p>"+self.term_link(class_uri)+" is"
-
-        #self.schema_text += class_label + "</br>" + class_name + "</br>" + self.term_link(class_uri) + "</br>" + definition + "</br></br>"
-
-        #self.schema_text += "<section id=\""+class_name.lower()+"\">"+class_uri+": "+definition+"</section>"
-        #"""<a href="#Communicate" tag="Communicate" description="Convey knowledge of or information about something." role="button" class="list-group-item level-2" data-toggle="collapse" aria-expanded="true" name="schemaNode">Communicate</a>""""
-        self.schema_text += "<li>"+self.term_link_schema(class_uri, definition)+"</li>"
 
         nidm_class = self.owl.get_nidm_parent(class_uri)
         if nidm_class:
@@ -573,7 +502,7 @@ class OwlNidmHtml:
                 </ul>
                 </div>
                 <pre class='example highlight' title=\""""+title+"""\">""" + \
-                cgi.escape(example) + """</pre>"""
+                html.escape(example) + """</pre>"""
 
         # For object property list also children (in sub-sections)
         if children:
@@ -655,13 +584,6 @@ class OwlNidmHtml:
         spec_open = codecs.open(spec_file, 'w', "utf-8")
         spec_open.write(self.text)
         spec_open.close()
-
-    def add_schema(self):
-        if self.schema_file != None:
-            schema_file = os.path.join(DOC_FOLDER, self.schema_file)
-        schema_open = codecs.open(schema_file, 'a', "utf-8")
-        schema_open.write(self.schema_text+"\n</ul>\n</div>\n")
-        schema_open.close()
 
     def _header_footer(self, prev_file=None, intro_file=None, follow_file=None, component=None,
                        version=None, term=None):
@@ -755,7 +677,7 @@ class OwlNidmHtml:
 
     #     return classes
 
-def owl_process(file, imports, spec_name, prefix, term_prefix, schema_file="schema.html"):
+def owl_process(file, imports, spec_name, prefix, term_prefix):
     spec_file = None
     if term_prefix == "nidm":
         spec_file = os.path.join(DOC_FOLDER, "index.html")
@@ -765,11 +687,7 @@ def owl_process(file, imports, spec_name, prefix, term_prefix, schema_file="sche
     nidm_original_version = "dev"
     nidm_version = 'dev'
 
-    used_by = {}
-    generated_by = {}
-    derived_from = {}
-    subcomponents = {}
-    owlspec = OwlNidmHtml(file, imports, spec_name, prefix=prefix, term_prefix=term_prefix, schema_file=schema_file)
+    owlspec = OwlNidmHtml(file, imports, spec_name, prefix=prefix, term_prefix=term_prefix)
     
     if not nidm_version == "dev":
         owlspec.text = owlspec.text.replace("(under development)", nidm_original_version)
@@ -780,65 +698,20 @@ def owl_process(file, imports, spec_name, prefix, term_prefix, schema_file="sche
     owlspec._header_footer(component=component_name, version=nidm_version, term=term_prefix)
     owlspec.write_specification(spec_file=spec_file, component=component_name, version=nidm_version)
 
-def create_schema_file(schema_file="schema.html"):
-    if schema_file == "schema.html":
-        schema_file = os.path.join(DOC_FOLDER, "schema.html")
-    schema_open = codecs.open(schema_file, 'w', "utf-8")
-    schema_open.write("""
-    <!DOCTYPE html>
-    <html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="stylesheet/schema.css" media="screen">
-        <script type="text/javascript" src="stylesheet/schema.js"></script>
-    </head>
-    <body>
-    """)
-    #<div id="info_box">test</div>
-    #""")
-    schema_open.close()
-
-def schema_footer(schema_file="schema.html"):
-    if schema_file == "schema.html":
-        schema_file = os.path.join(DOC_FOLDER, "schema.html")
-    schema_open = codecs.open(schema_file, 'a', "utf-8")
-    schema_open.write("""
-    </body>
-    </html>
-    """)
-    schema_open.close()
-
 def main():
-    if len(sys.argv) > 1:
-        nidm_original_version = sys.argv[1]
-        nidm_version = nidm_original_version.replace(".", "")
-    else:
-        nidm_original_version = "dev"
-        nidm_version = 'dev'
+    nidm_original_version = "dev"
+    nidm_version = 'dev'
 
-    # Retrieve owl file for NIDM-Results
-    if nidm_version == "dev":
-        owl_file = os.path.join(TERMS_FOLDER, 'nidm-experiment.owl')
-        import_files = glob.glob(os.path.join(TERMS_FOLDER, "imports", '*.ttl'))
-    else:
-        owl_file = os.path.join(RELEASED_TERMS_FOLDER, \
-            'nidm-experiment_'+nidm_version+'.owl')
-        # For released version of the ontology imports are embedded
-        import_files = None
+    owl_file = os.path.join(TERMS_FOLDER, 'nidm-experiment.owl')
+    import_files = glob.glob(os.path.join(IMPORTS_FOLDER, '*.ttl'))
 
     # check the file exists
     assert os.path.exists(owl_file)
 
     # Add manually used and wasDerivedFrom because these are not stored in the
     # owl file (no relations yet!)
-    subcomponents = {}
-    used_by = {}
-    generated_by = {}
-    derived_from = {}
 
-    schema_file="schema.html"
-    create_schema_file(schema_file=schema_file)
-    owlspec = OwlNidmHtml(owl_file, import_files, "NIDM-Experiment", subcomponents, used_by, generated_by, derived_from, prefix=str(NIDM), term_prefix="nidm", schema_file=schema_file)
+    owlspec = OwlNidmHtml(owl_file, import_files, "NIDM-Experiment", prefix=str(NIDM), term_prefix="nidm")
     
     if not nidm_version == "dev":
         owlspec.text = owlspec.text.replace("(under development)", nidm_original_version)
@@ -849,22 +722,21 @@ def main():
     owlspec.write_specification(component=component_name, version=nidm_version)
 
     
-    #owl_file = os.path.join(IMPORTS_FOLDER, 'bids_import.ttl')
-    #owl_process(owl_file, None, "BIDS", prefix=str(BIDS), term_prefix="bids", schema_file=schema_file)
+    owl_file = os.path.join(IMPORTS_FOLDER, 'bids_import.ttl')
+    owl_process(owl_file, None, "BIDS", prefix=str(BIDS), term_prefix="bids")
     
-    # owl_file = os.path.join(IMPORTS_FOLDER, 'dicom_import.ttl')
-    # owl_process(owl_file, None, "DICOM", prefix=str(DICOM), term_prefix="dicom")
+    owl_file = os.path.join(IMPORTS_FOLDER, 'dicom_import.ttl')
+    owl_process(owl_file, None, "DICOM", prefix=str(DICOM), term_prefix="dicom")
 
-    # owl_file = os.path.join(IMPORTS_FOLDER, 'sio_import.ttl')
-    # owl_process(owl_file, None, "SIO", prefix=str(SIO), term_prefix="sio")
+    owl_file = os.path.join(IMPORTS_FOLDER, 'sio_import.ttl')
+    owl_process(owl_file, None, "SIO", prefix=str(SIO), term_prefix="sio")
     
-    # owl_file = os.path.join(IMPORTS_FOLDER, 'obo_import.ttl')
-    # owl_process(owl_file, None, "OBO", prefix=str(OBO), term_prefix="obo")
+    owl_file = os.path.join(IMPORTS_FOLDER, 'obo_import.ttl')
+    owl_process(owl_file, None, "OBO", prefix=str(OBO), term_prefix="obo")
 
-    #owl_file = os.path.join(IMPORTS_FOLDER, 'ontoneurolog_instruments_import.ttl')
-    #owl_process(owl_file, None, "ONLI", prefix=str(ONLI), term_prefix="onli", schema_file=schema_file)
+    owl_file = os.path.join(IMPORTS_FOLDER, 'ontoneurolog_instruments_import.ttl')
+    owl_process(owl_file, None, "ONLI", prefix=str(ONLI), term_prefix="onli")
 
-    schema_footer(schema_file="schema.html")
 
 if __name__ == "__main__":
     main()
