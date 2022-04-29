@@ -1,17 +1,101 @@
-#info_box {
-  float: right;
-  width: 300px;
-  border: 5px solid green;
+body{
+  font-family:tahoma;
+  font-size:16px;
+}
+#schema {
+  padding-left: 30px;
+  margin-bottom: 50px;
 }
 
-details {
-  display: list-item;
+/*Indentation for hierarchical display*/
+.list-group {
+  padding-left: 30px;
+}
+.just-padding {
+  padding: 15px;
+}
+/**
+Draw line for list-group
+*/
+.list-group {
+  position: relative;
+}
+.list-group::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  border-left: 1px solid #000;
+  height: 100%;
+  width: 0px;
+  top: 2px;
 }
 
-details > summary {
-  /* list-style: none; */
+/*Remove left border line for last list-group div*/
+a.list-group-item:last-of-type + div::after {
+  border-style: none;
+}
+a.list-group-item:last-of-type + div.attribute + div::after {
+  border-style: none;
+}
+
+/*Draw tree line*/
+.list-group-item {
+  position: relative;
+  background-color: transparent;
+  border-style: none none none none;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.list-group-item::before, .list-group-item::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+}
+.list-group-item::before {
+  border-top: 1px solid black;
+  top: 14px;
+  width: 15px;
+  height: 0;
+}
+.list-group-item::after {
+  border-left: 1px solid #000;
+  height: 100%;
+  width: 0px;
+  top: 2px;
+}
+.list-group > .list-group-item:last-of-type::after {
+  height: 50%;
+}
+.list-group.list-group-root {
+  padding: 0;
+  overflow: hidden;
 }
 
 a {
-  cursor: pointer;
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+  cursor:text;
+}
+
+a[href] {
+  color: #007bff;
+}
+
+#infoBoard {
+  /*z-index: -1;*/
+  position: sticky;
+  top: 50px;
+  padding: 15px;
 }

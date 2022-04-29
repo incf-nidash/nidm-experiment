@@ -43,7 +43,7 @@ class OwlNidmHtml:
             #self.classes = self.split_process(owl_file)
 
             self.schema_file = schema_file
-            self.schema_text = "<div id=\""+term_prefix+"\"><h1>"+term_prefix+"</h1><ul class=\"term_list\">"
+            self.schema_text = "<h1>NIDM Class Browser</h1><div id='schema' class='list-group list-group-root well'>"
             self.schema_done = []
 
             #self.create_specification(prefix)
@@ -67,7 +67,9 @@ class OwlNidmHtml:
             # print('prov: '+str(prov))
             if prov != None:
                 prov_link = self.owl.get_label(prov)
-                self.schema_text += "<details><summary>"+prov_link+"</summary><ul>"
+                prov_name = self.owl.get_name(prov)
+                self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+prov_name+"\" aria-expanded='true'>"+prov_link+"</a>"
+                self.schema_text += "<div class='list-group multi-collapse level-1 show' id=\""+prov_name+"\">"
             children = self.owl.get_direct_children(prov)
             children = self.owl.sorted_by_labels(children)
 
@@ -78,170 +80,44 @@ class OwlNidmHtml:
                         continue
 
                 self.get_hierarchy(child)
-            self.schema_text += "</ul></details>"
+            self.schema_text += "</div>"
+
+        # self.add_type_section(OWL['DatatypeProperty'])
+        # self.add_type_section(OWL['AnnotationProperty'])
+        # self.add_type_section(OWL['ObjectProperty'])
+        # self.add_type_section(OWL['NamedIndividual'])
     
     def get_hierarchy(self, uri, level=1):
         # hier_str = '-' * level
         # hier_str += str(self.owl.get_label(uri))
         # print(hier_str)
 
-        term_link = self.term_link_schema(uri)
+        class_label = self.owl.get_label(uri)
+        self.schema_done.append(class_label)
+        
+        class_name = self.owl.get_name(uri)
+        definition = str(self.owl.get_definition(uri))
         
         children = self.owl.get_direct_children(uri)
         children = self.owl.sorted_by_labels(children)
         if len(children) <= 0:
-            self.schema_text += "<li>"+term_link+"</li>"
+            self.schema_text += "<a description=\""+definition+"\" role=\"button\" class=\"list-group-item\" tag=\""+class_name+"\">"+class_label+"</a>"
             return None
         
-        self.schema_text += "<details><summary>"+term_link+"</summary><ul>"
+        hier_level = "level-"+str(level+1)
+        self.schema_text += "<a href=\"#"+class_name+"\"description=\""+definition+"\" role=\"button\" data-bs-toggle=\"collapse\" class=\"list-group-item\" tag=\""+class_name+"\" aria-expanded='false'>"+class_label+"</a>"
+        self.schema_text += "<div class=\"list-group multi-collapse "+hier_level+" collapse\" id=\""+class_name+"\">"
+
         for child in children:
             self.get_hierarchy(child, level+1)
-        self.schema_text += "</ul></details>"
 
-    def create_specification(self, prefix):
-        classes = self.owl.get_classes(prefix=prefix, but=self.already_defined_classes)
-        classes_by_types = self.owl.get_class_names_by_prov_type(classes, prefix=prefix, but=self.already_defined_classes)
-        self.already_defined_classes += classes
-
-        all_classes = \
-            classes_by_types[PROV['Activity']] + \
-            classes_by_types[PROV['Entity']] + \
-            classes_by_types[PROV['Agent']] + \
-            classes_by_types[None]
-
-        print(self.get_top_uri(classes_by_types))
-
-        for class_uri in all_classes:
-            definition = self.owl.get_definition(class_uri)
-            self.create_class_section(class_uri, definition)
-        
-        self.add_type_section(OWL['DatatypeProperty'])
-        self.add_type_section(OWL['AnnotationProperty'])
-        self.add_type_section(OWL['ObjectProperty'])
-        self.add_type_section(OWL['NamedIndividual'])
-
-    def get_top_uri(self, classes_by_types):
-        all_classes = \
-            classes_by_types[PROV['Activity']] + \
-            classes_by_types[PROV['Entity']] + \
-            classes_by_types[PROV['Agent']] + \
-            classes_by_types[None]
-
-        prov_types = [PROV['Activity'], PROV['Entity'], PROV['Agent'], None]
-
-        top_uri = []
-        for prov in prov_types:
-            print('prov: '+str(prov))
-            for uri in classes_by_types[prov]:
-                print('-- '+self.owl.get_label(uri))
-                children = self.owl.get_direct_children(uri)
-                for child in children:
-                    print('---- '+self.owl.get_label(child))
-            print('')
-
-        # for uri in all_classes:
-        #     print(self.owl.get_label(uri))
-        #     parents = list(self.owl.get_direct_parents(uri))
-                
-        #     for p in parents:
-        #          print("parent -- "+self.owl.get_label(p))
-        #     #print(parents)
-        #     print('')
-        #     if len(parents) <= 0:
-        #         top_uri.append(self.owl.get_label(uri))
-        return top_uri
-
-    def add_type_section(self, rdf_type):
-        entries = self.get_type_entries(rdf_type)
-        
-        if entries:
-            for entry in entries:
-                # print(entry)
-                self.create_class_section(entry, self.owl.get_definition(entry))
-    
-    def get_type_entries(self, rdf_type):
-        entries = self.owl.all_of_rdf_type(rdf_type, but_type=OWL['Class'])
-        if entries:
-            filtered = list()
-            for entry in entries:
-                pre = self.owl.get_label(entry).split(":")[0]
-                if pre.lower() == self.term_prefix:
-                    filtered.append(entry)
-            if filtered:
-                return filtered
-        return False
-    
-    def has_type_entries(self, rdf_type):
-        entries = self.owl.all_of_rdf_type(rdf_type, but_type=OWL['Class'])
-        if entries:
-            for entry in entries:
-                pre = self.owl.get_label(entry).split(":")[0]
-                if pre.lower() == self.term_prefix:
-                    return True
-        return False
- 
-    def format_definition(self, definition):
-        definition = str(definition)
-        #print "into format_definition"
-
-        # Capitalize first letter, format markdown and end with dot
-        if definition:
-            definition = definition[0].upper() + definition[1:]
-            
-            # Replace links specified in markdown by html
-            definition = markdown2.markdown(definition).replace("<p>", "").replace("</p>", "")
-            definition = definition[0:-1]
-
-            definition += "."
-
-        return definition
-
-    def term_link_schema(self, term_uri):
-        definition = str(self.owl.get_definition(term_uri))
-        href = ""
-        if self.owl.is_external_namespace(term_uri):
-            href = " href =\""+str(term_uri)+"\""
-        else: #target link fix
-            term_uri_prefix = self.owl.get_label(term_uri).split(":")[0]
-            html_file = term_uri_prefix+".html"
-            if term_uri_prefix == "nidm":
-                html_file = "index.html"
-            href = " href =\"./"+html_file+"#"+self.owl.get_name(term_uri).lower()+"\""
-        
-        # if text is None:
-        #     text = self.owl.get_label(term_uri)
-
-        class_name = self.owl.get_label(term_uri)
-        term_link = "<a tag=\""+class_name+"\""+href+" description=\""+definition+"\" target=\"_blank\">"+class_name+"</a>"
-
-        self.owl.get_direct_children(term_uri)
-
-        #"""<a href="#Communicate" tag="Communicate"
-        # description="Convey knowledge of or information about something."
-        # role="button" class="list-group-item level-2" data-toggle="collapse"
-        # aria-expanded="true" name="schemaNode">Communicate</a>""""
-
-        self.schema_done.append(class_name)
-
-        return term_link
-
-    def create_class_section(self, class_uri, definition):
-        class_label = self.owl.get_label(class_uri)
-        class_name = self.owl.get_name(class_uri)
-        definition = self.format_definition(definition)
-        
-        if (not class_label.startswith(self.term_prefix.lower()+':')):
-            return
-           
-        #self.schema_text += "<section id=\""+class_name.lower()+"\">"+class_uri+": "+definition+"</section>"
-        #"""<a href="#Communicate" tag="Communicate" description="Convey knowledge of or information about something." role="button" class="list-group-item level-2" data-toggle="collapse" aria-expanded="true" name="schemaNode">Communicate</a>""""
-        self.schema_text += "<li>"+self.term_link_schema(class_uri)+"</li>"
+        self.schema_text += "</div>"
 
     def add_schema(self):
         if self.schema_file != None:
             schema_file = os.path.join(DOC_FOLDER, self.schema_file)
         schema_open = codecs.open(schema_file, 'a', "utf-8")
-        schema_open.write(self.schema_text+"\n</ul>\n</div>\n")
+        schema_open.write(self.schema_text+"\n</div>")
         schema_open.close()
   
 
@@ -273,6 +149,8 @@ def create_schema_file(schema_file="schema.html"):
     <html lang="en-us">
     <head>
         <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheet/schema.css" media="screen">
         <script type="text/javascript" src="stylesheet/schema.js"></script>
     </head>
@@ -287,6 +165,7 @@ def schema_footer(schema_file="schema.html"):
         schema_file = os.path.join(DOC_FOLDER, "schema.html")
     schema_open = codecs.open(schema_file, 'a', "utf-8")
     schema_open.write("""
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
     </html>
     """)
