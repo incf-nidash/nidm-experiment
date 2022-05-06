@@ -190,7 +190,10 @@ class OwlNidmHtml:
         return text
 
     def format_definition(self, definition):
-        definition = str(definition)
+        try:
+            definition = definition.decode("utf-8")
+        except AttributeError:
+            pass
         #print "into format_definition"
 
         # Capitalize first letter, format markdown and end with dot
