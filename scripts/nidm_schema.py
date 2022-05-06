@@ -208,7 +208,7 @@ def schema_footer(schema_file="schema.html"):
 
 RELPATH = os.path.dirname(os.path.abspath(__file__))
 NIDM_ROOT = os.path.abspath(os.path.join(RELPATH ,'..'))
-DOC_FOLDER = os.path.join(NIDM_ROOT, 'specs')
+DOC_FOLDER = os.path.join(NIDM_ROOT, 'docs')
 INCLUDE_FOLDER = os.path.join(DOC_FOLDER, 'include')
 IMPORTS_FOLDER = os.path.abspath(os.path.join(NIDM_ROOT ,'imports'))
 TERMS_FOLDER = os.path.join(NIDM_ROOT, 'terms')

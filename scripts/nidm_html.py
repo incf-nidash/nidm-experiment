@@ -18,7 +18,7 @@ RELPATH = os.path.dirname(os.path.abspath(__file__))
 
 #NIDM_ROOT = os.path.dirname(RELPATH)
 NIDM_ROOT = os.path.abspath(os.path.join(RELPATH ,'..'))
-DOC_FOLDER = os.path.join(NIDM_ROOT, 'specs')
+DOC_FOLDER = os.path.join(NIDM_ROOT, 'docs')
 INCLUDE_FOLDER = os.path.join(DOC_FOLDER, 'include')
 
 #NIDM_EXPE_PATH = os.path.dirname(RELPATH)
