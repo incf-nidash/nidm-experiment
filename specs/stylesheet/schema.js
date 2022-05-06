@@ -1,14 +1,18 @@
-// var term_list = document.getElementsByTagName("a");
+$(document).ready(function () {
+  $("a").mouseover(function(e){
+    var selected = $(e.target);
+    $("h4#title").text(selected.text());
+    
+    if (selected.attr("description")) {
+      $("p#description").text(selected.attr("description"));
+    }
+    else {
+      $("p#description").text("");
+    }
 
-// for (var i=0; i<term_list.length; i++) {
-//   var element = term_list[i];
-//   element.addEventListener("mouseover", function( event ) {
-//     // highlight the mouseover target
-//     //event.target.innerHTML = "test";
-//     var info_box = document.getElementById("info_box");
-//     info_box.innerHTML = event.target.getAttribute("description");
-//     alert("test");
-//   }, false);
-// }
+    if ($("p#description").text() == "") {
+      $("p#description").html("<i>Description not found</i>");
+    }
+  });
 
-// console.log(term_list);
+});

@@ -43,7 +43,7 @@ class OwlNidmHtml:
             #self.classes = self.split_process(owl_file)
 
             self.schema_file = schema_file
-            self.schema_text = "<h1>NIDM Class Browser</h1><div id='schema' class='list-group list-group-root well'>"
+            self.schema_text = "<div class=\"container-fluid\"><h1>NIDM Class Browser</h1><div class=\"row\"><div class=\"col-6\"><div id='schema' class='list-group list-group-root well'>"
             self.schema_done = []
 
             #self.create_specification(prefix)
@@ -68,7 +68,8 @@ class OwlNidmHtml:
             if prov != None:
                 prov_link = self.owl.get_label(prov)
                 prov_name = self.owl.get_name(prov)
-                self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+prov_name+"\" aria-expanded='true'>"+prov_link+"</a>"
+                prov_def = self.format_definition(self.owl.get_definition(prov))
+                self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+prov_name+"\" description=\""+prov_def+"\" aria-expanded='true'>"+prov_link+"</a>"
                 self.schema_text += "<div class='list-group multi-collapse level-1 show' id=\""+prov_name+"\">"
             children = self.owl.get_direct_children(prov)
             children = self.owl.sorted_by_labels(children)
@@ -96,7 +97,7 @@ class OwlNidmHtml:
         self.schema_done.append(class_label)
         
         class_name = self.owl.get_name(uri)
-        definition = str(self.owl.get_definition(uri))
+        definition = self.format_definition(self.owl.get_definition(uri))
         
         children = self.owl.get_direct_children(uri)
         children = self.owl.sorted_by_labels(children)
@@ -112,6 +113,31 @@ class OwlNidmHtml:
             self.get_hierarchy(child, level+1)
 
         self.schema_text += "</div>"
+
+    def format_definition(self, definition):
+        try:
+            definition = definition.decode("utf-8")
+        except AttributeError:
+            pass
+        #print "into format_definition"
+
+        # Capitalize first letter, format markdown and end with dot
+        if definition:
+            definition = definition[0].upper() + definition[1:]
+            definition = self._format_markdown(definition)
+            definition += "."
+
+        return definition
+    
+    def _format_markdown(self, text):
+
+        #print "into _format_markdown"
+
+        # Replace links specified in markdown by html
+        text = markdown2.markdown(text).replace("<p>", "").replace("</p>", "")
+        # Remove trailing new line
+        text = text[0:-1]
+        return text
 
     def add_schema(self):
         if self.schema_file != None:
@@ -165,6 +191,14 @@ def schema_footer(schema_file="schema.html"):
         schema_file = os.path.join(DOC_FOLDER, "schema.html")
     schema_open = codecs.open(schema_file, 'a', "utf-8")
     schema_open.write("""
+            <div class="col-5">
+                <div id="infoBoard" class="border border-primary rounded">
+                    <h4 id="title">Term</h4>
+                    <p id="description">Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
     </html>
