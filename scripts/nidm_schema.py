@@ -125,7 +125,7 @@ class OwlNidmHtml:
         if definition:
             definition = definition[0].upper() + definition[1:]
             definition = self._format_markdown(definition)
-            definition += "."
+            #definition += "."
 
         return definition
     
