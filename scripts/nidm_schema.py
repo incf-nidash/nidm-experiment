@@ -69,6 +69,8 @@ class OwlNidmHtml:
                 prov_link = self.owl.get_label(prov)
                 prov_name = self.owl.get_name(prov)
                 prov_def = self.format_definition(self.owl.get_definition(prov))
+                if not prov_def:
+                    prov_def = "<i>Description not found</i>"
                 self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+prov_name+"\" description=\""+prov_def+"\" aria-expanded='true'>"+prov_link+"</a>"
                 self.schema_text += "<div class='list-group multi-collapse level-1 show' id=\""+prov_name+"\">"
             children = self.owl.get_direct_children(prov)
@@ -98,15 +100,28 @@ class OwlNidmHtml:
         
         class_name = self.owl.get_name(uri)
         definition = self.format_definition(self.owl.get_definition(uri))
+        term_info = self.generate_info(uri)
         
+        if not definition:
+            definition = "<i>Description not found</i>"
+
+        description = definition
+
+        if term_info:
+            text_break = "</br>------------------------</br>"
+            description = definition+text_break+term_info
+        
+        description = description.replace('"', '&quot;')
+        description = description.replace("'", '&apos;')
+
         children = self.owl.get_direct_children(uri)
         children = self.owl.sorted_by_labels(children)
         if len(children) <= 0:
-            self.schema_text += "<a description=\""+definition+"\" role=\"button\" class=\"list-group-item\" tag=\""+class_name+"\">"+class_label+"</a>"
+            self.schema_text += "<a description=\""+description+"\" role=\"button\" class=\"list-group-item\" tag=\""+class_name+"\">"+class_label+"</a>"
             return None
         
         hier_level = "level-"+str(level+1)
-        self.schema_text += "<a href=\"#"+class_name+"\"description=\""+definition+"\" role=\"button\" data-bs-toggle=\"collapse\" class=\"list-group-item\" tag=\""+class_name+"\" aria-expanded='false'>"+class_label+"</a>"
+        self.schema_text += "<a href=\"#"+class_name+"\" description=\""+description+"\" role=\"button\" data-bs-toggle=\"collapse\" class=\"list-group-item\" tag=\""+class_name+"\" aria-expanded='false'>"+class_label+"</a>"
         self.schema_text += "<div class=\"list-group multi-collapse "+hier_level+" collapse\" id=\""+class_name+"\">"
 
         for child in children:
@@ -138,6 +153,65 @@ class OwlNidmHtml:
         # Remove trailing new line
         text = text[0:-1]
         return text
+
+    def generate_info(self, class_uri):
+        text = self.owl.get_label(class_uri)+" is"
+
+        nidm_class = self.owl.get_nidm_parent(class_uri)
+        if nidm_class:
+            #print(self.term_prefix+"-n: "+nidm_class)
+            text += " a "+self.owl.get_label(nidm_class)
+        else:
+            prov_class = self.owl.get_prov_class(class_uri)
+            if prov_class:
+                #print(self.term_prefix+": "+prov_class)
+                text += " a "+self.owl.get_label(prov_class)
+            else:
+                #look in NIDM file
+                nidm_file = os.path.join(TERMS_FOLDER, 'nidm-experiment.owl')
+                nidm_owl = OwlReader(nidm_file)
+                nidm_subclass = self.get_nidm_subclass(class_uri, nidm_owl)
+                if nidm_subclass:
+                    text += " a "+self.owl.get_label(nidm_subclass)
+
+        class_children = self.owl.get_direct_children(class_uri)
+        if class_children:
+            text += " and "
+            text += " has the following child"
+            if len(class_children) > 1:
+                text += "ren"
+            text += ": " + \
+                         self.linked_listing(class_children)
+
+        text += "."
+        
+        return text
+
+    def get_nidm_subclass(self, class_uri, nidm_owl):
+        nidm_subclasses = nidm_owl.get_direct_parents(class_uri)
+        for nidm_subclass in nidm_subclasses:
+            return nidm_subclass
+        return False
+
+    def linked_listing(self, uri_list, prefix="", suffix="", sort=True):
+
+        #print "into linked_listing"
+
+        linked_listing = prefix
+
+        if sort:
+            uri_list = self.owl.sorted_by_labels(uri_list)
+
+        for i, uri in enumerate(uri_list):
+            if i == 0:
+                sep = ""
+            elif i == len(uri_list):
+                sep = " and "
+            else:
+                sep = ", "
+            linked_listing += sep+self.owl.get_label(uri)
+
+        return linked_listing+suffix
 
     def add_schema(self):
         if self.schema_file != None:
