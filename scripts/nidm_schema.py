@@ -82,7 +82,7 @@ class OwlNidmHtml:
                     if len(parents) > 0:
                         continue
 
-                self.get_hierarchy(child)
+                self.get_hierarchy(child, path=prov_name)
             self.schema_text += "</div>"
 
         # self.add_type_section(OWL['DatatypeProperty'])
@@ -90,17 +90,14 @@ class OwlNidmHtml:
         # self.add_type_section(OWL['ObjectProperty'])
         # self.add_type_section(OWL['NamedIndividual'])
     
-    def get_hierarchy(self, uri, level=1):
-        # hier_str = '-' * level
-        # hier_str += str(self.owl.get_label(uri))
-        # print(hier_str)
-
+    def get_hierarchy(self, uri, level=1, path=""):
         class_label = self.owl.get_label(uri)
         self.schema_done.append(class_label)
         
         class_name = self.owl.get_name(uri)
         definition = self.format_definition(self.owl.get_definition(uri))
         term_info = self.generate_info(uri)
+        path += "/"+class_name
         
         if not definition:
             definition = "<i>Description not found</i>"
@@ -114,6 +111,8 @@ class OwlNidmHtml:
         description = description.replace('"', '&quot;')
         description = description.replace("'", '&apos;')
 
+        description += "</br></br>"+path
+
         children = self.owl.get_direct_children(uri)
         children = self.owl.sorted_by_labels(children)
         if len(children) <= 0:
@@ -125,7 +124,7 @@ class OwlNidmHtml:
         self.schema_text += "<div class=\"list-group multi-collapse "+hier_level+" collapse\" id=\""+class_name+"\">"
 
         for child in children:
-            self.get_hierarchy(child, level+1)
+            self.get_hierarchy(child, level+1, path)
 
         self.schema_text += "</div>"
 
