@@ -51,16 +51,6 @@ class OwlNidmHtml:
             self.add_schema()
 
     def create_schema_spec(self):
-        classes = self.owl.get_classes(but=self.already_defined_classes)
-        classes_by_types = self.owl.get_class_names_by_prov_type(classes, but=self.already_defined_classes)
-        self.already_defined_classes += classes
-
-        all_classes = \
-            classes_by_types[PROV['Activity']] + \
-            classes_by_types[PROV['Entity']] + \
-            classes_by_types[PROV['Agent']] + \
-            classes_by_types[None]
-
         prov_types = [PROV['Activity'], PROV['Entity'], PROV['Agent'], None]
 
         for prov in prov_types:
@@ -96,22 +86,23 @@ class OwlNidmHtml:
         
         class_name = self.owl.get_name(uri)
         definition = self.format_definition(self.owl.get_definition(uri))
-        term_info = self.generate_info(uri)
-        path += "/"+class_name
         
         if not definition:
             definition = "<i>Definition not found</i>"
-
         description = definition
 
-        if term_info:
-            text_break = "</br>------------------------</br>"
-            description = definition+text_break+term_info
+        text_break = "</br>------------------------</br>"
+        description += text_break
+
+        # term_info = self.generate_info(uri)
+        # if term_info:
+        #     description = definition+text_break+term_info
         
         description = description.replace('"', '&quot;')
         description = description.replace("'", '&apos;')
 
-        description += "</br></br>"+path
+        path += "/"+class_name
+        description += path
 
         children = self.owl.get_direct_children(uri)
         children = self.owl.sorted_by_labels(children)
