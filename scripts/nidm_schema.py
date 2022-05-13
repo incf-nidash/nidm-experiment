@@ -70,7 +70,7 @@ class OwlNidmHtml:
                 prov_name = self.owl.get_name(prov)
                 prov_def = self.format_definition(self.owl.get_definition(prov))
                 if not prov_def:
-                    prov_def = "<i>Description not found</i>"
+                    prov_def = "<i>Definition not found</i>"
                 self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+prov_name+"\" description=\""+prov_def+"\" aria-expanded='true'>"+prov_link+"</a>"
                 self.schema_text += "<div class='list-group multi-collapse level-1 show' id=\""+prov_name+"\">"
             children = self.owl.get_direct_children(prov)
@@ -100,7 +100,7 @@ class OwlNidmHtml:
         path += "/"+class_name
         
         if not definition:
-            definition = "<i>Description not found</i>"
+            definition = "<i>Definition not found</i>"
 
         description = definition
 
@@ -267,7 +267,7 @@ def schema_footer(schema_file="schema.html"):
             <div class="col-5">
                 <div id="infoBoard" class="border border-primary rounded">
                     <h4 id="title">Term</h4>
-                    <p id="description">Description</p>
+                    <p id="description">Definition</p>
                 </div>
             </div>
         </div>
