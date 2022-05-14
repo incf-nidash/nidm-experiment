@@ -2,10 +2,6 @@ body{
   font-family:tahoma;
   font-size:16px;
 }
-#schema {
-  padding-left: 30px;
-  margin-bottom: 50px;
-}
 
 /*Indentation for hierarchical display*/
 .list-group {
@@ -73,23 +69,23 @@ a.list-group-item:last-of-type + div.attribute + div::after {
   overflow: hidden;
 }
 
-a {
+#schema a {
   color: #007bff;
   text-decoration: none;
 }
 
-a:hover {
+#schema a:hover {
   color: #0056b3;
   text-decoration: underline;
 }
 
-a:not([href]) {
+#schema a:not([href]) {
   color: inherit;
   text-decoration: none;
   cursor:text;
 }
 
-a[href] {
+#schema a[href] {
   color: #007bff;
 }
 
@@ -98,4 +94,24 @@ a[href] {
   position: sticky;
   top: 50px;
   padding: 15px;
+  margin-right: 300px;
+  font-size:18px;
+}
+
+#schema {
+  padding-left: 30px;
+  margin-bottom: 50px;
+  font-size:20px;
+}
+
+#viewer {
+  margin-left: 200px;
+}
+
+h1 {
+  font-weight: bold !important;
+}
+
+h2 {
+  margin-top: 30px;
 }
