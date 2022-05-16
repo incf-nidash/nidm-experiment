@@ -201,12 +201,6 @@ prov:hadMember rdf:type owl:ObjectProperty .
 
 
 
-###  http://www.w3.org/ns/prov#hadRole
-
-prov:hadRole rdf:type owl:ObjectProperty .
-
-
-
 ###  http://www.w3.org/ns/prov#used
 
 prov:used rdf:type owl:ObjectProperty .
@@ -216,6 +210,95 @@ prov:used rdf:type owl:ObjectProperty .
 ###  http://www.w3.org/ns/prov#wasCreatedBy
 
 prov:wasCreatedBy rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.w3.org/ns/prov#generated
+
+prov:generated rdf:type owl:ObjectProperty ;
+               
+	       rdfs:domain prov:Activity ;
+
+    	       rdfs:range prov:Entity ;
+
+	       rdfs:label "generated"@en ;
+
+	       rdfs:subPropertyOf prov:influenced ;
+
+	       owl:inverseOf prov:wasGeneratedBy .
+
+
+
+###  http://www.w3.org/ns/prov#hadRole
+
+prov:hadRole rdf:type owl:ObjectProperty ;
+               
+	       rdfs:domain prov:Influence ;
+
+    	       rdfs:range prov:Role ;
+
+	       rdfs:label "hadRole"@en ;
+
+	       rdfs:subPropertyOf prov:influenced .
+
+
+
+###  http://www.w3.org/ns/prov#influenced
+
+prov:influenced rdf:type owl:ObjectProperty ;
+               
+	       rdfs:domain prov:Activity ;
+
+    	       rdfs:range prov:Entity ;
+
+	       rdfs:label "influenced"@en ;
+
+	       owl:inverseOf prov:wasInfluencedBy .
+
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+
+prov:wasAssociatedWith rdf:type owl:ObjectProperty ;
+               
+	       rdfs:domain prov:Activity ;
+
+    	       rdfs:range prov:Agent ;
+
+	       rdfs:subPropertyOf prov:wasInfluencedBy ;
+
+	       rdfs:label "wasAssociatedWith" .
+
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+
+prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
+               
+	       rdfs:domain prov:Entity ;
+
+    	       rdfs:range prov:Activity ;
+
+	       rdfs:label "wasGeneratedBy"@en ;
+
+	       rdfs:subPropertyOf prov:wasInfluencedBy ;
+
+	       owl:inverseOf prov:generated .
+
+
+
+###  http://www.w3.org/ns/prov#wasInfluencedBy
+
+prov:wasInfluencedBy rdf:type owl:ObjectProperty ;
+               
+	       rdfs:domain prov:Entity ;
+
+    	       rdfs:range prov:Activity ;
+
+	       rdfs:label "wasInfluencedBy"@en ;
+
+	       owl:inverseOf prov:influenced .
+               
 
 
 
@@ -3153,49 +3236,92 @@ obo:PATO_0000001 rdfs:subClassOf sio:SIO_000614 .
 
 
 
-###  http://www.w3.org/ns/prov#Activity
+###  http://purl.org/ontology/prv/core#Activity
 
-prov:Activity rdf:type owl:Class .
+prv:Activity rdf:type owl:Class ;
+                      
+                      rdfs:label "Activity"@en ;
 
-
-
-###  http://www.w3.org/ns/prov#Agent
-
-prov:Agent rdf:type owl:Class .
-
-
-
-###  http://www.w3.org/ns/prov#Collection
-
-prov:Collection rdf:type owl:Class .
-                
+		      owl:disjointWith prv:Entity ; 
+                      
+                      obo:IAO_0000115 "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en .
 
 
-###  http://www.w3.org/ns/prov#Entity
 
-prov:Entity rdf:type owl:Class ;
-            
-              rdfs:label "Entity"^^xsd:string .
+###  http://purl.org/ontology/prv/core#Agent
+
+prv:Agent rdf:type owl:Class ;
+                      
+                      rdfs:label "Agent"@en ;
+                      
+                      obo:IAO_0000115 "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."@en .
+
+
+
+###  http://purl.org/ontology/prv/core#Collection
+
+prv:Collection rdf:type owl:Class ;
+                      
+                      rdfs:label "Collection"@en ;
+
+		      rdfs:subClassOf prv:Entity ;
+                      
+                      obo:IAO_0000115 "A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections."@en .
+		      
+
+
+###  http://purl.org/ontology/prv/core#Entity
+
+prv:Entity rdf:type owl:Class ;
+                      
+                      rdfs:label "Entity"@en ;
+                      
+                      obo:IAO_0000115 "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."@en .
+
+
+
+###  http://purl.org/ontology/prv/core#Person
+
+prv:Person rdf:type owl:Class ;
+                      
+                      rdfs:label "Person"@en ;
+
+		      rdfs:subClassOf prv:Agent ;
+                      
+                      obo:IAO_0000115 "Person agents are people."@en .
+
+
+
+###  http://purl.org/ontology/prv/core#Role
+
+prv:Role rdf:type owl:Class ;
+                      
+                      rdfs:label "Role"@en ;
+
+		      rdfs:subClassOf sio:SIO_000009 ;
+                      
+                      obo:IAO_0000115 "A role is the function of an entity or agent with respect to an activity, in the context of a usage, generation, invalidation, association, start, and end."@en .
+
+
+
+###  http://purl.org/ontology/prv/core#SoftwareAgent
+
+prv:SoftwareAgent rdf:type owl:Class ;
+                      
+                      rdfs:label "Software Agent"@en ;
+
+		      rdfs:subClassOf prv:Agent ;
+                      
+                      obo:IAO_0000115 "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."@en .
+
 
 
 
 ###  http://www.w3.org/ns/prov#Plan
 
-prov:Plan rdfs:subClassOf sio:SIO_000091 .
+prov:Plan rdfs:subClassOf sio:SIO_000091 ;
 
-
-
-###  http://www.w3.org/ns/prov#Role
-
-prov:Role rdf:type owl:Class .
-
-
-
-###  http://www.w3.org/ns/prov#SoftwareAgent
-
-prov:SoftwareAgent rdf:type owl:Class ;
-                   
-              rdfs:subClassOf prov:Agent .
+                      obo:IAO_0000115 "A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals."@en .
 
 
 
