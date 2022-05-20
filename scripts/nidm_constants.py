@@ -313,3 +313,5 @@ NLX_IMAGING_INSTRUMENT = NLX['birnlex_2094']
 SKOS_DEFINITION = SKOS['definition']
 
 NS0_DEFINITION = DCT['description']
+
+PROV_DEFINITION = PROV['definition']

@@ -451,6 +451,8 @@ class OwlReader():
             list(self.graph.objects(owl_term, NS0_DEFINITION))
         definition = definition + \
             list(self.graph.objects(owl_term, SKOS_DEFINITION))
+        definition = definition + \
+            list(self.graph.objects(owl_term, PROV_DEFINITION))
 
         if definition:
             if len(definition) > 1:
