@@ -3236,21 +3236,21 @@ obo:PATO_0000001 rdfs:subClassOf sio:SIO_000614 .
 
 
 
-###  http://purl.org/ontology/prv/core#Activity
+###  http://www.w3.org/ns/prov#Activity
 
-prv:Activity rdf:type owl:Class ;
+prov:Activity rdf:type owl:Class ;
                       
                       rdfs:label "Activity"@en ;
 
-		      owl:disjointWith prv:Entity ; 
+		      owl:disjointWith prov:Entity ; 
                       
                       obo:IAO_0000115 "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en .
 
 
 
-###  http://purl.org/ontology/prv/core#Agent
+###  http://www.w3.org/ns/prov#Agent
 
-prv:Agent rdf:type owl:Class ;
+prov:Agent rdf:type owl:Class ;
                       
                       rdfs:label "Agent"@en ;
                       
@@ -3258,21 +3258,21 @@ prv:Agent rdf:type owl:Class ;
 
 
 
-###  http://purl.org/ontology/prv/core#Collection
+###  http://www.w3.org/ns/prov#Collection
 
-prv:Collection rdf:type owl:Class ;
+prov:Collection rdf:type owl:Class ;
                       
                       rdfs:label "Collection"@en ;
 
-		      rdfs:subClassOf prv:Entity ;
+		      rdfs:subClassOf prov:Entity ;
                       
                       obo:IAO_0000115 "A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections."@en .
 		      
 
 
-###  http://purl.org/ontology/prv/core#Entity
+###  http://www.w3.org/ns/prov#Entity
 
-prv:Entity rdf:type owl:Class ;
+prov:Entity rdf:type owl:Class ;
                       
                       rdfs:label "Entity"@en ;
                       
@@ -3280,21 +3280,21 @@ prv:Entity rdf:type owl:Class ;
 
 
 
-###  http://purl.org/ontology/prv/core#Person
+###  http://www.w3.org/ns/prov#Person
 
-prv:Person rdf:type owl:Class ;
+prov:Person rdf:type owl:Class ;
                       
                       rdfs:label "Person"@en ;
 
-		      rdfs:subClassOf prv:Agent ;
+		      rdfs:subClassOf prov:Agent ;
                       
                       obo:IAO_0000115 "Person agents are people."@en .
 
 
 
-###  http://purl.org/ontology/prv/core#Role
+###  http://www.w3.org/ns/prov#Role
 
-prv:Role rdf:type owl:Class ;
+prov:Role rdf:type owl:Class ;
                       
                       rdfs:label "Role"@en ;
 
@@ -3304,13 +3304,13 @@ prv:Role rdf:type owl:Class ;
 
 
 
-###  http://purl.org/ontology/prv/core#SoftwareAgent
+###  http://www.w3.org/ns/prov#SoftwareAgent
 
-prv:SoftwareAgent rdf:type owl:Class ;
+prov:SoftwareAgent rdf:type owl:Class ;
                       
                       rdfs:label "Software Agent"@en ;
 
-		      rdfs:subClassOf prv:Agent ;
+		      rdfs:subClassOf prov:Agent ;
                       
                       obo:IAO_0000115 "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."@en .
 
