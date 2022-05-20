@@ -388,8 +388,8 @@ def main():
     
     OwlNidmHtml(term_infos, import_files, "class")
     OwlNidmHtml(term_infos, import_files, "datatype")
-    # OwlNidmHtml(term_infos, import_files, "annotation")
-    # OwlNidmHtml(term_infos, import_files, "object")
+    OwlNidmHtml(term_infos, import_files, "annotation")
+    OwlNidmHtml(term_infos, import_files, "object")
     # OwlNidmHtml(term_infos, import_files, "individual")
 
 if __name__ == "__main__":
