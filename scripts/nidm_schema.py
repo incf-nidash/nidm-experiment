@@ -55,6 +55,17 @@ class OwlNidmHtml:
         
         self.schema_footer()
 
+    def get_top_prop_level(self, terms):
+        top = []
+
+        for term in terms:
+            parents = self.get_prop_parents(term)
+            parents = self.owl.sorted_by_labels(parents)
+            if len(parents) <= 0:
+                top.append(term)
+
+        return top
+
     def create_schema_class_spec(self):
         prov_types = [PROV['Activity'], PROV['Entity'], PROV['Agent'], None]
 
@@ -83,6 +94,7 @@ class OwlNidmHtml:
     
     def create_schema_type_spec(self, rdf_type):
         terms = self.owl.all_of_rdf_type(rdf_type, but_type=OWL['Class'])
+        terms = self.get_top_prop_level(terms)
 
         for term in terms:
             term_link = self.owl.get_label(term)
@@ -93,8 +105,9 @@ class OwlNidmHtml:
 
             children = self.get_prop_children(term)
             children = self.owl.sorted_by_labels(children)
-
+            
             if len(children) <= 0:
+                term_def = self.clean_definition(term_def)
                 self.schema_text += "<a description=\""+term_def+"\" role=\"button\" class=\"list-group-item\" tag=\""+term_name+"\">"+term_link+"</a>"
                 continue
 
@@ -138,9 +151,7 @@ class OwlNidmHtml:
         # term_info = self.generate_info(uri)
         # if term_info:
         #     description = definition+text_break+term_info
-        
-        description = description.replace('"', '&quot;')
-        description = description.replace("'", '&apos;')
+        description = self.clean_definition(description)
 
         path += " / "+class_name
         description += path
@@ -178,8 +189,7 @@ class OwlNidmHtml:
         # if term_info:
         #     description = definition+text_break+term_info
         
-        description = description.replace('"', '&quot;')
-        description = description.replace("'", '&apos;')
+        description = self.clean_definition(description)
 
         path += "/"+prop_name
         description += path
@@ -199,6 +209,14 @@ class OwlNidmHtml:
 
         self.schema_text += "</div>"
 
+    def clean_definition(self, definition):
+        definition = definition.replace('"', '&quot;')
+        definition = definition.replace('\"', '&quot;')
+        definition = definition.replace('_', '&#95;')
+        definition = definition.replace('<em>', '&#95;')
+        definition = definition.replace('</em>', '&#95;')
+        definition = definition.replace("'", '&apos;')
+        return definition
 
     def format_definition(self, definition):
         try:
@@ -390,7 +408,7 @@ def main():
     OwlNidmHtml(term_infos, import_files, "datatype")
     OwlNidmHtml(term_infos, import_files, "annotation")
     OwlNidmHtml(term_infos, import_files, "object")
-    # OwlNidmHtml(term_infos, import_files, "individual")
+    OwlNidmHtml(term_infos, import_files, "individual")
 
 if __name__ == "__main__":
     main()
