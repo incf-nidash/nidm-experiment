@@ -269,15 +269,81 @@ class OwlNidmHtml:
         
         if (not self.owl.get_label(class_uri).startswith(self.term_prefix.lower()+':')):
             return
-           
-        term_text = """
+
+
+        #section opener
+        self.text += """
             <!-- """+class_label+""" ("""+class_name+""")"""+""" -->
             <section id=\""""+class_name.lower()+"""\">
                 <h2 label=\""""+class_name+"""\">"""+class_label+"""</h2>
-                <div class="glossary-ref">
-                    """+self.term_link(class_uri, "dfn") + ": " + definition
+                <div class="glossary-ref">"""
 
-        self.text += term_text
+        #attributes
+        range_classes = list()
+        if attributes and (attributes != set([CRYPTO['sha512']])):
+            self.text += """
+                <p></p>
+                <div class="attributes" id="attributes-"""+class_label + \
+                """">""" + \
+                self.term_link(class_uri)+""" has attributes:
+                <ul>
+                    <li><span class="attribute" id=\"""" + \
+                class_label+""".label">rdfs:label</span>: \
+                    (<em class="rfc2119" title="OPTIONAL">OPTIONAL</em>) """\
+            """Human readable description of the """ + \
+                self.term_link(class_uri)+""".</li>"""
+
+            for att in sorted(attributes):
+
+                # Do not display prov relations as attributes
+                # (except prov:atLocation...)
+                if not self.owl.is_prov(att) or (att == PROV['atLocation']):
+                    if att not in self.attributes_done:
+                        # First definition of this attribute
+                        att_tag = "dfn"
+                    else:
+                        att_tag = "a"
+
+                    self.attributes_done.add(att)
+                    # if att_label.startswith("nidm:"):
+                    att_def = self.owl.get_definition(att)
+                    self.text += """
+                        <li>"""+self.term_link(att, att_tag) + \
+                        '</span>: (<em class="rfc2119" title="OPTIONAL">' + \
+                        'OPTIONAL</em>) ' + self.format_definition(att_def)
+
+                    if att in self.owl.parent_ranges:
+                        child_ranges = list()
+                        for parent_range in self.owl.parent_ranges[att]:
+                            child_ranges += self.owl.get_direct_children(
+                                parent_range)
+                            if self.owl.get_label(parent_range).\
+                                    startswith('nidm'):
+                                range_classes.append(parent_range)
+                        child_ranges = sorted(child_ranges)
+
+                        # if nidm_namespace:
+                        child_range_txt = ""
+                        if child_ranges:
+                            # Get all child ranges
+                            child_range_txt = self.linked_listing(
+                                child_ranges, " such as ")
+
+                        self.text += self.linked_listing(
+                            self.owl.parent_ranges[att],
+                            " (range ", child_range_txt+")")
+                        self.text += "."
+
+                        self.text += "</li>"
+
+            self.text += """
+                </ul>
+                </div>"""
+
+        #definition
+        self.text += self.term_link(class_uri, "dfn") + ": " + definition
+
+
         self.text += "<p>"+self.term_link(class_uri)+" is"
 
         nidm_class = self.owl.get_nidm_parent(class_uri)
@@ -433,69 +499,9 @@ class OwlNidmHtml:
             self.text += "<p>Editor Note: "+note+"</p>"
         
 
-        range_classes = list()
+        
 
         self.text += """
-                </div>"""
-
-        if attributes and (attributes != set([CRYPTO['sha512']])):
-            self.text += """
-                <p></p>
-                <div class="attributes" id="attributes-"""+class_label + \
-                """"> A """ + \
-                self.term_link(class_uri)+""" has attributes:
-                <ul>
-                    <li><span class="attribute" id=\"""" + \
-                class_label+""".label">rdfs:label</span>: \
-                    (<em class="rfc2119" title="OPTIONAL">OPTIONAL</em>) """\
-            """Human readable description of the """ + \
-                self.term_link(class_uri)+""".</li>"""
-
-            for att in sorted(attributes):
-
-                # Do not display prov relations as attributes
-                # (except prov:atLocation...)
-                if not self.owl.is_prov(att) or (att == PROV['atLocation']):
-                    if att not in self.attributes_done:
-                        # First definition of this attribute
-                        att_tag = "dfn"
-                    else:
-                        att_tag = "a"
-
-                    self.attributes_done.add(att)
-                    # if att_label.startswith("nidm:"):
-                    att_def = self.owl.get_definition(att)
-                    self.text += """
-                        <li>"""+self.term_link(att, att_tag) + \
-                        '</span>: (<em class="rfc2119" title="OPTIONAL">' + \
-                        'OPTIONAL</em>) ' + self.format_definition(att_def)
-
-                    if att in self.owl.parent_ranges:
-                        child_ranges = list()
-                        for parent_range in self.owl.parent_ranges[att]:
-                            child_ranges += self.owl.get_direct_children(
-                                parent_range)
-                            if self.owl.get_label(parent_range).\
-                                    startswith('nidm'):
-                                range_classes.append(parent_range)
-                        child_ranges = sorted(child_ranges)
-
-                        # if nidm_namespace:
-                        child_range_txt = ""
-                        if child_ranges:
-                            # Get all child ranges
-                            child_range_txt = self.linked_listing(
-                                child_ranges, " such as ")
-
-                        self.text += self.linked_listing(
-                            self.owl.parent_ranges[att],
-                            " (range ", child_range_txt+")")
-                        self.text += "."
-
-                        self.text += "</li>"
-
-            self.text += """
-                </ul>
                 </div>"""
 
         BASE_REPOSITORY = "https://raw.githubusercontent.com/" + \

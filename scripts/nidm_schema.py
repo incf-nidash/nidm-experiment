@@ -142,7 +142,7 @@ class OwlNidmHtml:
         description = description.replace('"', '&quot;')
         description = description.replace("'", '&apos;')
 
-        path += "/"+class_name
+        path += " / "+class_name
         description += path
 
         children = self.owl.get_direct_children(uri)
