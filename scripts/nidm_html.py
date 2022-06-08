@@ -60,52 +60,60 @@ class OwlNidmHtml:
                              derived_from, attributed_to, prefix, intro=None):
         self.create_title(self.name+": Types and relations", "definitions")
 
-        self.text += "<a href='#classes'>Classes</a>"
+        jump_links = ""
+        if self.has_class_entries():
+            jump_links += "<a href='#classes'>Classes</a>"
         if self.has_type_entries(OWL['DatatypeProperty']):
-            self.text += " | <a href='#datatypeproperties'>Datatype Properties</a>"
+            if jump_links != "": jump_links += " | "
+            jump_links += "<a href='#datatypeproperties'>Datatype Properties</a>"
         if self.has_type_entries(OWL['AnnotationProperty']):
-            self.text += " | <a href='#annotationproperties'>Annotation Properties</a>"
+            if jump_links != "": jump_links += " | "
+            jump_links += "<a href='#annotationproperties'>Annotation Properties</a>"
         if self.has_type_entries(OWL['ObjectProperty']):
-            self.text += " | <a href='#objectproperties'>Object Properties</a>"
+            if jump_links != "": jump_links += " | "
+            jump_links += "<a href='#objectproperties'>Object Properties</a>"
         if self.has_type_entries(OWL['NamedIndividual']):
-            self.text += " | <a href='#namedindividuals'>Named Individuals</a>"
+            if jump_links != "": jump_links += " | "
+            jump_links += "<a href='#namedindividuals'>Named Individuals</a>"
+        self.text += jump_links
 
         if intro is not None:
             self.text += intro
         
-        #table_num = 3
-        #if self.term_prefix == "nidm":
-        classes = self.owl.get_classes(prefix=prefix, but=self.already_defined_classes)
+        if self.has_class_entries():
+            #table_num = 3
+            #if self.term_prefix == "nidm":
+            classes = self.owl.get_classes(prefix=prefix, but=self.already_defined_classes)
 
-        #for classes in self.classes:
-        #print("CLASS: "+classes)
-        classes_by_types = self.owl.get_class_names_by_prov_type(
-            classes, prefix=prefix, but=self.already_defined_classes)
-        # for x in classes:
-        #     print(x)
-        self.already_defined_classes += classes
+            #for classes in self.classes:
+            #print("CLASS: "+classes)
+            classes_by_types = self.owl.get_class_names_by_prov_type(
+                classes, prefix=prefix, but=self.already_defined_classes)
+            # for x in classes:
+            #     print(x)
+            self.already_defined_classes += classes
 
-        #table_num = table_num + 1
-        all_classes = \
-            classes_by_types[PROV['Activity']] + \
-            classes_by_types[PROV['Entity']] + \
-            classes_by_types[PROV['Agent']] + \
-            classes_by_types[None]
+            #table_num = table_num + 1
+            all_classes = \
+                classes_by_types[PROV['Activity']] + \
+                classes_by_types[PROV['Entity']] + \
+                classes_by_types[PROV['Agent']] + \
+                classes_by_types[None]
 
-        self.text += "<h1 id='classes'>Classes</h1>"
+            self.text += "<h1 id='classes'>Classes</h1>"
 
-        #print(self.get_top_uri(classes_by_types))
+            #print(self.get_top_uri(classes_by_types))
 
-        for class_uri in all_classes:
-            # uncomment this to see uri before processing
-            # print(class_uri)
-            self.create_class_section(
-                class_uri,
-                self.owl.get_definition(class_uri),
-                self.owl.attributes.setdefault(class_uri, None),
-                used_by, generated_by, derived_from, attributed_to,
-                children=not (
-                    self.owl.get_prov_class(class_uri) == PROV['Entity']))
+            for class_uri in all_classes:
+                # uncomment this to see uri before processing
+                # print(class_uri)
+                self.create_class_section(
+                    class_uri,
+                    self.owl.get_definition(class_uri),
+                    self.owl.attributes.setdefault(class_uri, None),
+                    used_by, generated_by, derived_from, attributed_to,
+                    children=not (
+                        self.owl.get_prov_class(class_uri) == PROV['Entity']))
         
         self.add_type_section(OWL['DatatypeProperty'], used_by, generated_by, derived_from, attributed_to)
         self.add_type_section(OWL['AnnotationProperty'], used_by, generated_by, derived_from, attributed_to)
@@ -155,6 +163,15 @@ class OwlNidmHtml:
     
     def has_type_entries(self, rdf_type):
         entries = self.owl.all_of_rdf_type(rdf_type, but_type=OWL['Class'])
+        if entries:
+            for entry in entries:
+                pre = self.owl.get_label(entry).split(":")[0]
+                if pre.lower() == self.term_prefix:
+                    return True
+        return False
+    
+    def has_class_entries(self):
+        entries = self.owl.all_of_rdf_type(OWL['Class'])
         if entries:
             for entry in entries:
                 pre = self.owl.get_label(entry).split(":")[0]
