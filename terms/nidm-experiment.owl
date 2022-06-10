@@ -513,7 +513,7 @@ nidm:recordingLocation rdf:type owl:DatatypeProperty ;
 
 
 
-###  http://purl.org/nidash/nidm#dicomTag
+###  http://purl.org/nidash/nidm#DICOMTag
 
 nidm:DICOMTag rdf:type owl:DatatypeProperty ;
 
@@ -3394,12 +3394,6 @@ onli:scale-item rdfs:subClassOf sio:SIO_000366 .
 #    Individuals
 #
 #################################################################
-
-###  http://purl.obolibrary.org/obo/IAO_0000136
-
-obo:IAO_0000136 rdf:type owl:NamedIndividual ,
-              onli:assessment-instrument .
-
 
 
 ###  http://purl.org/nidash/nidm#BarnesAkathisiaScale
