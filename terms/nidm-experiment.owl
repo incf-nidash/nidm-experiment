@@ -513,9 +513,9 @@ nidm:recordingLocation rdf:type owl:DatatypeProperty ;
 
 
 
-###  http://purl.org/nidash/nidm#dicomTag
+###  http://purl.org/nidash/nidm#DICOMTag
 
-nidm:dicomTag rdf:type owl:DatatypeProperty ;
+nidm:DICOMTag rdf:type owl:DatatypeProperty ;
 
                rdfs:label "DICOM Tag"^^xsd:string ;
 
