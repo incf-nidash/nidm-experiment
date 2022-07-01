@@ -75,6 +75,8 @@ class OwlNidmHtml:
                 prov_link = self.owl.get_label(prov)
                 prov_name = self.owl.get_name(prov)
                 prov_def = self.format_definition(self.owl.get_definition(prov))
+                text_break = "</br>------------------------</br>"
+                prov_def += text_break + prov_name
                 if not prov_def:
                     prov_def = "<i>Definition not found</i>"
                 self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+prov_name+"\" description=\""+prov_def+"\" aria-expanded='true'>"+prov_link+"</a>"
@@ -100,6 +102,8 @@ class OwlNidmHtml:
             term_link = self.owl.get_label(term)
             term_name = self.owl.get_name(term)
             term_def = self.format_definition(self.owl.get_definition(term))
+            text_break = "</br>------------------------</br>"
+            term_def += text_break + term_name
             if not term_def:
                 term_def = "<i>Definition not found</i>"
 
