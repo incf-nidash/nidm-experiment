@@ -115,3 +115,14 @@ h1 {
 h2 {
   margin-top: 30px;
 }
+
+.ui-autocomplete {
+  cursor:pointer; 
+  height:300px; 
+  overflow-y:scroll;
+  overflow-x: hidden;
+}
+
+#autobox {
+  margin-top: 30px;
+}

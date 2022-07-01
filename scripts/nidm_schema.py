@@ -79,7 +79,7 @@ class OwlNidmHtml:
                 prov_def += text_break + prov_name
                 if not prov_def:
                     prov_def = "<i>Definition not found</i>"
-                self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+prov_name+"\" description=\""+prov_def+"\" aria-expanded='true'>"+prov_link+"</a>"
+                self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+prov_name+"\" description=\""+prov_def+"\" id=\""+prov_name+"_\" aria-expanded='true'>"+prov_link+"</a>"
                 self.schema_text += "<div class='list-group multi-collapse level-1 show' id=\""+prov_name+"\">"
             
             children = self.owl.get_direct_children(prov)
@@ -112,10 +112,10 @@ class OwlNidmHtml:
             
             if len(children) <= 0:
                 term_def = self.clean_definition(term_def)
-                self.schema_text += "<a description=\""+term_def+"\" role=\"button\" class=\"list-group-item\" tag=\""+term_name+"\">"+term_link+"</a>"
+                self.schema_text += "<a description=\""+term_def+"\" role=\"button\" class=\"list-group-item\" tag=\""+term_name+"\" id=\""+term_name+"\">"+term_link+"</a>"
                 continue
 
-            self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+term_name+"\" description=\""+term_def+"\" aria-expanded='true'>"+term_link+"</a>"
+            self.schema_text += "<a class='list-group-item' data-bs-toggle='collapse' role='button' href=\"#"+term_name+"\" description=\""+term_def+"\" aria-expanded='true' id=\""+term_name+"_\">"+term_link+"</a>"
             self.schema_text += "<div class='list-group multi-collapse level-1 show' id=\""+term_name+"\">"
             for child in children:
                 self.get_hierarchy_subprop(child, path=term_name)
@@ -163,11 +163,11 @@ class OwlNidmHtml:
         children = self.owl.get_direct_children(uri)
         children = self.owl.sorted_by_labels(children)
         if len(children) <= 0:
-            self.schema_text += "<a description=\""+description+"\" role=\"button\" class=\"list-group-item\" tag=\""+class_name+"\">"+class_label+"</a>"
+            self.schema_text += "<a description=\""+description+"\" role=\"button\" class=\"list-group-item\" tag=\""+class_name+"\" id=\""+class_name+"\">"+class_label+"</a>"
             return None
         
         hier_level = "level-"+str(level+1)
-        self.schema_text += "<a href=\"#"+class_name+"\" description=\""+description+"\" role=\"button\" data-bs-toggle=\"collapse\" class=\"list-group-item\" tag=\""+class_name+"\" aria-expanded='false'>"+class_label+"</a>"
+        self.schema_text += "<a href=\"#"+class_name+"\" description=\""+description+"\" role=\"button\" data-bs-toggle=\"collapse\" class=\"list-group-item\" tag=\""+class_name+"\" aria-expanded='false' id=\""+class_name+"_\">"+class_label+"</a>"
         self.schema_text += "<div class=\"list-group multi-collapse "+hier_level+" collapse\" id=\""+class_name+"\">"
 
         for child in children:
@@ -201,11 +201,11 @@ class OwlNidmHtml:
         children = self.get_prop_children(uri)
         children = self.owl.sorted_by_labels(children)
         if len(children) <= 0:
-            self.schema_text += "<a description=\""+description+"\" role=\"button\" class=\"list-group-item\" tag=\""+prop_name+"\">"+prop_label+"</a>"
+            self.schema_text += "<a description=\""+description+"\" role=\"button\" class=\"list-group-item\" tag=\""+prop_name+"\" id=\""+prop_name+"\">"+prop_label+"</a>"
             return None
         
         hier_level = "level-"+str(level+1)
-        self.schema_text += "<a href=\"#"+prop_name+"\" description=\""+description+"\" role=\"button\" data-bs-toggle=\"collapse\" class=\"list-group-item\" tag=\""+prop_name+"\" aria-expanded='false'>"+prop_label+"</a>"
+        self.schema_text += "<a href=\"#"+prop_name+"\" description=\""+description+"\" role=\"button\" data-bs-toggle=\"collapse\" class=\"list-group-item\" tag=\""+prop_name+"\" aria-expanded='false' id=\""+prop_name+"_\">"+prop_label+"</a>"
         self.schema_text += "<div class=\"list-group multi-collapse "+hier_level+" collapse\" id=\""+prop_name+"\">"
 
         for child in children:
@@ -339,6 +339,10 @@ class OwlNidmHtml:
             <meta charset="UTF-8">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
             <link rel="stylesheet" type="text/css" href="stylesheet/schema.css" media="screen">
             <script type="text/javascript" src="stylesheet/schema.js"></script>
 
@@ -349,7 +353,7 @@ class OwlNidmHtml:
         </head>
         <body>
             <section class="page-header">
-                <h1 class="project-name">Schema Browser: Class</h1>
+                <h1 class="project-name">Schema Browser: """+ttype+"""</h1>
                 <a href="schema_class.html" class="btn">Class</a>
                 <a href="schema_datatype.html" class="btn">Datatype Property</a>
                 <a href="schema_annotation.html" class="btn">Annotation Property</a>
@@ -358,6 +362,10 @@ class OwlNidmHtml:
                 <a href="index.html" class="btn">Term Resolution Page</a>
             </section>
             <div class=\"container-fluid\"><section id=\"viewer\">
+                <div id="autobox">
+                    Search """+ttype+""": <input type="text" id="termSearch" />
+                </div>
+                
                 <h2>"""+title+"""</h2>
                 <div class=\"row\">
                 <div class=\"col-5\"><div id='schema' class='list-group list-group-root well'>
