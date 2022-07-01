@@ -317,14 +317,19 @@ class OwlNidmHtml:
 
         if self.type == "class":
             title = "NIDM Class Browser"
+            ttype = "Class"
         if self.type == "datatype":
             title = "NIDM Datatype Property Browser"
+            ttype = "Datatype"
         if self.type == "annotation":
             title = "NIDM Annotation Property Browser"
+            ttype = "Annotation"
         if self.type == "object":
             title = "NIDM Object Property Browser"
+            ttype = "Object"
         if self.type == "individual":
             title = "NIDM Named Individual Browser"
+            ttype = "Individual"
 
         schema_open = codecs.open(schema_file, 'w', "utf-8")
         schema_open.write("""
