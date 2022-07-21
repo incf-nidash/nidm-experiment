@@ -1,11 +1,11 @@
 ---
 name: Revise subclass relationship
-about: Revise the subclass structure for CL terms
+about: Revise the subclass structure for NIDM-E terms
 title: "[Class hierarchy]"
-labels: CL-classhierarchy
+labels: NIDM-E-classhierarchy
 ---
 
-**CL term**
+**NIDM-E term**
 
 
 **Suggested revision and reasons**

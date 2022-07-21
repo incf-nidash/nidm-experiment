@@ -1,11 +1,11 @@
 ---
 name: Revise textual definition
-about: Change the textual definition of a CL term
+about: Change the textual definition of a NIDM-E term
 title: "[Text def]"
 labels: 'text definition'
 ---
 
-**CL term**
+**NIDM-E term**
 
 
 **Suggested revision of textual definition**

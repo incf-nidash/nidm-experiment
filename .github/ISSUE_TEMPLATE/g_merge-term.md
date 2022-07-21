@@ -1,12 +1,12 @@
 ---
 name: Merge two terms
-about: Obsolete or deprecate an existing CL term and merge with another CL term. Note - use the 'obsolete' template if you would like to obsolete a term without replacing it with another existing CL term.
+about: Obsolete or deprecate an existing NIDM-E term and merge with another NIDM-E term. Note - use the 'obsolete' template if you would like to deprecate a term without replacing it with another existing NIDM-E term.
 title: "[Merge]"
 labels: merge
 
 ---
 
-**CL term (ID and Label)**
+**NIDM-E term (ID and Label)**
 
 
 **Reason for deprecation**

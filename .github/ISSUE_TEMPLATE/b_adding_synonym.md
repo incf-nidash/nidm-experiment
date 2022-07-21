@@ -1,11 +1,11 @@
 ---
 name: Add synonym
-about: New synonym suggestion for an existing CL term
+about: New synonym suggestion for an existing NIDM-E term
 title: "[Synonym]"
 labels: synonym
 ---
 
-**CL term**
+**NIDM-E term**
 
 
 **Synonym to be added**
