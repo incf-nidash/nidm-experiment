@@ -13,3 +13,11 @@ labels: merge
 
 
 **Term to be merged with (ID and Label)**
+
+
+**Your ORCID**
+
+
+**Notes or comments**
+
+

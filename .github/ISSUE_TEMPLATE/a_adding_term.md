@@ -2,7 +2,7 @@
 name: Add term
 about: New term suggestion for NIDM-E
 title: "[NTR]"
-labels: 'new term'
+labels: 'new term request'
 ---
 
 Note - please check that the term does not already exist (check NIDM-E: https://incf-nidash.github.io/nidm-experiment/schema_menu.html)
