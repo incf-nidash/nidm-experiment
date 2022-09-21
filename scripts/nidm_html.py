@@ -295,21 +295,21 @@ class OwlNidmHtml:
                 <h2 label=\""""+class_name+"""\">"""+class_label+"""</h2>
                 <div class="glossary-ref">"""
 
+
+        self.text += """<p></p>
+        <div class="attributes" id="attributes-"""+class_label + """">""" + \
+            self.term_link(class_uri)+""" has attributes:
+        <ul>
+            <li>
+                <span class="attribute" id=\""""+class_label+""".label">Label</span>: """ + \
+                    self.term_link(class_uri)+""".</li>"""
+
+
+
+
         #attributes
         range_classes = list()
         if attributes and (attributes != set([CRYPTO['sha512']])):
-            self.text += """
-                <p></p>
-                <div class="attributes" id="attributes-"""+class_label + \
-                """">""" + \
-                self.term_link(class_uri)+""" has attributes:
-                <ul>
-                    <li><span class="attribute" id=\"""" + \
-                class_label+""".label">rdfs:label</span>: \
-                    (<em class="rfc2119" title="OPTIONAL">OPTIONAL</em>) """\
-            """Human readable description of the """ + \
-                self.term_link(class_uri)+""".</li>"""
-
             for att in sorted(attributes):
 
                 # Do not display prov relations as attributes
@@ -324,10 +324,10 @@ class OwlNidmHtml:
                     self.attributes_done.add(att)
                     # if att_label.startswith("nidm:"):
                     att_def = self.owl.get_definition(att)
-                    self.text += """
-                        <li>"""+self.term_link(att, att_tag) + \
-                        '</span>: (<em class="rfc2119" title="OPTIONAL">' + \
-                        'OPTIONAL</em>) ' + self.format_definition(att_def)
+                    # self.text += """
+                    #     <li>"""+self.term_link(att, att_tag) + \
+                    #     '</span>: (<em class="rfc2119" title="OPTIONAL">' + \
+                    #     'OPTIONAL</em>) ' + self.format_definition(att_def)
 
                     if att in self.owl.parent_ranges:
                         child_ranges = list()
@@ -346,22 +346,18 @@ class OwlNidmHtml:
                             child_range_txt = self.linked_listing(
                                 child_ranges, " such as ")
 
-                        self.text += self.linked_listing(
-                            self.owl.parent_ranges[att],
-                            " (range ", child_range_txt+")")
-                        self.text += "."
+                        # self.text += self.linked_listing(
+                        #     self.owl.parent_ranges[att],
+                        #     " (range ", child_range_txt+")")
+                        # self.text += "."
 
-                        self.text += "</li>"
-
-            self.text += """
-                </ul>
-                </div>"""
+                        # self.text += "</li>"
 
         #definition
-        self.text += self.term_link(class_uri, "dfn") + ": " + definition
+        #self.text += self.term_link(class_uri, "dfn") + ": " + definition
+        self.text += "<li>Definition: " + definition + "</li>"
 
-
-        self.text += "<p>"+self.term_link(class_uri)+" is"
+        self.text += "<li>"+self.term_link(class_uri)+" is"
 
         nidm_class = self.owl.get_nidm_parent(class_uri)
         if nidm_class:
@@ -466,7 +462,7 @@ class OwlNidmHtml:
                          self.linked_listing(class_children)
 
         self.text += "."
-        self.text += "</p>"
+        self.text += "</li>"
 
         curation = self.owl.get_curation_status(class_uri)
         note = self.owl.get_editor_note(class_uri)
@@ -487,7 +483,7 @@ class OwlNidmHtml:
 
         if indiv_types:
             try:
-                self.text += "<p>Type: "
+                self.text += "<li>Type: "
                 if self.owl.is_named_individual(class_uri):
                     self.text += self.term_link(OWL['NamedIndividual'])
                 else:
@@ -495,31 +491,30 @@ class OwlNidmHtml:
                     if len(indiv_types) > 1:
                         for itype in indiv_types[1:]:
                             self.text += ", "+self.term_link(itype)
-                self.text+"</p>"
+                self.text+"</li>"
             except:
                 logger.warning("URI invalid for: "+class_uri)
         if range_value:
-            self.text += "<p>Range: "+range_value+"</p>"
+            self.text += "<li>Range: "+range_value+"</li>"
         if domain:
-            self.text += "<p>Domain: "+domain+"</p>"
+            self.text += "<li>Domain: "+domain+"</li>"
         if same:
-            self.text += "<p>Same as: "+self.term_link(same)+"</p>"
+            self.text += "<li>Same as: "+self.term_link(same)+"</li>"
         if curation:
-            self.text += "<p>Curation Status: "+self.term_link(curation)+"</p>"
+            self.text += "<li>Curation Status: "+self.term_link(curation)+"</li>"
         if editor:
             try:
-                self.text += "<p>Editor: "+self.term_link(editor)+"</p>"
+                self.text += "<li>Editor: "+self.term_link(editor)+"</li>"
             except:
                 logger.warning("URI invalid for: "+editor)
-                self.text += "<p>Editor: "+editor
+                self.text += "<li>Editor: "+editor+"</li>"
         if note:
-            self.text += "<p>Editor Note: "+note+"</p>"
+            self.text += "<li>Editor Note: "+note+"</li>"
         
 
         
 
-        self.text += """
-                </div>"""
+        self.text += """</ul></div>"""
 
         BASE_REPOSITORY = "https://raw.githubusercontent.com/" + \
             "incf-nidash/nidm/master/"
@@ -575,6 +570,8 @@ class OwlNidmHtml:
         if not is_range:
             self.text += """
             </section>"""
+        
+        self.text += """</br>"""
 
     def close_sections(self):
 
