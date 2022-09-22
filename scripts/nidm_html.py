@@ -300,11 +300,7 @@ class OwlNidmHtml:
         <div class="attributes" id="attributes-"""+class_label + """">""" + \
             self.term_link(class_uri)+""" has attributes:
         <ul>
-            <li>
-                <span class="attribute" id=\""""+class_label+""".label">Label</span>: """ + \
-                    self.term_link(class_uri)+""".</li>"""
-
-
+        <li><span class="attribute" id=\""""+class_label+""".label">Label</span>: '"""+class_name+"""'</li>"""
 
 
         #attributes
@@ -355,7 +351,10 @@ class OwlNidmHtml:
 
         #definition
         #self.text += self.term_link(class_uri, "dfn") + ": " + definition
-        self.text += "<li>Definition: " + definition + "</li>"
+        self.text += "<li>Definition: "+definition
+        if (self.text[-1] != "."):
+            self.text += "."
+        self.text += "</li>"
 
         self.text += "<li>"+self.term_link(class_uri)+" is"
 
@@ -461,7 +460,8 @@ class OwlNidmHtml:
             self.text += ": " + \
                          self.linked_listing(class_children)
 
-        self.text += "."
+        if (self.text[-1] != "."):
+            self.text += "."
         self.text += "</li>"
 
         curation = self.owl.get_curation_status(class_uri)
