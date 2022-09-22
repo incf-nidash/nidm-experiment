@@ -295,12 +295,12 @@ class OwlNidmHtml:
                 <h2 label=\""""+class_name+"""\">"""+class_label+"""</h2>
                 <div class="glossary-ref">"""
 
-
+        term_label = class_label.split(":")[1]
         self.text += """<p></p>
         <div class="attributes" id="attributes-"""+class_label + """">""" + \
             self.term_link(class_uri)+""" has attributes:
         <ul>
-        <li><span class="attribute" id=\""""+class_label+""".label">Label</span>: '"""+class_name+"""'</li>"""
+        <li><span class="attribute" id=\""""+class_label+""".label">Label</span>: """+term_label+"""</li>"""
 
 
         #attributes
