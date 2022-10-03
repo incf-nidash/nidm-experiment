@@ -1,5 +1,7 @@
 @prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
 @prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
 @prefix nidm: <http://purl.org/nidash/nidm#> .
 @prefix dicom: <http://purl.org/nidash/dicom#> .
@@ -66,11 +68,6 @@ obo:IAO_0000116 rdf:type owl:AnnotationProperty .
 
 obo:IAO_0000117 rdf:type owl:AnnotationProperty .
 
-
-
-###  http://purl.org/dc/terms/source
-
-dct:source rdf:type owl:AnnotationProperty .
 
 
 
@@ -141,6 +138,7 @@ nidm:hasAcronym rdf:type owl:AnnotationProperty .
 ###  http://purl.org/dc/terms/hasPart
 
 dct:hasPart rdf:type owl:ObjectProperty .
+
 
 
 ###  http://purl.org/nidash/nidm#NIDM_0000010
@@ -3182,6 +3180,12 @@ dicom:dicom_xxxx0001 rdfs:subClassOf prov:Entity .
 
 
 
+###  http://purl.org/nidash/dicom#dicom_xxxx0022
+
+dicom:dicom_xxxx0001 rdfs:subClassOf sio:SIO_000015 .
+
+
+
 ###  http://semanticscience.org/resource/SIO_000004
 
 sio:SIO_000004 rdfs:subClassOf prov:Entity .
@@ -3385,7 +3389,7 @@ onli:scale-item rdfs:subClassOf sio:SIO_000366 .
 
 ###  http://purl.org/dc/dcmitype/Image
 
-<http://purl.org/dc/dcmitype/Image> rdfs:subClassOf nidm:ReconstructedAcquisitionObject .
+dctype:Image rdfs:subClassOf nidm:ReconstructedAcquisitionObject .
 
 
 
