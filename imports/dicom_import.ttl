@@ -8,6 +8,7 @@
 @prefix dicom: <http://purl.org/nidash/dicom#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -52361,7 +52362,7 @@ dicom:dicom_00189064 rdf:type owl:DatatypeProperty  ;
 
         obo:IAO_0000114  obo:IAO_0000428 ;
 
-	rdfs:subClassOf dct:Image ;
+	rdfs:subClassOf dctype:Image ;
 
         obo:IAO_0000115 "Image that contains multiple two-dimensional pixel planes." .
 
@@ -52675,7 +52676,7 @@ dicom:dicom_00189064 rdf:type owl:DatatypeProperty  ;
 
         obo:IAO_0000114  obo:IAO_0000428 ;
 
-	rdfs:subClassOf dct:Image ;
+	rdfs:subClassOf dctype:Image ;
 
         obo:IAO_0000115 "Graphical data (e.g., images) of variable pixel-depth encoded in the Pixel Data, Float Pixel Data or Double Float Pixel Data Element." .
 
