@@ -1,14 +1,10 @@
-from msilib import schema
 import os
 import codecs
-import collections
-import sys
 import glob
 from nidm_owl_reader import OwlReader
 from nidm_constants import *
 from rdflib import RDF
 import markdown2
-import cgi
 import logging
 
 logging.basicConfig(filename='debug.log', level=logging.DEBUG, filemode='w')
