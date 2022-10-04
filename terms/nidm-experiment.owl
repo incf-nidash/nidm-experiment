@@ -537,7 +537,7 @@ nidm:Acquisition rdf:type owl:Class ;
 
                rdfs:label "Acquisition" ;
 
-               obo:IAO_0000115 "An acquisition is an activity in which data about a study participant is gathered."^^xsd:string ;
+               obo:IAO_0000115 "An acquisition is an activty during which data about a study participant is gathered."^^xsd:string ;
                        
                obo:IAO_0000114 obo:IAO_0000428 ;
                  
