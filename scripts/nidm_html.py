@@ -201,7 +201,7 @@ class OwlNidmHtml:
         if definition:
             definition = definition[0].upper() + definition[1:]
             definition = definition.replace("<p>", "").replace("</p>", "")
-            definition = definition[0:-1]
+            #definition = definition[0:-1]
         return definition
 
     def linked_listing(self, uri_list, prefix="", suffix="", sort=True):
@@ -334,11 +334,7 @@ class OwlNidmHtml:
 
         #definition
         #self.text += self.term_link(class_uri, "dfn") + ": " + definition
-        self.text += "<li>Definition: "+definition
-        if (self.text[-1] != "."):
-            self.text += "."
-        self.text += "</li>"
-
+        self.text += "<li>Definition: "+definition+"</li>"
         self.text += "<li>"+self.term_link(class_uri)+" is"
 
         nidm_class = self.owl.get_nidm_parent(class_uri)

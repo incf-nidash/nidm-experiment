@@ -225,7 +225,6 @@ class OwlNidmHtml:
         if definition:
             definition = definition[0].upper() + definition[1:]
             definition = definition.replace("<p>", "").replace("</p>", "")
-            definition = definition[0:-1]
         return definition
 
     def generate_info(self, class_uri):
@@ -254,8 +253,6 @@ class OwlNidmHtml:
                 text += "ren"
             text += ": " + \
                          self.linked_listing(class_children)
-
-        text += "."
         
         return text
 
