@@ -4,7 +4,6 @@ import glob
 from nidm_owl_reader import OwlReader
 from nidm_constants import *
 from rdflib import RDF
-import markdown2
 import html
 import logging
 
@@ -193,29 +192,16 @@ class OwlNidmHtml:
         """
         self.section_open += 1
     
-    def _format_markdown(self, text):
-
-        #print "into _format_markdown"
-
-        # Replace links specified in markdown by html
-        text = markdown2.markdown(text).replace("<p>", "").replace("</p>", "")
-        # Remove trailing new line
-        text = text[0:-1]
-        return text
-
     def format_definition(self, definition):
         try:
             definition = definition.decode("utf-8")
         except AttributeError:
             pass
-        #print "into format_definition"
-
-        # Capitalize first letter, format markdown and end with dot
+        # Capitalize first letter, format markdown
         if definition:
             definition = definition[0].upper() + definition[1:]
-            definition = self._format_markdown(definition)
-            #definition += "."
-
+            definition = definition.replace("<p>", "").replace("</p>", "")
+            definition = definition[0:-1]
         return definition
 
     def linked_listing(self, uri_list, prefix="", suffix="", sort=True):
@@ -660,9 +646,10 @@ class OwlNidmHtml:
             prev_file_open3.close()
 
         if intro_file != None:
-            intro_file_open = open(intro_file, 'r')
-            start_text = start_text+intro_file_open.read()
+            intro_file_open = open(intro_file, 'r', encoding="utf-8")
+            intro_text = intro_file_open.read()
             intro_file_open.close()
+            start_text = start_text+intro_text
         
         self.text = start_text+self.text
 

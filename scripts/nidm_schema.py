@@ -3,8 +3,6 @@ import codecs
 import glob
 from nidm_owl_reader import OwlReader
 from nidm_constants import *
-from rdflib import RDF
-import markdown2
 import logging
 
 logging.basicConfig(filename='debug.log', level=logging.DEBUG, filemode='w')
@@ -223,25 +221,12 @@ class OwlNidmHtml:
             definition = definition.decode("utf-8")
         except AttributeError:
             pass
-        #print "into format_definition"
-
-        # Capitalize first letter, format markdown and end with dot
+        # Capitalize first letter, format markdown
         if definition:
             definition = definition[0].upper() + definition[1:]
-            definition = self._format_markdown(definition)
-            #definition += "."
-
+            definition = definition.replace("<p>", "").replace("</p>", "")
+            definition = definition[0:-1]
         return definition
-    
-    def _format_markdown(self, text):
-
-        #print "into _format_markdown"
-
-        # Replace links specified in markdown by html
-        text = markdown2.markdown(text).replace("<p>", "").replace("</p>", "")
-        # Remove trailing new line
-        text = text[0:-1]
-        return text
 
     def generate_info(self, class_uri):
         text = self.owl.get_label(class_uri)+" is"
