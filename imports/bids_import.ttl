@@ -3,15 +3,14 @@
 @prefix dicom: <http://purl.org/nidash/dicom#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pato: <http://purl.obolibrary.org/obo/pato#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sio: <http://semanticscience.org/resource/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix skos: <https://www.w3.org/TR/2009/REC-skos-reference-20090818#> .
 @prefix bids: <http://purl.org/nidash/bids#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @base <http://www.w3.org/2002/07/owl#> . 
 
 [ rdf:type owl:Ontology ] .
@@ -330,7 +329,7 @@ bids:Manufacturer rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00080070 ;
 
-            obo:IAO_0000136 sio:SIO_000956 ;
+            obo:IAO_0000136 obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -348,7 +347,7 @@ bids:ManufacturersModelName rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00081090 ;
 
-            obo:IAO_0000136 sio:SIO_000956 ;
+            obo:IAO_0000136 obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -366,7 +365,7 @@ bids:DeviceSerialNumber rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00181000 ;
 
-            obo:IAO_0000136 sio:SIO_000956 ;
+            obo:IAO_0000136 obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -402,7 +401,7 @@ bids:SoftwareVersions rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00181020 ;
 
-            obo:IAO_0000136 sio:SIO_000097 ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -420,7 +419,7 @@ bids:HardcopyDeviceSoftwareVersion rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_0018101A ;
 
-            obo:IAO_0000136 sio:SIO_000097 ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -438,7 +437,7 @@ bids:MagneticFieldStrength rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00180087 ;
 
-            sio:SIO_000221 "T"^^xsd:string ;
+            nidm:hasUnit "T"^^xsd:string ;
 
             obo:IAO_0000136 nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice ;
 
@@ -458,7 +457,7 @@ bids:ReceiveCoilName rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00181250 ;
 
-            obo:IAO_0000136 sio:SIO_000956, nidm:DataAcquisitionDevice, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:ReceiveCoil ;
+            obo:IAO_0000136 obo:OBI_0000968, nidm:DataAcquisitionDevice, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:ReceiveCoil ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -474,7 +473,7 @@ bids:ReceiveCoilActiveElements rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, nidm:DataAcquisitionDevice, nidm:MagnetticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:ReceiveCoil  ;
+            obo:IAO_0000136 obo:OBI_0000968, nidm:DataAcquisitionDevice, nidm:MagnetticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:ReceiveCoil  ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -490,7 +489,7 @@ bids:GradientSetType rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice ;
+            obo:IAO_0000136 obo:OBI_0000968, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -508,7 +507,7 @@ bids:MRTransmitCoilSequence rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00189049 ;
 
-            obo:IAO_0000136 sio:SIO_000956, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:TransmitCoil ;
+            obo:IAO_0000136 obo:OBI_0000968, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:TransmitCoil ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -524,7 +523,7 @@ bids:MatrixCoilMode rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:ReceiveCoil ;
+            obo:IAO_0000136 obo:OBI_0000968, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:ReceiveCoil ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -540,7 +539,7 @@ bids:CoilCombinationMethod rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:ReceiveCoil ;
+            obo:IAO_0000136 obo:OBI_0000968, nidm:MagneticResonanceImagingScanner, nidm:NuclearMagneticResonanceDevice, nidm:ReceiveCoil ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -556,7 +555,7 @@ bids:PulseSequenceType rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000097, nidm:PulseSequence, nidm:MagneticResonanceImaging, nidm:NuclearMagneticResonanceSpectroscopy, nidm:NuclearMagneticResonanceSpectroscopicImaging ;
+            obo:IAO_0000136 obo:IAO_0000010, nidm:PulseSequence, nidm:MagneticResonanceImaging, nidm:NuclearMagneticResonanceSpectroscopy, nidm:NuclearMagneticResonanceSpectroscopicImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -574,7 +573,7 @@ bids:ScanningSequence rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00180020 ;
 
-            obo:IAO_0000136  sio:SIO_000097, nidm:PulseSequence, nidm:MagneticResonanceImaging, nidm:NuclearMagneticResonanceSpectroscopy, nidm:NuclearMagneticResonanceSpectroscopicImaging ;
+            obo:IAO_0000136  obo:IAO_0000010, nidm:PulseSequence, nidm:MagneticResonanceImaging, nidm:NuclearMagneticResonanceSpectroscopy, nidm:NuclearMagneticResonanceSpectroscopicImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -592,7 +591,7 @@ bids:SequenceVariant rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00180021 ;
 
-            obo:IAO_0000136 sio:SIO_000097, nidm:PulseSequence, nidm:MagneticResonanceImaging, nidm:NuclearMagneticResonanceSpectroscopy, nidm:NuclearMagneticResonanceSpectroscopicImaging ;
+            obo:IAO_0000136 obo:IAO_0000010, nidm:PulseSequence, nidm:MagneticResonanceImaging, nidm:NuclearMagneticResonanceSpectroscopy, nidm:NuclearMagneticResonanceSpectroscopicImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -610,7 +609,7 @@ bids:ScanOptions rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00180022 ;
 
-            obo:IAO_0000136 sio:SIO_000097, nidm:PulseSequence, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:IAO_0000010, nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -628,7 +627,7 @@ bids:SequenceName rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00180024 ;
 
-            obo:IAO_0000136 sio:SIO_000097, nidm:PulseSequence, nidm:MagneticResonanceImaging, nidm:NuclearMagneticResonanceSpectroscopy, nidm:NuclearMagneticResonanceSpectroscopicImaging ;
+            obo:IAO_0000136 obo:IAO_0000010, nidm:PulseSequence, nidm:MagneticResonanceImaging, nidm:NuclearMagneticResonanceSpectroscopy, nidm:NuclearMagneticResonanceSpectroscopicImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -644,7 +643,7 @@ bids:PulseSequenceDetails rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000097, nidm:PulseSequence, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:IAO_0000010, nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -660,7 +659,7 @@ bids:NonlinearGradientCorrection rdf:type owl:DatatypeProperty ;
 
             bids:DataType "boolean"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000097, nidm:MagneticResonanceImaging, nidm:DataProcessing ;
+            obo:IAO_0000136 obo:IAO_0000010, nidm:MagneticResonanceImaging, nidm:DataProcessing ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -708,7 +707,7 @@ bids:MTOffsetFrequency rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-	    sio:SIO_000221 "Hz"^^xsd:string ;
+	    nidm:hasUnit "Hz"^^xsd:string ;
 
             obo:IAO_0000136 nidm:MagneticResonanceImaging, nidm:MagnetizationTransfer ;
 
@@ -726,7 +725,7 @@ bids:MTPulseBandwidth rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-	    sio:SIO_000221 "Hz"^^xsd:string ;
+	    nidm:hasUnit "Hz"^^xsd:string ;
 
             obo:IAO_0000136 nidm:MagneticResonanceImaging, nidm:MagnetizationTransfer ;
 
@@ -776,7 +775,7 @@ bids:MTPulseDuration rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-	    sio:SIO_000221 "s"^^xsd:string ;
+	    nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:MagneticResonanceImaging, nidm:MagnetizationTransfer ;
 
@@ -826,7 +825,7 @@ bids:SpoilingRFPhaseIncrement rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-	    sio:SIO_000221 "degrees"^^xsd:string ;
+	    nidm:hasUnit "degrees"^^xsd:string ;
 
             obo:IAO_0000136 nidm:MagneticResonanceImaging  ;
 
@@ -844,7 +843,7 @@ bids:SpoilingGradientMoment rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-	    sio:SIO_000221 "mT.s/m"^^xsd:string ;
+	    nidm:hasUnit "mT.s/m"^^xsd:string ;
  
             obo:IAO_0000136 nidm:MagneticResonanceImaging ;
 
@@ -862,7 +861,7 @@ bids:SpoilingGradientDuration rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-	    sio:SIO_000221 "s"^^xsd:string ;
+	    nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:MagneticResonanceImaging ;
 
@@ -984,7 +983,7 @@ bids:EffectiveEchoSpacing rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 	    
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
@@ -1002,7 +1001,7 @@ bids:TotalReadoutTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 	    
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
@@ -1020,7 +1019,7 @@ bids:MixingTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
 	    obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
@@ -1040,7 +1039,7 @@ bids:EchoTime rdf:type owl:DatatypeProperty ;
 
             skos:closeMatch dicom:dicom_00180081 ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
@@ -1060,7 +1059,7 @@ bids:InversionTime rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00180082 ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
@@ -1078,7 +1077,7 @@ bids:SliceTiming rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136  nidm:PulseSequence, nidm:MagneticResonanceImaging;
 
@@ -1112,7 +1111,7 @@ bids:DwellTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             owl:sameAs dicom:dicom_00191018 ;
 
@@ -1136,7 +1135,7 @@ bids:FlipAngle rdf:type owl:DatatypeProperty ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
-            sio:SIO_000221 "degree"^^xsd:string ;
+            nidm:hasUnit "degree"^^xsd:string ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1202,7 +1201,7 @@ bids:InstitutionName rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00080080 ;
 
-            obo:IAO_0000136 prov:Location ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1220,7 +1219,7 @@ bids:InstitutionAddress rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00080081 ;
 
-            obo:IAO_0000136 prov:Location ;
+            obo:IAO_0000136 obo:IAO_0000422 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1238,7 +1237,7 @@ bids:InstitutionalDepartmentName rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00081040 ;
 
-            obo:IAO_0000136 prov:Location ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1254,7 +1253,7 @@ bids:ContrastBolusIngredient rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_010004 ;
+            obo:IAO_0000136 obo:CHEBI_24431 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1272,9 +1271,9 @@ bids:RepetitionTimeExcitation rdf:type owl:DatatypeProperty ;
 
             skos:closeMatch dicom:dicom_00180080 ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000417 ;
+            obo:IAO_0000136 obo:IAO_0000416 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1290,9 +1289,9 @@ bids:RepetitionTimePreparation rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number or array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000417 ;
+            obo:IAO_0000136 obo:IAO_0000416 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1310,9 +1309,9 @@ bids:RepetitionTime rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00180080 ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:IAO_0000416, nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1328,7 +1327,7 @@ bids:VolumeTiming rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:IAO_0000416, nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1392,7 +1391,7 @@ bids:DelayTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
@@ -1410,7 +1409,7 @@ bids:AcquisitionDuration rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             owl:sameAs dicom:dicom_00189073 ;
 	    
@@ -1430,7 +1429,7 @@ bids:DelayAfterTrigger rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:MagneticResonanceImaging ;
 
@@ -1464,7 +1463,7 @@ bids:TaskDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Functional, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:Functional ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1480,7 +1479,7 @@ bids:CogAtlasID rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000115 ;
+            obo:IAO_0000136 obo:IAO_0020000 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1498,7 +1497,7 @@ bids:CogPOID rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000115 ;
+            obo:IAO_0000136 obo:IAO_0020000 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1514,7 +1513,7 @@ bids:MultipartID rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000115 ;
+            obo:IAO_0000136 obo:IAO_0020000 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1546,11 +1545,11 @@ bids:PostLabelingDelay rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number or array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             skos:closeMatch dicom:dicom_00189079, dicom:dicom_00180082 ;
 
-            obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabelling, nidm:MagneticResonanceImaging, sio:SIO_000417 ;
+            obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabelling, nidm:MagneticResonanceImaging, obo:IAO_0000416 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1630,7 +1629,7 @@ bids:AcquisitionVoxelSize rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "mm"^^xsd:string ;
+            nidm:hasUnit "mm"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:Acquisition, nidm:MagneticResonanceImaging ;
 
@@ -1680,9 +1679,9 @@ bids:BackgroundSuppressionPulseTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000417, nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:IAO_0000416, nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1698,7 +1697,7 @@ bids:VascularCrushingVENC rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number or array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "cm/s"^^xsd:string ;
+            nidm:hasUnit "cm/s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
@@ -1734,7 +1733,7 @@ bids:LabelingDistance rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "mm"^^xsd:string ;
+            nidm:hasUnit "mm"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
@@ -1752,7 +1751,7 @@ bids:LabelingLocationDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 prov:Location,nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:PATO_0000140, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1802,7 +1801,7 @@ bids:LabelingDuration rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00189258 ;
 
-	    sio:SIO_000221 "s"^^xsd:string ;
+	    nidm:hasUnit "s"^^xsd:string ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
@@ -1852,7 +1851,7 @@ bids:LabelingPulseAverageGradient rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "mT/m"^^xsd:string  ;
+            nidm:hasUnit "mT/m"^^xsd:string  ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
@@ -1870,7 +1869,7 @@ bids:LabelingPulseMaximumGradient rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "mT/m"^^xsd:string  ;
+            nidm:hasUnit "mT/m"^^xsd:string  ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
@@ -1888,7 +1887,7 @@ bids:LabelingPulseAverageB1 rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "microT/m"^^xsd:string  ;
+            nidm:hasUnit "microT/m"^^xsd:string  ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
@@ -1906,9 +1905,9 @@ bids:LabelingPulseDuration rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "ms"^^xsd:string  ;
+            nidm:hasUnit "ms"^^xsd:string  ;
 
-            obo:IAO_0000136 nidm:PulseSequence, sio:SIO_000417, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 nidm:PulseSequence, obo:IAO_0000416, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1924,7 +1923,7 @@ bids:LabelingPulseFlipAngle rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "degrees"^^xsd:string  ;
+            nidm:hasUnit "degrees"^^xsd:string  ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
@@ -1942,9 +1941,9 @@ bids:LabelingPulseInterval rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "ms"^^xsd:string  ;
+            nidm:hasUnit "ms"^^xsd:string  ;
 
-            obo:IAO_0000136 nidm:PulseSequence, sio:SIO_000417, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 nidm:PulseSequence, obo:IAO_0000416, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -1994,7 +1993,7 @@ bids:LabelingSlabThickness rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "mm"^^xsd:string  ;
+            nidm:hasUnit "mm"^^xsd:string  ;
 
             obo:IAO_0000136 nidm:PulseSequence, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
@@ -2012,9 +2011,9 @@ bids:BolusCutOffDelayTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number or array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000417, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:IAO_0000416, nidm:ArterialSpinLabeling, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2062,9 +2061,9 @@ bids:EchoTime1 rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418, nidm:PulseSequence, nidm:Acquisition, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PulseSequence, nidm:Acquisition, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2080,9 +2079,9 @@ bids:EchoTime2 rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418, nidm:PulseSequence, nidm:Acquisition, nidm:MagneticResonanceImaging ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PulseSequence, nidm:Acquisition, nidm:MagneticResonanceImaging ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2116,7 +2115,7 @@ bids:SamplingFrequency rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_003A001A ;
 
-            sio:SIO_000221 "Hz"^^xsd:string ;
+            nidm:hasUnit "Hz"^^xsd:string ;
 
             obo:IAO_0000136 nidm:Acquisition, nidm:AcquisitionObjectQuality ;
 
@@ -2134,7 +2133,7 @@ bids:PowerLineFrequency rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number or 'n/a'"^^xsd:string ;
 
-            sio:SIO_000221 "Hz"^^xsd:string ;
+            nidm:hasUnit "Hz"^^xsd:string ;
 
             obo:IAO_0000136 nidm:Acquisition, nidm:AcquisitionObjectQuality ;
 
@@ -2152,7 +2151,7 @@ bids:DewarPosition rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            sio:SIO_000221 "degree"^^xsd:string ;
+            nidm:hasUnit "degree"^^xsd:string ;
 
             obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography ;
 
@@ -2186,7 +2185,7 @@ bids:DigitizedLandmarks rdf:type owl:DatatypeProperty ;
 
             bids:DataType "boolean"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, prov:Location ;
+            obo:IAO_0000136 nidm:Acquisition, obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2202,7 +2201,7 @@ bids:DigitizedHeadPoints rdf:type owl:DatatypeProperty ;
 
             bids:DataType "boolean"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, prov:Location ;
+            obo:IAO_0000136 nidm:Acquisition, obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2218,7 +2217,7 @@ bids:MEGChannelCount rdf:type owl:DatatypeProperty ;
 
             bids:DataType "integer"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000794, nidm:Magnetoencephalography ;
+            obo:IAO_0000136 nidm:Acquisition, obo:APOLLO_SV_00000032, nidm:Magnetoencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2236,7 +2235,7 @@ bids:MEGREFChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136  nidm:Acquisition, sio:SIO_000794, nidm:Magnetoencephalography ;
+            obo:IAO_0000136  nidm:Acquisition, obo:APOLLO_SV_00000032, nidm:Magnetoencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2254,7 +2253,7 @@ bids:EEGChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000794, nidm:Electroencephalography ;
+            obo:IAO_0000136 nidm:Acquisition, obo:APOLLO_SV_00000032, nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2272,7 +2271,7 @@ bids:ECOGChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000794, nidm:Electrocorticography ;
+            obo:IAO_0000136 nidm:Acquisition, obo:APOLLO_SV_00000032, nidm:Electrocorticography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2290,7 +2289,7 @@ bids:SEEGChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000794, nidm:Stereolectroencephalography ;
+            obo:IAO_0000136 nidm:Acquisition, obo:APOLLO_SV_00000032, nidm:Stereolectroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2308,7 +2307,7 @@ bids:EOGChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000794, nidm:Electrooculography ;
+            obo:IAO_0000136 nidm:Acquisition, obo:APOLLO_SV_00000032, nidm:Electrooculography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2326,7 +2325,7 @@ bids:ECGChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000794, nidm:Electrocardiography ;
+            obo:IAO_0000136 nidm:Acquisition, obo:APOLLO_SV_00000032, nidm:Electrocardiography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2344,7 +2343,7 @@ bids:EMGChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000794, nidm:Electromyography ;
+            obo:IAO_0000136 nidm:Acquisition, obo:APOLLO_SV_00000032, nidm:Electromyography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2362,7 +2361,7 @@ bids:MiscChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136  nidm:Acquisition, sio:SIO_000794 ;
+            obo:IAO_0000136  nidm:Acquisition, obo:APOLLO_SV_00000032 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2380,7 +2379,7 @@ bids:TriggerChannelCount rdf:type owl:DatatypeProperty ;
 
             owl:sameAs nidm:NumberOfChannels ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000794 ;
+            obo:IAO_0000136 nidm:Acquisition, obo:APOLLO_SV_00000032 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2396,9 +2395,9 @@ bids:RecordingDuration rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000391 ;
+            obo:IAO_0000136 nidm:Acquisition, obo:PATO_0000165 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2430,9 +2429,9 @@ bids:EpochLength rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000391 ;
+            obo:IAO_0000136 nidm:Acquisition, obo:PATO_0000165 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2464,7 +2463,7 @@ bids:HeadCoilFrequency rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number or array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "Hz"^^xsd:string ;
+            nidm:hasUnit "Hz"^^xsd:string ;
 
             obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography, nidm:ReceiveCoil ;
 
@@ -2482,9 +2481,9 @@ bids:MaxMovement rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "mm"^^xsd:string ;
+            nidm:hasUnit "mm"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography, sio:SIO_000038 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography, obo:PATO_0000040 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2500,7 +2499,7 @@ bids:SubjectArtefactDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Magnetoencephalography, sio:SIO_00013 ;
+            obo:IAO_0000136 nidm:Magnetoencephalography, obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2516,7 +2515,7 @@ bids:AssociatedEmptyRoom rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography, sio:SIO_000396 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2584,7 +2583,7 @@ bids:CapManufacturersModelName rdf:type owl:DatatypeProperty ;
 
             skos:closeMatch dicom:dicom_00081090 ;
 
-            obo:IAO_0000136 nidm:Electroencephalography, sio:SIO_000116 ;
+            obo:IAO_0000136 nidm:Electroencephalography, obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2600,7 +2599,7 @@ bids:EEGReference rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Electroencephalography, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:Electroencephalography, obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2616,7 +2615,7 @@ bids:MEGCoordinateSystem rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography, sio:SIO_000320 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2632,9 +2631,9 @@ bids:MEGCoordinateUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            skos:closeMatch sio:SIO_000221 ;
+            skos:closeMatch nidm:hasUnit ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography, sio:SIO_000074 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2650,7 +2649,7 @@ bids:MEGCoordinateSystemDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2666,7 +2665,7 @@ bids:EEGCoordinateSystem rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Electyroencephalography, sio:SIO_00032 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Electyroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2682,9 +2681,9 @@ bids:EEGCoordinateUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            skos:closeMatch sio:SIO_000221 ;
+            skos:closeMatch nidm:hasUnit ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Electroencephalography, sio:SIO_000074 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2700,7 +2699,7 @@ bids:EEGCoordinateSystemDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Magnetoencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2716,7 +2715,7 @@ bids:HeadCoilCoordinates rdf:type owl:DatatypeProperty ;
 
             bids:DataType "object of arrays"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000956, sio:SIO_00032 ;
+            obo:IAO_0000136 nidm:Acquisition, obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2732,7 +2731,7 @@ bids:HeadCoilCoordinateSystem rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000956, sio:SIO_000320 ;
+            obo:IAO_0000136 nidm:Acquisition, obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2748,9 +2747,9 @@ bids:HeadCoilCoordinateUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            skos:closeMatch sio:SIO_000221 ;
+            skos:closeMatch nidm:hasUnit ;
 
-            obo:IAO_0000136 nidm:Acquisition, nidm:Electroencephalography, sio:SIO_000074 ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2766,7 +2765,7 @@ bids:HeadCoilCoordinateSystemDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:Acquisition ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2783,7 +2782,7 @@ bids:DigitizedHeadPointsCoordinateSystem rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000956, sio:SIO_000320 ;
+            obo:IAO_0000136 nidm:Acquisition, obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2799,9 +2798,9 @@ bids:DigitizedHeadPointsCoordinateUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            skos:closeMatch sio:SIO_000221  ;
+            skos:closeMatch nidm:hasUnit  ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000074 ;
+            obo:IAO_0000136 nidm:Acquisition ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2817,7 +2816,7 @@ bids:DigitizedHeadPointsCoordinateSystemDescription rdf:type owl:DatatypePropert
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:Acquisition, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:Acquisition ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2833,7 +2832,7 @@ bids:AnatomicalLandmarkCoordinateSystem rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000320 ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2849,9 +2848,9 @@ bids:AnatomicalLandmarkCoordinateUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            skos:closeMatch sio:SIO_000221  ;
+            skos:closeMatch nidm:hasUnit  ;
 
-            obo:IAO_0000136 sio:SIO_000074 ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2867,7 +2866,7 @@ bids:AnatomicalLandmarkCoordinateSystemDescription rdf:type owl:DatatypeProperty
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136 ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2883,7 +2882,7 @@ bids:FiducialsDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136 ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2899,7 +2898,7 @@ bids:EEGGround rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136, nidm:Electroencephalography ;
+            obo:IAO_0000136 obo:PATO_0000140, nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2915,9 +2914,9 @@ bids:HeadCircumference rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "cm"^^xsd:string ;
+            nidm:hasUnit "cm"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000047 ;
+            obo:IAO_0000136 obo:PATO_0000122 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2934,7 +2933,7 @@ bids:FiducialsCoordinates rdf:type owl:DatatypeProperty ;
 
             bids:DataType "object of arrays"^^xsd:string ;
 
-            obo:IAO_0000136 prov:Location ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2950,7 +2949,7 @@ bids:FiducialsCoordinateSystem rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000320 ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2966,9 +2965,9 @@ bids:FiducialsCoordinateUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            skos:closeMatch sio:SIO_000221  ;
+            skos:closeMatch nidm:hasUnit  ;
 
-            obo:IAO_0000136 sio:SIO_000074 ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2984,7 +2983,7 @@ bids:FiducialsCoordinateSystemDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136 ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3001,7 +3000,7 @@ bids:iEEGReference rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, sio:SIO_000136 ;
+            obo:IAO_0000136 obo:OBI_0000968, obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3017,7 +3016,7 @@ bids:DCOffsetCorrection rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, sio:SIO_000136 ;
+            obo:IAO_0000136 obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3033,7 +3032,7 @@ bids:ElectrodeManufacturer rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, nidm:Manufacturer ;
+            obo:IAO_0000136 obo:OBI_0000968, nidm:Manufacturer ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3049,7 +3048,7 @@ bids:ElectrodeManufacturersModelName rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, sio:SIO_000116 ;
+            obo:IAO_0000136 obo:OBI_0000968 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3065,7 +3064,7 @@ bids:iEEGGround rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, prov:Location, sio:SIO_000136, nidm:Electroencephalography ;
+            obo:IAO_0000136 obo:OBI_0000968, obo:PATO_0000140, nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3081,7 +3080,7 @@ bids:iEEGPlacementScheme rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, prov:Location, sio:SIO_000136, nidm:Electroencephalography ;
+            obo:IAO_0000136 obo:OBI_0000968, obo:PATO_0000140, nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3097,7 +3096,7 @@ bids:iEEGElectrodeGroups rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000956, sio:SIO_000136, nidm:Electroencephalography ;
+            obo:IAO_0000136 obo:OBI_0000968, obo:PATO_0000140, nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3130,7 +3129,7 @@ bids:ElectricalStimulationParameters rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136 ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3146,7 +3145,7 @@ bids:iEEGCoordinateSystem rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000320, nidm:Electroencephalography ;
+            obo:IAO_0000136 obo:PATO_0000140, nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3162,9 +3161,9 @@ bids:iEEGCoordinateUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-	    skos:closeMatch sio:SIO_000221 ;
+	    skos:closeMatch nidm:hasUnit ;
 
-            obo:IAO_0000136 sio:SIO_000074, nidm:Electroencephalography ;
+            obo:IAO_0000136  nidm:Electroencephalography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3180,7 +3179,7 @@ bids:iEEGCoordinateSystemDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000320, nidm:Electroencephalography, sio:SIO_000136 ;
+            obo:IAO_0000136 obo:PATO_0000140, nidm:Electroencephalography, dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3196,7 +3195,7 @@ bids:iEEGCoordinateProcessingDescription rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136  sio:SIO_000320, nidm:Electroencephalography, sio:SIO_000136 ;
+            obo:IAO_0000136  obo:PATO_0000140, nidm:Electroencephalography, dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3212,7 +3211,7 @@ bids:StimulusPresentation rdf:type owl:DatatypeProperty ;
 
             bids:DataType "object of strings"^^xsd:string ;
 
-            obo:IAO_0000136 prov:Collection ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3228,7 +3227,7 @@ bids:OperatingSystem rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000653 ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3244,7 +3243,7 @@ bids:SoftwareName rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000119 ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3260,7 +3259,7 @@ bids:SoftwareRRID rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000675 ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3276,7 +3275,7 @@ bids:SoftwareVersion rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000653 ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3292,7 +3291,7 @@ bids:Code rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000675 ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3308,9 +3307,9 @@ bids:StartTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418 ;
+            obo:IAO_0000136 obo:PATO_0000165 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3326,7 +3325,7 @@ bids:Columns rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000116, sio:SIO_000396 ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3342,7 +3341,7 @@ bids:Genetics.Dataset rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000675, nidm:FilePath ;
+            obo:IAO_0000136 nidm:hasFilePath ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3358,7 +3357,7 @@ bids:Genetics.Database rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000675 ;
+            obo:IAO_0000136 nidm:hasPath ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3374,7 +3373,7 @@ bids:Genetics.Descriptors rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string or array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000675, sio:SIO_000136 ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3390,7 +3389,7 @@ bids:GeneticLevel rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string or array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136 ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3406,7 +3405,7 @@ bids:AnalyticalApproach rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string or array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136 ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3422,7 +3421,7 @@ bids:SampleOrigin rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136, prov:Location ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3438,7 +3437,7 @@ bids:TissueOrigin rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136, prov:Location ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3454,7 +3453,7 @@ bids:BrainLocation rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136, prov:Location ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3470,7 +3469,7 @@ bids:CellType rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136 ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3489,7 +3488,7 @@ bids:BodyPart rdf:type owl:DatatypeProperty ;
 
             skos:closeMatch dicom:dicom_00180015  ;
 
-            obo:IAO_0000136 prov:Location, sio:SIO_000116 ;
+            obo:IAO_0000136 obo:PATO_0000140 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3521,7 +3520,7 @@ bids:TracerRadionuclide rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_010004, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:CHEBI_24431, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3539,7 +3538,7 @@ bids:InjectedRadioactivity rdf:type owl:DatatypeProperty ;
 
             owl:sameAs dicom:dicom_00181074 ;
 
-            obo:IAO_0000136 sio:SIO_001019, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3555,7 +3554,7 @@ bids:InjectedRadioactivityUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_00074, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3587,7 +3586,7 @@ bids:InjectedMassUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_00074, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3621,7 +3620,7 @@ bids:SpecificRadioactivityUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_00074, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3637,7 +3636,7 @@ bids:ModeOfAdministration rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 dc:description, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3653,7 +3652,7 @@ bids:TracerRadLex rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000675, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:IAO_0020000, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3669,7 +3668,7 @@ bids:TracerSNOMED rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000675, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:IAO_0020000, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3701,7 +3700,7 @@ bids:TracerMolecularWeightUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_00074, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3733,7 +3732,7 @@ bids:InjectedMassPerWeightUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_00074, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3751,7 +3750,7 @@ bids:SpecificRadioactivityMeasTime rdf:type owl:DatatypeProperty ;
 
             skos:closeMatch dicom:dicom_00181078 ;
 
-            obo:IAO_0000136 sio:SIO_000391, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3785,7 +3784,7 @@ bids:MolarActivityUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_00074, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3801,7 +3800,7 @@ bids:MolarActivityMeasTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000391, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3831,13 +3830,13 @@ bids:InfusionStart rdf:type owl:DatatypeProperty ;
 
             obo:IAO_0000115 "Time of start of infusion with respect to TimeZero in the default unit seconds."^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             bids:DataType "number"^^xsd:string ;
 
             skos:closeMatch dicom:dicom_00181078 ;
 
-            obo:IAO_0000136 sio:SIO_000391, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3871,7 +3870,7 @@ bids:InfusionSpeedUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_00074, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3887,9 +3886,9 @@ bids:InjectedVolume rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "ml"^^xsd:string ;
+            nidm:hasUnit "ml"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000049, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000918, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3905,7 +3904,7 @@ bids:Purity rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            obo:IAO_0000136 obo:PATO_0001339, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:CHEBI_24431, obo:PATO_0001339, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3921,7 +3920,7 @@ bids:PharmaceuticalName rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000116, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:CHEBI_24431, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3939,7 +3938,7 @@ bids:PharmaceuticalDoseAmount rdf:type owl:DatatypeProperty ;
 
             skos:closeMatch dicom:dicom_30040012 ;
 
-            obo:IAO_0000136 sio:SIO_001019, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:CHEBI_24431, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3955,7 +3954,7 @@ bids:PharmaceuticalDoseUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_00074, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:CHEBI_24431, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -3987,9 +3986,9 @@ bids:PharmaceuticalDoseTime rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number or array of numbers"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000417, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:IAO_0000416, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4005,7 +4004,7 @@ bids:Anaesthesia rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 dc:description, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4021,7 +4020,7 @@ bids:TimeZero rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4037,9 +4036,9 @@ bids:ScanStart rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4055,9 +4054,9 @@ bids:InjectionStart rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4071,11 +4070,11 @@ bids:FrameTimesStart rdf:type owl:DatatypeProperty ;
 
             obo:IAO_0000115 "Start times for all frames relative to TimeZero in default unit seconds."^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4089,11 +4088,11 @@ bids:FrameDuration rdf:type owl:DatatypeProperty ;
 
             obo:IAO_0000115 "Time duration of each frame in default unit seconds. This corresponds to DICOM Tag (0018,1242) converted to seconds."^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000417, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:IAO_0000416, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4125,11 +4124,11 @@ bids:InjectionEnd rdf:type owl:DatatypeProperty ;
 
             obo:IAO_0000115 "Time of end of injection with respect to TimeZero in the default unit seconds."^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             bids:DataType "number"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000165, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4145,7 +4144,7 @@ bids:AcquisitionMode rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 dc:description, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4175,11 +4174,11 @@ bids:ImageDecayCorrectionTime rdf:type owl:DatatypeProperty ;
 
             obo:IAO_0000115 "Point in time from which the decay correction was applied with respect to TimeZero in the default unit seconds."^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
             bids:DataType "number"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000418, nidm:PositronEmissionTomography  ;
+            obo:IAO_0000136 obo:IAO_0000416, nidm:PositronEmissionTomography  ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4195,7 +4194,7 @@ bids:ReconMethodName rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIO_000116, nidm:ImageDataReconstruction ;
+            obo:IAO_0000136 nidm:DataProcessing, nidm:ImageDataReconstruction ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4211,7 +4210,7 @@ bids:ReconMethodParameterLabels rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 prov:Collection, nidm:DataProcessing, nidm:ImageDataReconstruction  ;
+            obo:IAO_0000136 dc:description, nidm:DataProcessing, nidm:ImageDataReconstruction  ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4227,7 +4226,7 @@ bids:ReconMethodParameterUnits rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIOI_000074 ;
+            obo:IAO_0000136 nidm:DataProcessing ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4243,7 +4242,7 @@ bids:ReconMethodParameterValues rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIO_000052 ;
+            obo:IAO_0000136 nidm:DataProcessing ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4259,7 +4258,7 @@ bids:ReconFilterType rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string or array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:SignalFilter, sio:SIO_000116 ;
+            obo:IAO_0000136 nidm:SignalFilter, dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4291,7 +4290,7 @@ bids:AttenuationCorrection rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, nidm:PositronEmissionTomography, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:DataProcessing, nidm:PositronEmissionTomography, dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4307,7 +4306,7 @@ bids:ReconMethodImplementationVersion rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000653 ;
+            obo:IAO_0000136 obo:IAO_0000010 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4323,7 +4322,7 @@ bids:ScaleFactor rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIO_000257 ;
+            obo:IAO_0000136 nidm:DataProcessing ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4339,7 +4338,7 @@ bids:ScatterFraction rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIO_000257, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:DataProcessing, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4355,7 +4354,7 @@ bids:DecayCorrectionFactor rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIO_000257, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:DataProcessing, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4371,7 +4370,7 @@ bids:PromptRate rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIO_000258, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:DataProcessing, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4387,7 +4386,7 @@ bids:RandomRate rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIO_000258, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:DataProcessing, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4403,7 +4402,7 @@ bids:SinglesRate rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of numbers"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:DataProcessing, sio:SIO_000258, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 nidm:DataProcessing, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4483,7 +4482,7 @@ bids:WithdrawalRate rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-	    sio:SIO_00221 "mL/s"^^xsd:string ;
+	    nidm:hasUnit "mL/s"^^xsd:string ;
 
             obo:IAO_0000136 obo:PATO_0000161, nidm:PositronEmissionTomography ;
 
@@ -4501,7 +4500,7 @@ bids:TubingType rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:PositronEmissionTomography, sio:SIO_00136 ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography, dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4517,7 +4516,7 @@ bids:TubingLength rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000041, nidm:PositronEmissionTomography ;
+            obo:IAO_0000136 obo:PATO_0000122, nidm:PositronEmissionTomography ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4533,9 +4532,9 @@ bids:DispersionConstant rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            sio:SIO_000221 "s"^^xsd:string ;
+            nidm:hasUnit "s"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:PositronEmissionTomography, sio:SIO_000258  ;
+            obo:IAO_0000136 nidm:PositronEmissionTomography  ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4551,7 +4550,7 @@ bids:Haematocrit rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000258, nidm:BloodDraw ;
+            obo:IAO_0000136 nidm:BloodDraw ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4567,7 +4566,7 @@ bids:BloodDensity rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:BloodDraw, sio:SIO_001406 ;
+            obo:IAO_0000136 nidm:BloodDraw ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4583,7 +4582,7 @@ bids:PlasmaFreeFraction rdf:type owl:DatatypeProperty ;
 
             bids:DataType "number"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:BloodDraw, sio:SIO_000257 ;
+            obo:IAO_0000136 nidm:BloodDraw ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4599,7 +4598,7 @@ bids:PlasmaFreeFractionMethod rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:BloodDraw, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:BloodDraw, dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4615,7 +4614,7 @@ bids:MetaboliteMethod rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:BloodDraw, sio:SIO_000136 ;
+            obo:IAO_0000136 nidm:BloodDraw, dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4647,7 +4646,7 @@ bids:Sources rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:FilePath ;
+            obo:IAO_0000136 nidm:hasFilePath ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4663,7 +4662,7 @@ bids:RawSources rdf:type owl:DatatypeProperty ;
 
             bids:DataType "array of strings"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:FilePath ;
+            obo:IAO_0000136 nidm:hasFilePath ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4679,7 +4678,7 @@ bids:SpatialReference rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string or object"^^xsd:string ;
 
-            obo:IAO_0000136 nidm:FilePath ;
+            obo:IAO_0000136 nidm:hasFilePath ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4743,7 +4742,7 @@ bids:Type rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136 ;
+            obo:IAO_0000136 dc:description ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -4759,7 +4758,7 @@ bids:Atlas rdf:type owl:DatatypeProperty ;
 
             bids:DataType "string"^^xsd:string ;
 
-            obo:IAO_0000136 sio:SIO_000136, nidm:DataProcessing ;
+            obo:IAO_0000136 dc:description, nidm:DataProcessing ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 

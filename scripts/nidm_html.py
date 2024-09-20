@@ -348,7 +348,7 @@ class OwlNidmHtml:
                 self.text += " a "+self.term_link(prov_class)
             else:
                 #look in NIDM file
-                nidm_file = os.path.join(TERMS_FOLDER, 'nidm-experiment.owl')
+                nidm_file = os.path.join(TERMS_FOLDER, 'nec.owl')
                 nidm_owl = OwlReader(nidm_file)
                 nidm_subclass = self.get_nidm_subclass(class_uri, nidm_owl)
                 if nidm_subclass:
@@ -495,14 +495,14 @@ class OwlNidmHtml:
 
         self.text += """</ul></div>"""
 
-        BASE_REPOSITORY = "https://raw.githubusercontent.com/" + \
-            "incf-nidash/nidm/master/"
-        for title, example in self.owl.get_example(class_uri, BASE_REPOSITORY):
-            self.text += """
-                </ul>
-                </div>
-                <pre class='example highlight' title=\""""+title+"""\">""" + \
-                html.escape(example) + """</pre>"""
+        # BASE_REPOSITORY = "https://raw.githubusercontent.com/" + \
+        #     "incf-nidash/nidm/master/"
+        # for title, example in self.owl.get_example(class_uri, BASE_REPOSITORY):
+        #     self.text += """
+        #         </ul>
+        #         </div>
+        #         <pre class='example highlight' title=\""""+title+"""\">""" + \
+        #         html.escape(example) + """</pre>"""
 
         # For object property list also children (in sub-sections)
         if children:
@@ -705,7 +705,7 @@ def main():
     nidm_original_version = "dev"
     nidm_version = 'dev'
 
-    owl_file = os.path.join(TERMS_FOLDER, 'nidm-experiment.owl')
+    owl_file = os.path.join(TERMS_FOLDER, 'nec.owl')
     import_files = glob.glob(os.path.join(IMPORTS_FOLDER, '*.ttl'))
 
     # check the file exists
@@ -724,18 +724,14 @@ def main():
     owlspec._header_footer(component=component_name, version=nidm_version, term="nidm")
     owlspec.write_specification(component=component_name, version=nidm_version)
 
-    
+    owl_file = os.path.join(TERMS_FOLDER, 'nec.owl')
+    owl_process(owl_file, None, "OBO", prefix=str(OBO), term_prefix="obo")
+
     owl_file = os.path.join(IMPORTS_FOLDER, 'bids_import.ttl')
     owl_process(owl_file, None, "BIDS", prefix=str(BIDS), term_prefix="bids")
     
     owl_file = os.path.join(IMPORTS_FOLDER, 'dicom_import.ttl')
     owl_process(owl_file, None, "DICOM", prefix=str(DICOM), term_prefix="dicom")
-
-    owl_file = os.path.join(IMPORTS_FOLDER, 'sio_import.ttl')
-    owl_process(owl_file, None, "SIO", prefix=str(SIO), term_prefix="sio")
-    
-    owl_file = os.path.join(IMPORTS_FOLDER, 'obo_import.ttl')
-    owl_process(owl_file, None, "OBO", prefix=str(OBO), term_prefix="obo")
 
     owl_file = os.path.join(IMPORTS_FOLDER, 'ontoneurolog_instruments_import.ttl')
     owl_process(owl_file, None, "ONLI", prefix=str(ONLI), term_prefix="onli")
