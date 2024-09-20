@@ -13,10 +13,9 @@
   <section class="page-header">
     <h1 class="project-name">DICOM</h1>
     <a href="index.html" class="btn">NIDM-E</a>
+    <a href="obo.html" class="btn">OBO</a>
     <a href="bids.html" class="btn">BIDS</a>
     <a href="dicom.html" class="btn">DICOM</a>
-    <a href="sio.html" class="btn">SIO</a>
-    <a href="obo.html" class="btn">OBO</a>
     <a href="onli.html" class="btn">ONLI</a>
     <a href="schema_menu.html" class="btn">Schema Browser</a>
   </section>
@@ -26,686 +25,14 @@
         <section id="definitions">
         
             <h1>DICOM: Types and relations</h1>
-        <a href='#classes'>Classes</a> | <a href='#datatypeproperties'>Datatype Properties</a> | <a href='#objectproperties'>Object Properties</a><h1 id='classes'>Classes</h1>
-            <!-- dicom:'Specialization' (dicom_xxxx0028) -->
-            <section id="dicom_xxxx0028">
-                <h2 label="dicom_xxxx0028">dicom:'Specialization'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Specialization'"><a title="dicom_xxxx0028" href ="#dicom_xxxx0028">dicom:'Specialization'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Specialization'.label">Label</span>: 'Specialization'</li><li>Definition: Specialization is the replacement of the Type, value range and/or description of an Attribute in a general Module of an IOD, by its Type, value range and/or description defined in a modality-specific Module of an IOD. Note: The same Attribute may be present in multiple Modules in the same IOD but not specified to be specialized.</li><li><a title="dicom_xxxx0028" href ="#dicom_xxxx0028">dicom:'Specialization'</a> is a <a title="Activity" href ="http://www.w3.org/ns/prov#Activity">prov:Activity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Data Set' (dicom_xxxx0007) -->
-            <section id="dicom_xxxx0007">
-                <h2 label="dicom_xxxx0007">dicom:'Data Set'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Data Set'"><a title="dicom_xxxx0007" href ="#dicom_xxxx0007">dicom:'Data Set'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Data Set'.label">Label</span>: 'Data Set'</li><li>Definition: Exchanged information consisting of a structured set of Attributes. The value of each Attribute in a Data Set is expressed as a Data Element.</li><li><a title="dicom_xxxx0007" href ="#dicom_xxxx0007">dicom:'Data Set'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Data Stream' (dicom_xxxx0008) -->
-            <section id="dicom_xxxx0008">
-                <h2 label="dicom_xxxx0008">dicom:'Data Stream'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Data Stream'"><a title="dicom_xxxx0008" href ="#dicom_xxxx0008">dicom:'Data Stream'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Data Stream'.label">Label</span>: 'Data Stream'</li><li>Definition: The result of encoding a Data Set using the DICOM encoding scheme (Data Element Numbers and representations as specified by the Data Dictionary).</li><li><a title="dicom_xxxx0008" href ="#dicom_xxxx0008">dicom:'Data Stream'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Information Object' (dicom_xxxx0009) -->
-            <section id="dicom_xxxx0009">
-                <h2 label="dicom_xxxx0009">dicom:'Information Object'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Information Object'"><a title="dicom_xxxx0009" href ="#dicom_xxxx0009">dicom:'Information Object'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Information Object'.label">Label</span>: 'Information Object'</li><li>Definition: An abstraction of a real information entity (e.g., CT Image, Structured Report, etc.) that is acted upon by one or more DICOM Commands. Note: This term is primarily used in PS3.1, with a few references in PS3.3. It is an informal term corresponding to a formal term that is introduced in PS3.3. In all other parts of the DICOM Standard this formal term is known as an Information Object Definition.</li><li><a title="dicom_xxxx0009" href ="#dicom_xxxx0009">dicom:'Information Object'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Same as: <a title="SIO_000015" href ="./sio.html#sio_000015">sio:SIO_000015</a></li><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Functional Group' (dicom_xxxx0021) -->
-            <section id="dicom_xxxx0021">
-                <h2 label="dicom_xxxx0021">dicom:'Functional Group'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Functional Group'"><a title="dicom_xxxx0021" href ="#dicom_xxxx0021">dicom:'Functional Group'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Functional Group'.label">Label</span>: 'Functional Group'</li><li>Definition: A set of logically related Attributes that are likely to vary together. May be used in Multi-frame IODs to describe parameters that change on a per frame basis.</li><li><a title="dicom_xxxx0021" href ="#dicom_xxxx0021">dicom:'Functional Group'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Module' (dicom_xxxx0023) -->
-            <section id="dicom_xxxx0023">
-                <h2 label="dicom_xxxx0023">dicom:'Module'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Module'"><a title="dicom_xxxx0023" href ="#dicom_xxxx0023">dicom:'Module'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Module'.label">Label</span>: 'Module'</li><li>Definition: A set of Attributes within an Information Entity or Normalized IOD that are logically related to each other.</li><li><a title="dicom_xxxx0023" href ="#dicom_xxxx0023">dicom:'Module'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Data Set' (dicom_xxxx0038) -->
-            <section id="dicom_xxxx0038">
-                <h2 label="dicom_xxxx0038">dicom:'Data Set'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Data Set'"><a title="dicom_xxxx0038" href ="#dicom_xxxx0038">dicom:'Data Set'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Data Set'.label">Label</span>: 'Data Set'</li><li>Definition: Exchanged information consisting of a structured set of Attribute values directly or indirectly related to Information Objects. The value of each Attribute in a Data Set is expressed as a Data Element. A collection of Data Elements ordered by increasing Data Element Tag number that is an encoding of the values of Attributes of a real world object.</li><li><a title="dicom_xxxx0038" href ="#dicom_xxxx0038">dicom:'Data Set'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Nested Data Set' (dicom_xxxx0046) -->
-            <section id="dicom_xxxx0046">
-                <h2 label="dicom_xxxx0046">dicom:'Nested Data Set'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Nested Data Set'"><a title="dicom_xxxx0046" href ="#dicom_xxxx0046">dicom:'Nested Data Set'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Nested Data Set'.label">Label</span>: 'Nested Data Set'</li><li>Definition: A Data Set contained within a Data Element of another Data Set. Data Sets can be nested recursively. Only Data Elements with Value Representation Sequence of Items may, themselves, contain Data Sets.</li><li><a title="dicom_xxxx0046" href ="#dicom_xxxx0046">dicom:'Nested Data Set'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Sequence of Items' (dicom_xxxx0054) -->
-            <section id="dicom_xxxx0054">
-                <h2 label="dicom_xxxx0054">dicom:'Sequence of Items'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Sequence of Items'"><a title="dicom_xxxx0054" href ="#dicom_xxxx0054">dicom:'Sequence of Items'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Sequence of Items'.label">Label</span>: 'Sequence of Items'</li><li>Definition: A Value Representation for Data Elements that contain a sequence of Data Sets. Sequence of Items allows for Nested Data Sets. (The Value Representation is denoted SQ.)</li><li><a title="dicom_xxxx0054" href ="#dicom_xxxx0054">dicom:'Sequence of Items'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Value Field' (dicom_xxxx0060) -->
-            <section id="dicom_xxxx0060">
-                <h2 label="dicom_xxxx0060">dicom:'Value Field'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Value Field'"><a title="dicom_xxxx0060" href ="#dicom_xxxx0060">dicom:'Value Field'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Value Field'.label">Label</span>: 'Value Field'</li><li>Definition: The field within a Data Element that contains the Value(s) of that Data Element.</li><li><a title="dicom_xxxx0060" href ="#dicom_xxxx0060">dicom:'Value Field'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Value Representation Field' (dicom_xxxx0064) -->
-            <section id="dicom_xxxx0064">
-                <h2 label="dicom_xxxx0064">dicom:'Value Representation Field'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Value Representation Field'"><a title="dicom_xxxx0064" href ="#dicom_xxxx0064">dicom:'Value Representation Field'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Value Representation Field'.label">Label</span>: 'Value Representation Field'</li><li>Definition: The field where the Value Representation of a Data Element is stored in the encoding of a Data Element structure with explicit VR.</li><li><a title="dicom_xxxx0064" href ="#dicom_xxxx0064">dicom:'Value Representation Field'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Application Profile' (dicom_xxxx0066) -->
-            <section id="dicom_xxxx0066">
-                <h2 label="dicom_xxxx0066">dicom:'Application Profile'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Application Profile'"><a title="dicom_xxxx0066" href ="#dicom_xxxx0066">dicom:'Application Profile'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Application Profile'.label">Label</span>: 'Application Profile'</li><li>Definition: A Media Storage Application Profile defines a selection of choices at the various layers of the DICOM Media Storage Model that are applicable to a specific need or context in which the media interchange is intended to be performed.</li><li><a title="dicom_xxxx0066" href ="#dicom_xxxx0066">dicom:'Application Profile'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'File Meta Information' (dicom_xxxx0073) -->
-            <section id="dicom_xxxx0073">
-                <h2 label="dicom_xxxx0073">dicom:'File Meta Information'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'File Meta Information'"><a title="dicom_xxxx0073" href ="#dicom_xxxx0073">dicom:'File Meta Information'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'File Meta Information'.label">Label</span>: 'File Meta Information'</li><li>Definition: The File Meta Information includes identifying information on the encapsulated Data Set. It is a mandatory header at the beginning of every DICOM File.</li><li><a title="dicom_xxxx0073" href ="#dicom_xxxx0073">dicom:'File Meta Information'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'File-set' (dicom_xxxx0074) -->
-            <section id="dicom_xxxx0074">
-                <h2 label="dicom_xxxx0074">dicom:'File-set'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'File-set'"><a title="dicom_xxxx0074" href ="#dicom_xxxx0074">dicom:'File-set'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'File-set'.label">Label</span>: 'File-set'</li><li>Definition: A File-set is a collection of DICOM Files (and possibly non-DICOM Files) that share a common naming space within which File IDs are unique.</li><li><a title="dicom_xxxx0074" href ="#dicom_xxxx0074">dicom:'File-set'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a> and  has the following child: <a title="dicom_xxxx0084" href ="#dicom_xxxx0084">dicom:'Secure File-set'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Media Storage Services' (dicom_xxxx0081) -->
-            <section id="dicom_xxxx0081">
-                <h2 label="dicom_xxxx0081">dicom:'Media Storage Services'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Media Storage Services'"><a title="dicom_xxxx0081" href ="#dicom_xxxx0081">dicom:'Media Storage Services'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Media Storage Services'.label">Label</span>: 'Media Storage Services'</li><li>Definition: DICOM Media Storage Services define a set of operations with media that facilitate storage to and retrieval from the media of DICOM SOP Instances.</li><li><a title="dicom_xxxx0081" href ="#dicom_xxxx0081">dicom:'Media Storage Services'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Secure File-set' (dicom_xxxx0084) -->
-            <section id="dicom_xxxx0084">
-                <h2 label="dicom_xxxx0084">dicom:'Secure File-set'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Secure File-set'"><a title="dicom_xxxx0084" href ="#dicom_xxxx0084">dicom:'Secure File-set'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Secure File-set'.label">Label</span>: 'Secure File-set'</li><li>Definition: A File-set in which all DICOM Files are Secure DICOM Files.</li><li><a title="dicom_xxxx0084" href ="#dicom_xxxx0084">dicom:'Secure File-set'</a> is a <a title="dicom_xxxx0074" href ="#dicom_xxxx0074">dicom:'File-set'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Secure Media Storage Application Profile' (dicom_xxxx0085) -->
-            <section id="dicom_xxxx0085">
-                <h2 label="dicom_xxxx0085">dicom:'Secure Media Storage Application Profile'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Secure Media Storage Application Profile'"><a title="dicom_xxxx0085" href ="#dicom_xxxx0085">dicom:'Secure Media Storage Application Profile'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Secure Media Storage Application Profile'.label">Label</span>: 'Secure Media Storage Application Profile'</li><li>Definition:  A DICOM Media Storage Application Profile that requires a Secure File-set.</li><li><a title="dicom_xxxx0085" href ="#dicom_xxxx0085">dicom:'Secure Media Storage Application Profile'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'File-set Creator' (dicom_xxxx0075) -->
-            <section id="dicom_xxxx0075">
-                <h2 label="dicom_xxxx0075">dicom:'File-set Creator'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'File-set Creator'"><a title="dicom_xxxx0075" href ="#dicom_xxxx0075">dicom:'File-set Creator'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'File-set Creator'.label">Label</span>: 'File-set Creator'</li><li>Definition: An Application Entity that creates the DICOMDIR File (see Section 8.6) and zero or more DICOM Files.</li><li><a title="dicom_xxxx0075" href ="#dicom_xxxx0075">dicom:'File-set Creator'</a> is a <a title="Agent" href ="http://www.w3.org/ns/prov#Agent">prov:Agent</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'File-set Reader' (dicom_xxxx0076) -->
-            <section id="dicom_xxxx0076">
-                <h2 label="dicom_xxxx0076">dicom:'File-set Reader'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'File-set Reader'"><a title="dicom_xxxx0076" href ="#dicom_xxxx0076">dicom:'File-set Reader'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'File-set Reader'.label">Label</span>: 'File-set Reader'</li><li>Definition: An Application Entity that accesses one or more files in a File-set.</li><li><a title="dicom_xxxx0076" href ="#dicom_xxxx0076">dicom:'File-set Reader'</a> is a <a title="Agent" href ="http://www.w3.org/ns/prov#Agent">prov:Agent</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'File-set Updater' (dicom_xxxx0077) -->
-            <section id="dicom_xxxx0077">
-                <h2 label="dicom_xxxx0077">dicom:'File-set Updater'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'File-set Updater'"><a title="dicom_xxxx0077" href ="#dicom_xxxx0077">dicom:'File-set Updater'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'File-set Updater'.label">Label</span>: 'File-set Updater'</li><li>Definition: An Application Entity that accesses Files, creates additional Files, or deletes existing Files in a File-set. A File-set Updater makes the appropriate alterations to the DICOMDIR file reflecting the additions or deletions.</li><li><a title="dicom_xxxx0077" href ="#dicom_xxxx0077">dicom:'File-set Updater'</a> is a <a title="Agent" href ="http://www.w3.org/ns/prov#Agent">prov:Agent</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Attribute' (dicom_xxxx0001) -->
-            <section id="dicom_xxxx0001">
-                <h2 label="dicom_xxxx0001">dicom:'Attribute'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Attribute'"><a title="dicom_xxxx0001" href ="#dicom_xxxx0001">dicom:'Attribute'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Attribute'.label">Label</span>: 'Attribute'</li><li>Definition: A property of an Information Object. An Attribute has a name and a value that are independent of any encoding scheme.</li><li><a title="dicom_xxxx0001" href ="#dicom_xxxx0001">dicom:'Attribute'</a> is a <a title="Entity" href ="http://www.w3.org/ns/prov#Entity">prov:Entity</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Same as: <a title="SIO_000614" href ="./sio.html#sio_000614">sio:SIO_000614</a></li><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Command' (dicom_xxxx0002) -->
-            <section id="dicom_xxxx0002">
-                <h2 label="dicom_xxxx0002">dicom:'Command'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Command'"><a title="dicom_xxxx0002" href ="#dicom_xxxx0002">dicom:'Command'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Command'.label">Label</span>: 'Command'</li><li>Definition: A request to operate on information across a network.</li><li><a title="dicom_xxxx0002" href ="#dicom_xxxx0002">dicom:'Command'</a> is a <a title="SIO_000091" href ="./sio.html#sio_000091">sio:SIO_000091</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Command Element' (dicom_xxxx0003) -->
-            <section id="dicom_xxxx0003">
-                <h2 label="dicom_xxxx0003">dicom:'Command Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Command Element'"><a title="dicom_xxxx0003" href ="#dicom_xxxx0003">dicom:'Command Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Command Element'.label">Label</span>: 'Command Element'</li><li>Definition: An encoding of a parameter of a command that conveys this parameters value.</li><li><a title="dicom_xxxx0003" href ="#dicom_xxxx0003">dicom:'Command Element'</a> is a <a title="SIO_000612" href ="./sio.html#sio_000612">sio:SIO_000612</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Command Stream' (dicom_xxxx0004) -->
-            <section id="dicom_xxxx0004">
-                <h2 label="dicom_xxxx0004">dicom:'Command Stream'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Command Stream'"><a title="dicom_xxxx0004" href ="#dicom_xxxx0004">dicom:'Command Stream'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Command Stream'.label">Label</span>: 'Command Stream'</li><li>Definition: The result of encoding a set of DICOM Command Elements using the DICOM encoding scheme.</li><li><a title="dicom_xxxx0004" href ="#dicom_xxxx0004">dicom:'Command Stream'</a> is a <a title="SIO_000612" href ="./sio.html#sio_000612">sio:SIO_000612</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Conformance Statement' (dicom_xxxx0005) -->
-            <section id="dicom_xxxx0005">
-                <h2 label="dicom_xxxx0005">dicom:'Conformance Statement'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Conformance Statement'"><a title="dicom_xxxx0005" href ="#dicom_xxxx0005">dicom:'Conformance Statement'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Conformance Statement'.label">Label</span>: 'Conformance Statement'</li><li>Definition: A formal statement that describes a specific product implementation that uses the DICOM Standard. It specifies the Service Classes, Information Objects, and Communication Protocols supported by the implementation.</li><li><a title="dicom_xxxx0005" href ="#dicom_xxxx0005">dicom:'Conformance Statement'</a> is a <a title="SIO_000136" href ="./sio.html#sio_000136">sio:SIO_000136</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Data Dictionary' (dicom_xxxx0006) -->
-            <section id="dicom_xxxx0006">
-                <h2 label="dicom_xxxx0006">dicom:'Data Dictionary'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Data Dictionary'"><a title="dicom_xxxx0006" href ="#dicom_xxxx0006">dicom:'Data Dictionary'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Data Dictionary'.label">Label</span>: 'Data Dictionary'</li><li>Definition: A registry of DICOM Data Elements that assigns a unique tag, a name, value characteristics, and semantics to each Data Element. Data Element A unit of information as defined by a single entry in the data dictionary.</li><li><a title="dicom_xxxx0006" href ="#dicom_xxxx0006">dicom:'Data Dictionary'</a> is a <a title="SIO_000090" href ="./sio.html#sio_000090">sio:SIO_000090</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Information Object Class' (dicom_xxxx0010) -->
-            <section id="dicom_xxxx0010">
-                <h2 label="dicom_xxxx0010">dicom:'Information Object Class'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Information Object Class'"><a title="dicom_xxxx0010" href ="#dicom_xxxx0010">dicom:'Information Object Class'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Information Object Class'.label">Label</span>: 'Information Object Class'</li><li>Definition: A formal description of an Information Object, which includes a description of its purpose and the Attributes it possesses. It does not include values for these attributes. Note This term is only used in PS3.1. It is an informal term corresponding to a formal term that is introduced in PS3.4. This formal term is known as a Service-Object Pair Class or more commonly as a SOP Class.</li><li><a title="dicom_xxxx0010" href ="#dicom_xxxx0010">dicom:'Information Object Class'</a> is a <a title="SIO_000136" href ="./sio.html#sio_000136">sio:SIO_000136</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Information Object Instance' (dicom_xxxx0011) -->
-            <section id="dicom_xxxx0011">
-                <h2 label="dicom_xxxx0011">dicom:'Information Object Instance'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Information Object Instance'"><a title="dicom_xxxx0011" href ="#dicom_xxxx0011">dicom:'Information Object Instance'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Information Object Instance'.label">Label</span>: 'Information Object Instance'</li><li>Definition: A representation of an occurrence of an real-world entity, which includes values for the Attributes of the Information Object Class to which the entity belongs. Note This term is only used in PS3.1. It is an informal term corresponding to a formal term that is introduced in PS3.4. This formal term is known as a Service-Object Pair Instance or more commonly as a SOP Instance.</li><li><a title="dicom_xxxx0011" href ="#dicom_xxxx0011">dicom:'Information Object Instance'</a> is a <a title="SIO_000396" href ="./sio.html#sio_000396">sio:SIO_000396</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Message' (dicom_xxxx0012) -->
-            <section id="dicom_xxxx0012">
-                <h2 label="dicom_xxxx0012">dicom:'Message'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Message'"><a title="dicom_xxxx0012" href ="#dicom_xxxx0012">dicom:'Message'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Message'.label">Label</span>: 'Message'</li><li>Definition: A data unit of the Message Exchange Protocol exchanged between two cooperating DICOM Applications. A Message is composed of a Command Stream followed by an optional Data Stream.</li><li><a title="dicom_xxxx0012" href ="#dicom_xxxx0012">dicom:'Message'</a> is a <a title="SIO_000602" href ="./sio.html#sio_000602">sio:SIO_000602</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Service Class' (dicom_xxxx0013) -->
-            <section id="dicom_xxxx0013">
-                <h2 label="dicom_xxxx0013">dicom:'Service Class'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Service Class'"><a title="dicom_xxxx0013" href ="#dicom_xxxx0013">dicom:'Service Class'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Service Class'.label">Label</span>: 'Service Class'</li><li>Definition: A structured description of a service that is supported by cooperating DICOM Applications using specific DICOM Commands acting on a specific class of Information Object.</li><li><a title="dicom_xxxx0013" href ="#dicom_xxxx0013">dicom:'Service Class'</a> is a <a title="SIO_000136" href ="./sio.html#sio_000136">sio:SIO_000136</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Acquisition Context' (dicom_xxxx0014) -->
-            <section id="dicom_xxxx0014">
-                <h2 label="dicom_xxxx0014">dicom:'Acquisition Context'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Acquisition Context'"><a title="dicom_xxxx0014" href ="#dicom_xxxx0014">dicom:'Acquisition Context'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Acquisition Context'.label">Label</span>: 'Acquisition Context'</li><li>Definition: A description of the conditions present during data acquisition.</li><li><a title="dicom_xxxx0014" href ="#dicom_xxxx0014">dicom:'Acquisition Context'</a> is a <a title="SIO_000136" href ="./sio.html#sio_000136">sio:SIO_000136</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Acquisition Protocol Element' (dicom_xxxx0015) -->
-            <section id="dicom_xxxx0015">
-                <h2 label="dicom_xxxx0015">dicom:'Acquisition Protocol Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Acquisition Protocol Element'"><a title="dicom_xxxx0015" href ="#dicom_xxxx0015">dicom:'Acquisition Protocol Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Acquisition Protocol Element'.label">Label</span>: 'Acquisition Protocol Element'</li><li>Definition: A sequential component of an acquisition protocol, that contains the SCANNING PARAMETERS necessary to perform a single SCAN. In the case of CT this would correspond to tube voltage, tube current, rotation time, spatial location, etc. and an Acquisition Protocol Element also corresponds to an XR-25 PROTOCOL ELEMENT.</li><li><a title="dicom_xxxx0015" href ="#dicom_xxxx0015">dicom:'Acquisition Protocol Element'</a> is a <a title="dicom_xxxx0026" href ="#dicom_xxxx0026">dicom:'Protocol Element'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Attribute tag' (dicom_xxxx0016) -->
-            <section id="dicom_xxxx0016">
-                <h2 label="dicom_xxxx0016">dicom:'Attribute tag'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Attribute tag'"><a title="dicom_xxxx0016" href ="#dicom_xxxx0016">dicom:'Attribute tag'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Attribute tag'.label">Label</span>: 'Attribute tag'</li><li>Definition: A unique identifier for an Attribute of an Information Object composed of an ordered pair of numbers (a Group Number followed by an Element number). Cine run A set of temporally related frames acquired at constant or variable frame rates. This term incorporates the general class of serialography. Note: A Cine run is typically encoded as a multi-frame image.</li><li><a title="dicom_xxxx0016" href ="#dicom_xxxx0016">dicom:'Attribute tag'</a> is a <a title="dicom_xxxx0065" href ="#dicom_xxxx0065">dicom:'Tag'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Code Sequence Attribute' (dicom_xxxx0017) -->
-            <section id="dicom_xxxx0017">
-                <h2 label="dicom_xxxx0017">dicom:'Code Sequence Attribute'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Code Sequence Attribute'"><a title="dicom_xxxx0017" href ="#dicom_xxxx0017">dicom:'Code Sequence Attribute'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Code Sequence Attribute'.label">Label</span>: 'Code Sequence Attribute'</li><li>Definition: Attribute that (usually) includes the string 'Code Sequence' in the Attribute Name and has a VR of SQ (Sequence of Items). Its purpose is to encode concepts using code values and optional text meanings from coding schemes. Section 8.1 through Section 8.8 specify the Attributes of which the Sequence Items (Attribute Sets) of Code Sequence Attributes are constructed.</li><li><a title="dicom_xxxx0017" href ="#dicom_xxxx0017">dicom:'Code Sequence Attribute'</a> is a <a title="SIO_000614" href ="./sio.html#sio_000614">sio:SIO_000614</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Composite IOD' (dicom_xxxx0018) -->
-            <section id="dicom_xxxx0018">
-                <h2 label="dicom_xxxx0018">dicom:'Composite IOD'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Composite IOD'"><a title="dicom_xxxx0018" href ="#dicom_xxxx0018">dicom:'Composite IOD'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Composite IOD'.label">Label</span>: 'Composite IOD'</li><li>Definition: An Information Object Definition that represents parts of several entities in the DICOM Application Model. Such an IOD includes Attributes that are not inherent in the Real-World Object that the IOD represents but rather are inherent in related Real-World Objects. Derived image an image in which the pixel data was constructed from pixel data of one or more other images (source images).</li><li><a title="dicom_xxxx0018" href ="#dicom_xxxx0018">dicom:'Composite IOD'</a> is a <a title="SIO_000136" href ="./sio.html#sio_000136">sio:SIO_000136</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'DICOM application model' (dicom_xxxx0019) -->
-            <section id="dicom_xxxx0019">
-                <h2 label="dicom_xxxx0019">dicom:'DICOM application model'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'DICOM application model'"><a title="dicom_xxxx0019" href ="#dicom_xxxx0019">dicom:'DICOM application model'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'DICOM application model'.label">Label</span>: 'DICOM application model'</li><li>Definition: An Entity-Relationship diagram used to model the relationships between Real-World Objects that are within the area of interest of the DICOM Standard.</li><li><a title="dicom_xxxx0019" href ="#dicom_xxxx0019">dicom:'DICOM application model'</a> is a <a title="SIO_000510" href ="./sio.html#sio_000510">sio:SIO_000510</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'DICOM Information Model' (dicom_xxxx0020) -->
-            <section id="dicom_xxxx0020">
-                <h2 label="dicom_xxxx0020">dicom:'DICOM Information Model'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'DICOM Information Model'"><a title="dicom_xxxx0020" href ="#dicom_xxxx0020">dicom:'DICOM Information Model'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'DICOM Information Model'.label">Label</span>: 'DICOM Information Model'</li><li>Definition: An Entity-Relationship diagram that is used to model the relationships between the Information Object Definitions representing classes of Real-World Objects defined by the DICOM Application Model.</li><li><a title="dicom_xxxx0020" href ="#dicom_xxxx0020">dicom:'DICOM Information Model'</a> is a <a title="SIO_000510" href ="./sio.html#sio_000510">sio:SIO_000510</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Information entity' (dicom_xxxx0022) -->
-            <section id="dicom_xxxx0022">
-                <h2 label="dicom_xxxx0022">dicom:'Information entity'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Information entity'"><a title="dicom_xxxx0022" href ="#dicom_xxxx0022">dicom:'Information entity'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Information entity'.label">Label</span>: 'Information entity'</li><li>Definition: That portion of information defined by a Composite IOD that is related to one specific class of Real-World Object. There is a one-to-one correspondence between Information Entities and entities in the DICOM Application Model. Information object definition (IOD) a data abstraction of a class of similar Real-World Objects that defines the nature and Attributes relevant to the class of Real-World Objects represented.</li><li><a title="dicom_xxxx0022" href ="#dicom_xxxx0022">dicom:'Information entity'</a> is a <a title="SIO_000015" href ="./sio.html#sio_000015">sio:SIO_000015</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Multi-frame Image' (dicom_xxxx0024) -->
-            <section id="dicom_xxxx0024">
-                <h2 label="dicom_xxxx0024">dicom:'Multi-frame Image'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Multi-frame Image'"><a title="dicom_xxxx0024" href ="#dicom_xxxx0024">dicom:'Multi-frame Image'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Multi-frame Image'.label">Label</span>: 'Multi-frame Image'</li><li>Definition: Image that contains multiple two-dimensional pixel planes.</li><li><a title="dicom_xxxx0024" href ="#dicom_xxxx0024">dicom:'Multi-frame Image'</a> is a <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Normalized IOD' (dicom_xxxx0025) -->
-            <section id="dicom_xxxx0025">
-                <h2 label="dicom_xxxx0025">dicom:'Normalized IOD'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Normalized IOD'"><a title="dicom_xxxx0025" href ="#dicom_xxxx0025">dicom:'Normalized IOD'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Normalized IOD'.label">Label</span>: 'Normalized IOD'</li><li>Definition: An Information Object Definition (IOD) that represents a single entity in the DICOM Application Model. Such an IOD includes Attributes that are only inherent in the Real-World Object that the IOD represents.</li><li><a title="dicom_xxxx0025" href ="#dicom_xxxx0025">dicom:'Normalized IOD'</a> is a <a title="SIO_000136" href ="./sio.html#sio_000136">sio:SIO_000136</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Protocol Element' (dicom_xxxx0026) -->
-            <section id="dicom_xxxx0026">
-                <h2 label="dicom_xxxx0026">dicom:'Protocol Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Protocol Element'"><a title="dicom_xxxx0026" href ="#dicom_xxxx0026">dicom:'Protocol Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Protocol Element'.label">Label</span>: 'Protocol Element'</li><li>Definition: A sequential component of a protocol, consisting of all the parameters necessary to perform that component of the protocol.</li><li><a title="dicom_xxxx0026" href ="#dicom_xxxx0026">dicom:'Protocol Element'</a> is a <a title="SIO_000091" href ="./sio.html#sio_000091">sio:SIO_000091</a> and  has the following children: <a title="dicom_xxxx0015" href ="#dicom_xxxx0015">dicom:'Acquisition Protocol Element'</a>, <a title="dicom_xxxx0027" href ="#dicom_xxxx0027">dicom:'Reconstruction Protocol Element'</a>, <a title="dicom_xxxx0029" href ="#dicom_xxxx0029">dicom:'Storage Protocol Element'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Reconstruction Protocol Element' (dicom_xxxx0027) -->
-            <section id="dicom_xxxx0027">
-                <h2 label="dicom_xxxx0027">dicom:'Reconstruction Protocol Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Reconstruction Protocol Element'"><a title="dicom_xxxx0027" href ="#dicom_xxxx0027">dicom:'Reconstruction Protocol Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Reconstruction Protocol Element'.label">Label</span>: 'Reconstruction Protocol Element'</li><li>Definition: </li><li><a title="dicom_xxxx0027" href ="#dicom_xxxx0027">dicom:'Reconstruction Protocol Element'</a> is a <a title="dicom_xxxx0026" href ="#dicom_xxxx0026">dicom:'Protocol Element'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Storage Protocol Element' (dicom_xxxx0029) -->
-            <section id="dicom_xxxx0029">
-                <h2 label="dicom_xxxx0029">dicom:'Storage Protocol Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Storage Protocol Element'"><a title="dicom_xxxx0029" href ="#dicom_xxxx0029">dicom:'Storage Protocol Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Storage Protocol Element'.label">Label</span>: 'Storage Protocol Element'</li><li>Definition:  A sequential component of a storage protocol, such as sending a series of images to a PACS or an archive or a processing workstation.</li><li><a title="dicom_xxxx0029" href ="#dicom_xxxx0029">dicom:'Storage Protocol Element'</a> is a <a title="dicom_xxxx0026" href ="#dicom_xxxx0026">dicom:'Protocol Element'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Unique Device Identifier' (dicom_xxxx0030) -->
-            <section id="dicom_xxxx0030">
-                <h2 label="dicom_xxxx0030">dicom:'Unique Device Identifier'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Unique Device Identifier'"><a title="dicom_xxxx0030" href ="#dicom_xxxx0030">dicom:'Unique Device Identifier'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Unique Device Identifier'.label">Label</span>: 'Unique Device Identifier'</li><li>Definition: An alphanumeric identifier issued by the unique device identification system established by the FDA to label and identify devices through distribution and use. See http://www.fda.gov/udi.</li><li><a title="dicom_xxxx0030" href ="#dicom_xxxx0030">dicom:'Unique Device Identifier'</a> is a <a title="dicom_xxxx0058" href ="#dicom_xxxx0058">dicom:'Unique Identifier'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Basic Offset Table' (dicom_xxxx0031) -->
-            <section id="dicom_xxxx0031">
-                <h2 label="dicom_xxxx0031">dicom:'Basic Offset Table'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Basic Offset Table'"><a title="dicom_xxxx0031" href ="#dicom_xxxx0031">dicom:'Basic Offset Table'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Basic Offset Table'.label">Label</span>: 'Basic Offset Table'</li><li>Definition: </li><li><a title="dicom_xxxx0031" href ="#dicom_xxxx0031">dicom:'Basic Offset Table'</a> is a <a title="SIO_000612" href ="./sio.html#sio_000612">sio:SIO_000612</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Big Endian' (dicom_xxxx0032) -->
-            <section id="dicom_xxxx0032">
-                <h2 label="dicom_xxxx0032">dicom:'Big Endian'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Big Endian'"><a title="dicom_xxxx0032" href ="#dicom_xxxx0032">dicom:'Big Endian'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Big Endian'.label">Label</span>: 'Big Endian'</li><li>Definition: A form of byte ordering where multiple byte binary values are encoded with the most significant byte encoded first, and the remaining bytes encoded in decreasing order of significance.</li><li><a title="dicom_xxxx0032" href ="#dicom_xxxx0032">dicom:'Big Endian'</a> is a <a title="SIO_000612" href ="./sio.html#sio_000612">sio:SIO_000612</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Character Repertoire' (dicom_xxxx0033) -->
-            <section id="dicom_xxxx0033">
-                <h2 label="dicom_xxxx0033">dicom:'Character Repertoire'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Character Repertoire'"><a title="dicom_xxxx0033" href ="#dicom_xxxx0033">dicom:'Character Repertoire'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Character Repertoire'.label">Label</span>: 'Character Repertoire'</li><li>Definition: A finite set of different characters that is considered to be complete for a given purpose and is specified independently of their encoding (also referred to as a character set).</li><li><a title="dicom_xxxx0033" href ="#dicom_xxxx0033">dicom:'Character Repertoire'</a> is a <a title="SIO_000612" href ="./sio.html#sio_000612">sio:SIO_000612</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Code String:' (dicom_xxxx0034) -->
-            <section id="dicom_xxxx0034">
-                <h2 label="dicom_xxxx0034">dicom:'Code String:'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Code String:'"><a title="dicom_xxxx0034" href ="#dicom_xxxx0034">dicom:'Code String:'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Code String:'.label">Label</span>: 'Code String</li><li>Definition: A string of characters identifying a controlled concept, including Defined Terms and Enumerated Values when represented as character strings. The scope of the controlled concept is limited to the attribute for which the string provides the value; i.e., the attribute defines the allowed set of values for the Code String, and a particular string may have different meanings in different attributes. A Code String is formally an arbitrary code representing a semantic concept; however, English language words (using the constrained character set of the CS Value Representation) are often used as codes for the semantics of those words.</li><li><a title="dicom_xxxx0034" href ="#dicom_xxxx0034">dicom:'Code String:'</a> is a <a title="SIO_000651" href ="./sio.html#sio_000651">sio:SIO_000651</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Data Element' (dicom_xxxx0035) -->
-            <section id="dicom_xxxx0035">
-                <h2 label="dicom_xxxx0035">dicom:'Data Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Data Element'"><a title="dicom_xxxx0035" href ="#dicom_xxxx0035">dicom:'Data Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Data Element'.label">Label</span>: 'Data Element'</li><li>Definition: A unit of information as defined by a single entry in the data dictionary. An encoded Information Object Definition (IOD) Attribute that is composed of, at a minimum, three fields: a Data Element Tag, a Value Length, and a Value Field. For some specific Transfer Syntaxes, a Data Element also contains a VR Field where the Value Representation of that Data Element is specified explicitly.</li><li><a title="dicom_xxxx0035" href ="#dicom_xxxx0035">dicom:'Data Element'</a> is a <a title="SIO_000651" href ="./sio.html#sio_000651">sio:SIO_000651</a> and  has the following children: <a title="dicom_xxxx0044" href ="#dicom_xxxx0044">dicom:'Item Delimitation Data Element'</a>, <a title="dicom_xxxx0050" href ="#dicom_xxxx0050">dicom:'Private Data Element'</a>, <a title="dicom_xxxx0052" href ="#dicom_xxxx0052">dicom:'Retired Data Element'</a>, <a title="dicom_xxxx0055" href ="#dicom_xxxx0055">dicom:'Standard Data Element'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Data Element Tag' (dicom_xxxx0036) -->
-            <section id="dicom_xxxx0036">
-                <h2 label="dicom_xxxx0036">dicom:'Data Element Tag'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Data Element Tag'"><a title="dicom_xxxx0036" href ="#dicom_xxxx0036">dicom:'Data Element Tag'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Data Element Tag'.label">Label</span>: 'Data Element Tag'</li><li>Definition: A unique identifier for a Data Element composed of an ordered pair of numbers (a Group Number followed by an Element Number).</li><li><a title="dicom_xxxx0036" href ="#dicom_xxxx0036">dicom:'Data Element Tag'</a> is a <a title="dicom_xxxx0065" href ="#dicom_xxxx0065">dicom:'Tag'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Data Element Type' (dicom_xxxx0037) -->
-            <section id="dicom_xxxx0037">
-                <h2 label="dicom_xxxx0037">dicom:'Data Element Type'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Data Element Type'"><a title="dicom_xxxx0037" href ="#dicom_xxxx0037">dicom:'Data Element Type'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Data Element Type'.label">Label</span>: 'Data Element Type'</li><li>Definition: Used to specify whether an Attribute of an Information Object Definition or an Attribute of a SOP Class Definition is mandatory, mandatory only under certain conditions, or optional. This translates to whether a Data Element of a Data Set is mandatory, mandatory only under certain conditions, or optional.</li><li><a title="dicom_xxxx0037" href ="#dicom_xxxx0037">dicom:'Data Element Type'</a> is a <a title="SIO_000179" href ="./sio.html#sio_000179">sio:SIO_000179</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Defined Term' (dicom_xxxx0039) -->
-            <section id="dicom_xxxx0039">
-                <h2 label="dicom_xxxx0039">dicom:'Defined Term'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Defined Term'"><a title="dicom_xxxx0039" href ="#dicom_xxxx0039">dicom:'Defined Term'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Defined Term'.label">Label</span>: 'Defined Term'</li><li>Definition: The Value of a Data Element is a Defined Term when the Value of the element may be one of an explicitly specified set of standard values, and these values may be extended by implementers.</li><li><a title="dicom_xxxx0039" href ="#dicom_xxxx0039">dicom:'Defined Term'</a> is a <a title="SIO_000651" href ="./sio.html#sio_000651">sio:SIO_000651</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Element Number' (dicom_xxxx0040) -->
-            <section id="dicom_xxxx0040">
-                <h2 label="dicom_xxxx0040">dicom:'Element Number'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Element Number'"><a title="dicom_xxxx0040" href ="#dicom_xxxx0040">dicom:'Element Number'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Element Number'.label">Label</span>: 'Element Number'</li><li>Definition: The second number in the ordered pair of numbers that makes up a Data Element Tag.</li><li><a title="dicom_xxxx0040" href ="#dicom_xxxx0040">dicom:'Element Number'</a> is a <a title="SIO_000115" href ="./sio.html#sio_000115">sio:SIO_000115</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Enumerated Value' (dicom_xxxx0041) -->
-            <section id="dicom_xxxx0041">
-                <h2 label="dicom_xxxx0041">dicom:'Enumerated Value'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Enumerated Value'"><a title="dicom_xxxx0041" href ="#dicom_xxxx0041">dicom:'Enumerated Value'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Enumerated Value'.label">Label</span>: 'Enumerated Value'</li><li>Definition: The Value of a Data Element is an Enumerated Value when the value of the element must be one of an explicitly specified set of standard values, and these values shall not be extended by implementers.</li><li><a title="dicom_xxxx0041" href ="#dicom_xxxx0041">dicom:'Enumerated Value'</a> is a <a title="SIO_000366" href ="./sio.html#sio_000366">sio:SIO_000366</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Group Number' (dicom_xxxx0042) -->
-            <section id="dicom_xxxx0042">
-                <h2 label="dicom_xxxx0042">dicom:'Group Number'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Group Number'"><a title="dicom_xxxx0042" href ="#dicom_xxxx0042">dicom:'Group Number'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Group Number'.label">Label</span>: 'Group Number'</li><li>Definition: The first number in the ordered pair of numbers that makes up a Data Element Tag.</li><li><a title="dicom_xxxx0042" href ="#dicom_xxxx0042">dicom:'Group Number'</a> is a <a title="SIO_000115" href ="./sio.html#sio_000115">sio:SIO_000115</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Item' (dicom_xxxx0043) -->
-            <section id="dicom_xxxx0043">
-                <h2 label="dicom_xxxx0043">dicom:'Item'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Item'"><a title="dicom_xxxx0043" href ="#dicom_xxxx0043">dicom:'Item'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Item'.label">Label</span>: 'Item'</li><li>Definition: A component of the Value of a Data Element that is of Value Representation Sequence of Items.</li><li><a title="dicom_xxxx0043" href ="#dicom_xxxx0043">dicom:'Item'</a> is a <a title="SIO_000651" href ="./sio.html#sio_000651">sio:SIO_000651</a> and  has the following child: <a title="dicom_xxxx0053" href ="#dicom_xxxx0053">dicom:'Sequence Delimitation Item'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Item Delimitation Data Element' (dicom_xxxx0044) -->
-            <section id="dicom_xxxx0044">
-                <h2 label="dicom_xxxx0044">dicom:'Item Delimitation Data Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Item Delimitation Data Element'"><a title="dicom_xxxx0044" href ="#dicom_xxxx0044">dicom:'Item Delimitation Data Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Item Delimitation Data Element'.label">Label</span>: 'Item Delimitation Data Element'</li><li>Definition: Used to mark the end of an Item of Undefined Length in a Sequence of Items. This is the last Data Element in an Item of Undefined Length.</li><li><a title="dicom_xxxx0044" href ="#dicom_xxxx0044">dicom:'Item Delimitation Data Element'</a> is a <a title="SIO_000651" href ="./sio.html#sio_000651">sio:SIO_000651</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Little Endian' (dicom_xxxx0045) -->
-            <section id="dicom_xxxx0045">
-                <h2 label="dicom_xxxx0045">dicom:'Little Endian'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Little Endian'"><a title="dicom_xxxx0045" href ="#dicom_xxxx0045">dicom:'Little Endian'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Little Endian'.label">Label</span>: 'Little Endian'</li><li>Definition: A form of byte ordering where multiple byte binary values are encoded with the least significant byte encoded first; and the remaining bytes encoded in increasing order of significance.</li><li><a title="dicom_xxxx0045" href ="#dicom_xxxx0045">dicom:'Little Endian'</a> is a <a title="SIO_000612" href ="./sio.html#sio_000612">sio:SIO_000612</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Pixel Cell' (dicom_xxxx0047) -->
-            <section id="dicom_xxxx0047">
-                <h2 label="dicom_xxxx0047">dicom:'Pixel Cell'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Pixel Cell'"><a title="dicom_xxxx0047" href ="#dicom_xxxx0047">dicom:'Pixel Cell'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Pixel Cell'.label">Label</span>: 'Pixel Cell'</li><li>Definition: The container for a single Pixel Sample Value that may include unused bits. The size of a Pixel Cell shall be specified by the Bits Allocated (0028, 0100) Data Element.</li><li><a title="dicom_xxxx0047" href ="#dicom_xxxx0047">dicom:'Pixel Cell'</a> is a <a title="SIO_000015" href ="./sio.html#sio_000015">sio:SIO_000015</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Pixel Data' (dicom_xxxx0048) -->
-            <section id="dicom_xxxx0048">
-                <h2 label="dicom_xxxx0048">dicom:'Pixel Data'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Pixel Data'"><a title="dicom_xxxx0048" href ="#dicom_xxxx0048">dicom:'Pixel Data'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Pixel Data'.label">Label</span>: 'Pixel Data'</li><li>Definition: Graphical data (e.g., images) of variable pixel-depth encoded in the Pixel Data, Float Pixel Data or Double Float Pixel Data Element.</li><li><a title="dicom_xxxx0048" href ="#dicom_xxxx0048">dicom:'Pixel Data'</a> is a <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Pixel Sample Value' (dicom_xxxx0049) -->
-            <section id="dicom_xxxx0049">
-                <h2 label="dicom_xxxx0049">dicom:'Pixel Sample Value'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Pixel Sample Value'"><a title="dicom_xxxx0049" href ="#dicom_xxxx0049">dicom:'Pixel Sample Value'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Pixel Sample Value'.label">Label</span>: 'Pixel Sample Value'</li><li>Definition: A value associated with an individual pixel. An individual pixel consists of one or more Pixel Sample Values (e.g., color images).</li><li><a title="dicom_xxxx0049" href ="#dicom_xxxx0049">dicom:'Pixel Sample Value'</a> is a <a title="SIO_000070" href ="./sio.html#sio_000070">sio:SIO_000070</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Private Data Element' (dicom_xxxx0050) -->
-            <section id="dicom_xxxx0050">
-                <h2 label="dicom_xxxx0050">dicom:'Private Data Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Private Data Element'"><a title="dicom_xxxx0050" href ="#dicom_xxxx0050">dicom:'Private Data Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Private Data Element'.label">Label</span>: 'Private Data Element'</li><li>Definition: Additional Data Element, defined by an implementer, to communicate information that is not contained in Standard Data Elements. Private Data elements have odd Group Numbers.</li><li><a title="dicom_xxxx0050" href ="#dicom_xxxx0050">dicom:'Private Data Element'</a> is a <a title="dicom_xxxx0035" href ="#dicom_xxxx0035">dicom:'Data Element'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Repeating Group' (dicom_xxxx0051) -->
-            <section id="dicom_xxxx0051">
-                <h2 label="dicom_xxxx0051">dicom:'Repeating Group'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Repeating Group'"><a title="dicom_xxxx0051" href ="#dicom_xxxx0051">dicom:'Repeating Group'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Repeating Group'.label">Label</span>: 'Repeating Group'</li><li>Definition: Standard Data Elements within a particular range of Group Numbers where elements that have identical Element Numbers have the same meaning within each Group (and the same VR, VM, and Data Element Type). Repeating Groups shall only exist for Curves and Overlay Planes (Group Numbers (50xx,eeee) and (60xx,eeee), respectively) and are a remnant of versions of this standard prior to V3.0.</li><li><a title="dicom_xxxx0051" href ="#dicom_xxxx0051">dicom:'Repeating Group'</a> is a <a title="SIO_000115" href ="./sio.html#sio_000115">sio:SIO_000115</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Retired Data Element' (dicom_xxxx0052) -->
-            <section id="dicom_xxxx0052">
-                <h2 label="dicom_xxxx0052">dicom:'Retired Data Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Retired Data Element'"><a title="dicom_xxxx0052" href ="#dicom_xxxx0052">dicom:'Retired Data Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Retired Data Element'.label">Label</span>: 'Retired Data Element'</li><li>Definition: A Data Element that is unsupported beginning with Version 3.0 of this standard. Implementations may continue to support Retired Data Elements for the purpose of backward compatibility with versions prior to V3.0, but this is not a requirement of this version of the standard.</li><li><a title="dicom_xxxx0052" href ="#dicom_xxxx0052">dicom:'Retired Data Element'</a> is a <a title="dicom_xxxx0035" href ="#dicom_xxxx0035">dicom:'Data Element'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Sequence Delimitation Item' (dicom_xxxx0053) -->
-            <section id="dicom_xxxx0053">
-                <h2 label="dicom_xxxx0053">dicom:'Sequence Delimitation Item'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Sequence Delimitation Item'"><a title="dicom_xxxx0053" href ="#dicom_xxxx0053">dicom:'Sequence Delimitation Item'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Sequence Delimitation Item'.label">Label</span>: 'Sequence Delimitation Item'</li><li>Definition: Item used to mark the end of a Sequence of Items of Undefined Length. This Item is the last Item in a Sequence of Items of Undefined Length.</li><li><a title="dicom_xxxx0053" href ="#dicom_xxxx0053">dicom:'Sequence Delimitation Item'</a> is a <a title="dicom_xxxx0043" href ="#dicom_xxxx0043">dicom:'Item'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Standard Data Element' (dicom_xxxx0055) -->
-            <section id="dicom_xxxx0055">
-                <h2 label="dicom_xxxx0055">dicom:'Standard Data Element'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Standard Data Element'"><a title="dicom_xxxx0055" href ="#dicom_xxxx0055">dicom:'Standard Data Element'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Standard Data Element'.label">Label</span>: 'Standard Data Element'</li><li>Definition: A Data Element defined in the DICOM Standard, and therefore listed in the DICOM Data Element Dictionary in PS3.6.</li><li><a title="dicom_xxxx0055" href ="#dicom_xxxx0055">dicom:'Standard Data Element'</a> is a <a title="dicom_xxxx0035" href ="#dicom_xxxx0035">dicom:'Data Element'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Transfer Syntax' (dicom_xxxx0056) -->
-            <section id="dicom_xxxx0056">
-                <h2 label="dicom_xxxx0056">dicom:'Transfer Syntax'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Transfer Syntax'"><a title="dicom_xxxx0056" href ="#dicom_xxxx0056">dicom:'Transfer Syntax'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Transfer Syntax'.label">Label</span>: 'Transfer Syntax'</li><li>Definition: A set of encoding rules that allow Application Entities to unambiguously negotiate the encoding techniques (e.g., Data Element structure, byte ordering, compression) they are able to support, thereby allowing these Application Entities to communicate. (This is for both Standard and Private).</li><li><a title="dicom_xxxx0056" href ="#dicom_xxxx0056">dicom:'Transfer Syntax'</a> is a <a title="SIO_000651" href ="./sio.html#sio_000651">sio:SIO_000651</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Undefined Length' (dicom_xxxx0057) -->
-            <section id="dicom_xxxx0057">
-                <h2 label="dicom_xxxx0057">dicom:'Undefined Length'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Undefined Length'"><a title="dicom_xxxx0057" href ="#dicom_xxxx0057">dicom:'Undefined Length'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Undefined Length'.label">Label</span>: 'Undefined Length'</li><li>Definition: The ability to specify an unknown length for a Data Element Value (of Value Representation SQ, UN, OW, or OB) or Item. Data Elements and Items of Undefined Length are delimited with Sequence Delimitation Items and Item Delimiter Data Elements, respectively.</li><li><a title="dicom_xxxx0057" href ="#dicom_xxxx0057">dicom:'Undefined Length'</a> is a <a title="SIO_000614" href ="./sio.html#sio_000614">sio:SIO_000614</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Unique Identifier' (dicom_xxxx0058) -->
-            <section id="dicom_xxxx0058">
-                <h2 label="dicom_xxxx0058">dicom:'Unique Identifier'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Unique Identifier'"><a title="dicom_xxxx0058" href ="#dicom_xxxx0058">dicom:'Unique Identifier'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Unique Identifier'.label">Label</span>: 'Unique Identifier'</li><li>Definition: A string of characters that uniquely identifies a wide variety of items; guaranteeing uniqueness across multiple countries, sites, vendors and equipment. (The acronym is UID)</li><li><a title="dicom_xxxx0058" href ="#dicom_xxxx0058">dicom:'Unique Identifier'</a> is a <a title="SIO_000115" href ="./sio.html#sio_000115">sio:SIO_000115</a> and  has the following children: <a title="dicom_xxxx0065" href ="#dicom_xxxx0065">dicom:'Tag'</a>, <a title="dicom_xxxx0030" href ="#dicom_xxxx0030">dicom:'Unique Device Identifier'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Value' (dicom_xxxx0059) -->
-            <section id="dicom_xxxx0059">
-                <h2 label="dicom_xxxx0059">dicom:'Value'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Value'"><a title="dicom_xxxx0059" href ="#dicom_xxxx0059">dicom:'Value'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Value'.label">Label</span>: 'Value'</li><li>Definition: A component of a Value Field. A Value Field may consist of one or more of these components.</li><li><a title="dicom_xxxx0059" href ="#dicom_xxxx0059">dicom:'Value'</a> is a <a title="SIO_000015" href ="./sio.html#sio_000015">sio:SIO_000015</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Value Length' (dicom_xxxx0061) -->
-            <section id="dicom_xxxx0061">
-                <h2 label="dicom_xxxx0061">dicom:'Value Length'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Value Length'"><a title="dicom_xxxx0061" href ="#dicom_xxxx0061">dicom:'Value Length'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Value Length'.label">Label</span>: 'Value Length'</li><li>Definition: The field within a Data Element that contains the length of the Value Field of the Data Element.</li><li><a title="dicom_xxxx0061" href ="#dicom_xxxx0061">dicom:'Value Length'</a> is a <a title="SIO_000366" href ="./sio.html#sio_000366">sio:SIO_000366</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Value Multiplicity' (dicom_xxxx0062) -->
-            <section id="dicom_xxxx0062">
-                <h2 label="dicom_xxxx0062">dicom:'Value Multiplicity'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Value Multiplicity'"><a title="dicom_xxxx0062" href ="#dicom_xxxx0062">dicom:'Value Multiplicity'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Value Multiplicity'.label">Label</span>: 'Value Multiplicity'</li><li>Definition:  Specifies the number of Values contained in the Value Field of a Data Element. (VM)</li><li><a title="dicom_xxxx0062" href ="#dicom_xxxx0062">dicom:'Value Multiplicity'</a> is a <a title="SIO_000366" href ="./sio.html#sio_000366">sio:SIO_000366</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Value Representation' (dicom_xxxx0063) -->
-            <section id="dicom_xxxx0063">
-                <h2 label="dicom_xxxx0063">dicom:'Value Representation'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Value Representation'"><a title="dicom_xxxx0063" href ="#dicom_xxxx0063">dicom:'Value Representation'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Value Representation'.label">Label</span>: 'Value Representation'</li><li>Definition: Specifies the data type and format of the Value(s) contained in the Value Field of a Data Element. (VR)</li><li><a title="dicom_xxxx0063" href ="#dicom_xxxx0063">dicom:'Value Representation'</a> is a <a title="SIO_000179" href ="./sio.html#sio_000179">sio:SIO_000179</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
+        <a href='#classes'>Classes</a> | <a href='#datatypeproperties'>Datatype Properties</a><h1 id='classes'>Classes</h1>
             <!-- dicom:'Tag' (dicom_xxxx0065) -->
             <section id="dicom_xxxx0065">
                 <h2 label="dicom_xxxx0065">dicom:'Tag'</h2>
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Tag'"><a title="dicom_xxxx0065" href ="#dicom_xxxx0065">dicom:'Tag'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Tag'.label">Label</span>: 'Tag'</li><li>Definition: A unique identifier for an element of information composed of an ordered pair of numbers (a Group Number followed by an Element Number), which is used to identify Attributes and corresponding Data Elements.</li><li><a title="dicom_xxxx0065" href ="#dicom_xxxx0065">dicom:'Tag'</a> is a <a title="dicom_xxxx0058" href ="#dicom_xxxx0058">dicom:'Unique Identifier'</a> and  has the following children: <a title="dicom_xxxx0016" href ="#dicom_xxxx0016">dicom:'Attribute tag'</a>, <a title="dicom_xxxx0036" href ="#dicom_xxxx0036">dicom:'Data Element Tag'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'DICOM File Service' (dicom_xxxx0067) -->
-            <section id="dicom_xxxx0067">
-                <h2 label="dicom_xxxx0067">dicom:'DICOM File Service'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'DICOM File Service'"><a title="dicom_xxxx0067" href ="#dicom_xxxx0067">dicom:'DICOM File Service'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'DICOM File Service'.label">Label</span>: 'DICOM File Service'</li><li>Definition: The DICOM File Service specifies a minimum abstract view of files to be provided by the Media Format Layer. Constraining access to the content of files by the Application Entities through such a DICOM File Service boundary ensures Media Format and Physical Media independence.</li><li><a title="dicom_xxxx0067" href ="#dicom_xxxx0067">dicom:'DICOM File Service'</a> is a <a title="SIO_000090" href ="./sio.html#sio_000090">sio:SIO_000090</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'DICOM File' (dicom_xxxx0068) -->
-            <section id="dicom_xxxx0068">
-                <h2 label="dicom_xxxx0068">dicom:'DICOM File'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'DICOM File'"><a title="dicom_xxxx0068" href ="#dicom_xxxx0068">dicom:'DICOM File'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'DICOM File'.label">Label</span>: 'DICOM File'</li><li>Definition: A DICOM File is a File with a content formatted according to the requirements of this Part of the DICOM Standard. In particular such files shall contain, the File Meta Information and a properly formatted Data Set.</li><li><a title="dicom_xxxx0068" href ="#dicom_xxxx0068">dicom:'DICOM File'</a> is a <a title="dicom_xxxx0070" href ="#dicom_xxxx0070">dicom:'File'</a> and  has the following child: <a title="dicom_xxxx0069" href ="#dicom_xxxx0069">dicom:'DICOMDIR File'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'DICOMDIR File' (dicom_xxxx0069) -->
-            <section id="dicom_xxxx0069">
-                <h2 label="dicom_xxxx0069">dicom:'DICOMDIR File'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'DICOMDIR File'"><a title="dicom_xxxx0069" href ="#dicom_xxxx0069">dicom:'DICOMDIR File'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'DICOMDIR File'.label">Label</span>: 'DICOMDIR File'</li><li>Definition: A unique and mandatory DICOM File within a File-set that contains the Media Storage Directory SOP Class. This File is given a single component File ID, DICOMDIR.</li><li><a title="dicom_xxxx0069" href ="#dicom_xxxx0069">dicom:'DICOMDIR File'</a> is a <a title="dicom_xxxx0068" href ="#dicom_xxxx0068">dicom:'DICOM File'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'File' (dicom_xxxx0070) -->
-            <section id="dicom_xxxx0070">
-                <h2 label="dicom_xxxx0070">dicom:'File'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'File'"><a title="dicom_xxxx0070" href ="#dicom_xxxx0070">dicom:'File'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'File'.label">Label</span>: 'File'</li><li>Definition: A File is an ordered string of zero or more bytes, where the first byte is at the beginning of the file and the last byte at the end of the File. Files are identified by a unique File ID and may by written, read and/or deleted.</li><li><a title="dicom_xxxx0070" href ="#dicom_xxxx0070">dicom:'File'</a> is a <a title="SIO_000602" href ="./sio.html#sio_000602">sio:SIO_000602</a> and  has the following children: <a title="dicom_xxxx0068" href ="#dicom_xxxx0068">dicom:'DICOM File'</a>, <a title="dicom_xxxx0083" href ="#dicom_xxxx0083">dicom:'Secure DICOM File'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Same as: <a title="SIO_000396" href ="./sio.html#sio_000396">sio:SIO_000396</a></li><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'File ID' (dicom_xxxx0071) -->
-            <section id="dicom_xxxx0071">
-                <h2 label="dicom_xxxx0071">dicom:'File ID'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'File ID'"><a title="dicom_xxxx0071" href ="#dicom_xxxx0071">dicom:'File ID'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'File ID'.label">Label</span>: 'File ID'</li><li>Definition: Files are identified by a File ID that is unique within the context of the File-set they belong to. A set of ordered File ID Components (up to a maximum of eight) forms a File ID.</li><li><a title="dicom_xxxx0071" href ="#dicom_xxxx0071">dicom:'File ID'</a> is a <a title="SIO_000115" href ="./sio.html#sio_000115">sio:SIO_000115</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'File ID Component' (dicom_xxxx0072) -->
-            <section id="dicom_xxxx0072">
-                <h2 label="dicom_xxxx0072">dicom:'File ID Component'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'File ID Component'"><a title="dicom_xxxx0072" href ="#dicom_xxxx0072">dicom:'File ID Component'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'File ID Component'.label">Label</span>: 'File ID Component'</li><li>Definition: A string of one to eight characters of a defined character set.</li><li><a title="dicom_xxxx0072" href ="#dicom_xxxx0072">dicom:'File ID Component'</a> is a <a title="SIO_000115" href ="./sio.html#sio_000115">sio:SIO_000115</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'DICOM File Format' (dicom_xxxx0078) -->
-            <section id="dicom_xxxx0078">
-                <h2 label="dicom_xxxx0078">dicom:'DICOM File Format'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'DICOM File Format'"><a title="dicom_xxxx0078" href ="#dicom_xxxx0078">dicom:'DICOM File Format'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'DICOM File Format'.label">Label</span>: 'DICOM File Format'</li><li>Definition: The DICOM File Format provides a means to encapsulate in a File the Data Set representing a SOP Instance related to a DICOM Information Object.</li><li><a title="dicom_xxxx0078" href ="#dicom_xxxx0078">dicom:'DICOM File Format'</a> is a <a title="SIO_000090" href ="./sio.html#sio_000090">sio:SIO_000090</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Media Format' (dicom_xxxx0079) -->
-            <section id="dicom_xxxx0079">
-                <h2 label="dicom_xxxx0079">dicom:'Media Format'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Media Format'"><a title="dicom_xxxx0079" href ="#dicom_xxxx0079">dicom:'Media Format'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Media Format'.label">Label</span>: 'Media Format'</li><li>Definition: Data structures and associated policies that organize the bit streams defined by the Physical Media format into data file structures and associated file directories.</li><li><a title="dicom_xxxx0079" href ="#dicom_xxxx0079">dicom:'Media Format'</a> is a <a title="SIO_000090" href ="./sio.html#sio_000090">sio:SIO_000090</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Media Storage Model' (dicom_xxxx0080) -->
-            <section id="dicom_xxxx0080">
-                <h2 label="dicom_xxxx0080">dicom:'Media Storage Model'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Media Storage Model'"><a title="dicom_xxxx0080" href ="#dicom_xxxx0080">dicom:'Media Storage Model'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Media Storage Model'.label">Label</span>: 'Media Storage Model'</li><li>Definition: The DICOM Media Storage Model pertains to the data structures used at different layers to achieve interoperability through media interchange.</li><li><a title="dicom_xxxx0080" href ="#dicom_xxxx0080">dicom:'Media Storage Model'</a> is a <a title="SIO_000510" href ="./sio.html#sio_000510">sio:SIO_000510</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Physical Media' (dicom_xxxx0082) -->
-            <section id="dicom_xxxx0082">
-                <h2 label="dicom_xxxx0082">dicom:'Physical Media'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Physical Media'"><a title="dicom_xxxx0082" href ="#dicom_xxxx0082">dicom:'Physical Media'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Physical Media'.label">Label</span>: 'Physical Media'</li><li>Definition: A piece of material with recording capabilities for streams of bits. Characteristics of a Physical Media include form factor, mechanical characteristics, recording properties and rules for recording and organizing bit streams in accessible structures.</li><li><a title="dicom_xxxx0082" href ="#dicom_xxxx0082">dicom:'Physical Media'</a> is a <a title="SIO_000596" href ="./sio.html#sio_000596">sio:SIO_000596</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br>
-            <!-- dicom:'Secure DICOM File' (dicom_xxxx0083) -->
-            <section id="dicom_xxxx0083">
-                <h2 label="dicom_xxxx0083">dicom:'Secure DICOM File'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'Secure DICOM File'"><a title="dicom_xxxx0083" href ="#dicom_xxxx0083">dicom:'Secure DICOM File'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'Secure DICOM File'.label">Label</span>: 'Secure DICOM File'</li><li>Definition: A DICOM File that is encapsulated with the Cryptographic Message Syntax specified in RFC2630.</li><li><a title="dicom_xxxx0083" href ="#dicom_xxxx0083">dicom:'Secure DICOM File'</a> is a <a title="dicom_xxxx0070" href ="#dicom_xxxx0070">dicom:'File'</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Tag'.label">Label</span>: 'Tag'</li><li>Definition: A unique identifier for an element of information composed of an ordered pair of numbers (a Group Number followed by an Element Number), which is used to identify Attributes and corresponding Data Elements.</li><li><a title="dicom_xxxx0065" href ="#dicom_xxxx0065">dicom:'Tag'</a> is a <a title="IAO_0020000" href ="./obo.html#iao_0020000">obo:IAO_0020000</a>.</li><li>Type: <a title="Class" href ="http://www.w3.org/2002/07/owl#Class">owl:Class</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br><h1 id='datatypeproperties'>Datatype Properties</h1>
             <!-- dicom:'File-set ID' (dicom_00041130) -->
             <section id="dicom_00041130">
@@ -1089,7 +416,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Institution Code Sequence'"><a title="dicom_00080082" href ="#dicom_00080082">dicom:'Institution Code Sequence'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Institution Code Sequence'.label">Label</span>: 'Institution Code Sequence'</li><li>Definition: Institution or organization to which the identified individual is responsible or accountable.</li><li><a title="dicom_00080082" href ="#dicom_00080082">dicom:'Institution Code Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Institution Code Sequence'.label">Label</span>: 'Institution Code Sequence'</li><li>Definition: Coded identifier of Custodial Institution or Organization.</li><li><a title="dicom_00080082" href ="#dicom_00080082">dicom:'Institution Code Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Referring Physicians Name' (dicom_00080090) -->
             <section id="dicom_00080090">
@@ -2049,7 +1376,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Derivation Code Sequence'"><a title="dicom_00089215" href ="#dicom_00089215">dicom:'Derivation Code Sequence'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Derivation Code Sequence'.label">Label</span>: 'Derivation Code Sequence'</li><li>Definition: A coded description of how this dose was derived from other RT Dose and/or RT Plan objects.</li><li><a title="dicom_00089215" href ="#dicom_00089215">dicom:'Derivation Code Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Derivation Code Sequence'.label">Label</span>: 'Derivation Code Sequence'</li><li>Definition: A coded description of how this ROI was derived.</li><li><a title="dicom_00089215" href ="#dicom_00089215">dicom:'Derivation Code Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Referenced Presentation State Sequence' (dicom_00089237) -->
             <section id="dicom_00089237">
@@ -2681,7 +2008,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Clinical Trial Protocol Ethics Committee Name'"><a title="dicom_00120081" href ="#dicom_00120081">dicom:'Clinical Trial Protocol Ethics Committee Name'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Clinical Trial Protocol Ethics Committee Name'.label">Label</span>: 'Clinical Trial Protocol Ethics Committee Name'</li><li>Definition: Name of the Ethics Committee or Institutional Review Board (IRB) responsible for approval of the Clinical Trial.</li><li><a title="dicom_00120081" href ="#dicom_00120081">dicom:'Clinical Trial Protocol Ethics Committee Name'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Clinical Trial Protocol Ethics Committee Name'.label">Label</span>: 'Clinical Trial Protocol Ethics Committee Name'</li><li>Definition: Name of the Ethics Committee or Institutional Review Board (IRB) or Institutional Animal Care and Use Committees (IACUC) responsible for approval of the Clinical Trial or research.</li><li><a title="dicom_00120081" href ="#dicom_00120081">dicom:'Clinical Trial Protocol Ethics Committee Name'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Clinical Trial Protocol Ethics Committee Approval Number' (dicom_00120082) -->
             <section id="dicom_00120082">
@@ -3385,7 +2712,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Frame Time'"><a title="dicom_00181063" href ="#dicom_00181063">dicom:'Frame Time'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Frame Time'.label">Label</span>: 'Frame Time'</li><li>Definition: Nominal time per individual frame in msec.</li><li><a title="dicom_00181063" href ="#dicom_00181063">dicom:'Frame Time'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Frame Time'.label">Label</span>: 'Frame Time'</li><li>Definition: Nominal duration per individual frame, in msec.</li><li><a title="dicom_00181063" href ="#dicom_00181063">dicom:'Frame Time'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Cardiac Framing Type' (dicom_00181064) -->
             <section id="dicom_00181064">
@@ -3537,7 +2864,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Beat Rejection Flag'"><a title="dicom_00181080" href ="#dicom_00181080">dicom:'Beat Rejection Flag'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Beat Rejection Flag'.label">Label</span>: 'Beat Rejection Flag'</li><li>Definition: Heart beat duration sorting has been applied.</li><li><a title="dicom_00181080" href ="#dicom_00181080">dicom:'Beat Rejection Flag'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Beat Rejection Flag'.label">Label</span>: 'Beat Rejection Flag'</li><li>Definition: Beat length sorting has been applied.</li><li><a title="dicom_00181080" href ="#dicom_00181080">dicom:'Beat Rejection Flag'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Low R-R Value' (dicom_00181081) -->
             <section id="dicom_00181081">
@@ -3545,7 +2872,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Low R-R Value'"><a title="dicom_00181081" href ="#dicom_00181081">dicom:'Low R-R Value'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Low R-R Value'.label">Label</span>: 'Low R-R Value'</li><li>Definition: R-R interval low limit for beat rejection, in ms.</li><li><a title="dicom_00181081" href ="#dicom_00181081">dicom:'Low R-R Value'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Low R-R Value'.label">Label</span>: 'Low R-R Value'</li><li>Definition: R-R interval low limit for beat rejection, in ms. Required if Cardiac Synchronization Technique (0018,9037) equals PROSPECTIVE or RETROSPECTIVE.</li><li><a title="dicom_00181081" href ="#dicom_00181081">dicom:'Low R-R Value'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'High R-R Value' (dicom_00181082) -->
             <section id="dicom_00181082">
@@ -4449,7 +3776,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Collimator Left Vertical Edge'"><a title="dicom_00181702" href ="#dicom_00181702">dicom:'Collimator Left Vertical Edge'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Collimator Left Vertical Edge'.label">Label</span>: 'Collimator Left Vertical Edge'</li><li>Definition: Required if a value of Collimator Shape (0018,1700) is RECTANGULAR. Location of the left edge of the rectangular collimator with respect to pixels in the image given as column.</li><li><a title="dicom_00181702" href ="#dicom_00181702">dicom:'Collimator Left Vertical Edge'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Collimator Left Vertical Edge'.label">Label</span>: 'Collimator Left Vertical Edge'</li><li>Definition: Required if Collimator Shape (0018,1700) is RECTANGULAR. Location of the left edge of the rectangular collimator expressed as effective pixel column.</li><li><a title="dicom_00181702" href ="#dicom_00181702">dicom:'Collimator Left Vertical Edge'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Collimator Right Vertical Edge' (dicom_00181704) -->
             <section id="dicom_00181704">
@@ -4681,7 +4008,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'IVUS Pullback Start Frame Number'"><a title="dicom_00183103" href ="#dicom_00183103">dicom:'IVUS Pullback Start Frame Number'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'IVUS Pullback Start Frame Number'.label">Label</span>: 'IVUS Pullback Start Frame Number'</li><li>Definition: Required if IVUS Acquisition (0018,3100) value is MOTOR_PULLBACK or GATED_PULLBACK.</li><li><a title="dicom_00183103" href ="#dicom_00183103">dicom:'IVUS Pullback Start Frame Number'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'IVUS Pullback Start Frame Number'.label">Label</span>: 'IVUS Pullback Start Frame Number'</li><li>Definition: Frame number at which the motorized portion of the acquisition begins.</li><li><a title="dicom_00183103" href ="#dicom_00183103">dicom:'IVUS Pullback Start Frame Number'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'IVUS Pullback Stop Frame Number' (dicom_00183104) -->
             <section id="dicom_00183104">
@@ -5593,7 +4920,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Echo Planar Pulse Sequence'"><a title="dicom_00189018" href ="#dicom_00189018">dicom:'Echo Planar Pulse Sequence'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Echo Planar Pulse Sequence'.label">Label</span>: 'Echo Planar Pulse Sequence'</li><li>Definition: Echo Planar category of pulse-sequences.</li><li><a title="dicom_00189018" href ="#dicom_00189018">dicom:'Echo Planar Pulse Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Echo Planar Pulse Sequence'.label">Label</span>: 'Echo Planar Pulse Sequence'</li><li>Definition: Echo Planar category of Pulse Sequences.</li><li><a title="dicom_00189018" href ="#dicom_00189018">dicom:'Echo Planar Pulse Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Tag Angle First Axis' (dicom_00189019) -->
             <section id="dicom_00189019">
@@ -6041,7 +5368,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Cardiac Signal Source'"><a title="dicom_00189085" href ="#dicom_00189085">dicom:'Cardiac Signal Source'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Cardiac Signal Source'.label">Label</span>: 'Cardiac Signal Source'</li><li>Definition: Source of cardiac synchronization signal.</li><li><a title="dicom_00189085" href ="#dicom_00189085">dicom:'Cardiac Signal Source'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Cardiac Signal Source'.label">Label</span>: 'Cardiac Signal Source'</li><li>Definition: Cardiac Signal Source.</li><li><a title="dicom_00189085" href ="#dicom_00189085">dicom:'Cardiac Signal Source'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Diffusion b-value' (dicom_00189087) -->
             <section id="dicom_00189087">
@@ -6985,7 +6312,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'X-Ray Tube Current in mA'"><a title="dicom_00189330" href ="#dicom_00189330">dicom:'X-Ray Tube Current in mA'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'X-Ray Tube Current in mA'.label">Label</span>: 'X-Ray Tube Current in mA'</li><li>Definition: Average (or exact, depending upon context) of the nominal X-Ray tube currents in milliamperes for all frames. Required if present and consistent in the contributing SOP Instances. Required if Modality (0008,0060) is MG.</li><li><a title="dicom_00189330" href ="#dicom_00189330">dicom:'X-Ray Tube Current in mA'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'X-Ray Tube Current in mA'.label">Label</span>: 'X-Ray Tube Current in mA'</li><li>Definition: Average of the nominal X-Ray tube currents in milliamperes for all frames.</li><li><a title="dicom_00189330" href ="#dicom_00189330">dicom:'X-Ray Tube Current in mA'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Exposure in mAs' (dicom_00189332) -->
             <section id="dicom_00189332">
@@ -9177,7 +8504,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Dimension Organization UID'"><a title="dicom_00209164" href ="#dicom_00209164">dicom:'Dimension Organization UID'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Dimension Organization UID'.label">Label</span>: 'Dimension Organization UID'</li><li>Definition: Uniquely identifies a set of dimensions referenced within the containing SOP Instance.</li><li><a title="dicom_00209164" href ="#dicom_00209164">dicom:'Dimension Organization UID'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Dimension Organization UID'.label">Label</span>: 'Dimension Organization UID'</li><li>Definition: Uniquely identifies a set of dimensions referenced within the containing SOP Instance. In particular the dimension described by this sequence item is associated with this Dimension Organization UID.</li><li><a title="dicom_00209164" href ="#dicom_00209164">dicom:'Dimension Organization UID'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Dimension Index Pointer' (dicom_00209165) -->
             <section id="dicom_00209165">
@@ -9465,7 +8792,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Light Path Filter Pass-Through Wavelength'"><a title="dicom_00220001" href ="#dicom_00220001">dicom:'Light Path Filter Pass-Through Wavelength'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Light Path Filter Pass-Through Wavelength'.label">Label</span>: 'Light Path Filter Pass-Through Wavelength'</li><li>Definition: Nominal pass-through wavelength of light path filter(s) in nm</li><li><a title="dicom_00220001" href ="#dicom_00220001">dicom:'Light Path Filter Pass-Through Wavelength'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Light Path Filter Pass-Through Wavelength'.label">Label</span>: 'Light Path Filter Pass-Through Wavelength'</li><li>Definition: Nominal pass-through wavelength of light path filter in nm</li><li><a title="dicom_00220001" href ="#dicom_00220001">dicom:'Light Path Filter Pass-Through Wavelength'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Light Path Filter Pass Band' (dicom_00220002) -->
             <section id="dicom_00220002">
@@ -9521,7 +8848,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Cylinder Lens Power'"><a title="dicom_00220008" href ="#dicom_00220008">dicom:'Cylinder Lens Power'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Cylinder Lens Power'.label">Label</span>: 'Cylinder Lens Power'</li><li>Definition: Cylinder value in diopters.</li><li><a title="dicom_00220008" href ="#dicom_00220008">dicom:'Cylinder Lens Power'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Cylinder Lens Power'.label">Label</span>: 'Cylinder Lens Power'</li><li>Definition: Cylinder value in diopters</li><li><a title="dicom_00220008" href ="#dicom_00220008">dicom:'Cylinder Lens Power'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Cylinder Axis' (dicom_00220009) -->
             <section id="dicom_00220009">
@@ -9665,7 +8992,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Refractive State Sequence'"><a title="dicom_0022001B" href ="#dicom_0022001b">dicom:'Refractive State Sequence'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Refractive State Sequence'.label">Label</span>: 'Refractive State Sequence'</li><li>Definition: The refractive state of the imaged eye at the time of acquisition.</li><li><a title="dicom_0022001B" href ="#dicom_0022001b">dicom:'Refractive State Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Refractive State Sequence'.label">Label</span>: 'Refractive State Sequence'</li><li>Definition: Refractive state of the imaged eye at the time of acquisition.</li><li><a title="dicom_0022001B" href ="#dicom_0022001b">dicom:'Refractive State Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Mydriatic Agent Code Sequence' (dicom_0022001C) -->
             <section id="dicom_0022001c">
@@ -9825,7 +9152,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Illumination Wave Length'"><a title="dicom_00220055" href ="#dicom_00220055">dicom:'Illumination Wave Length'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Illumination Wave Length'.label">Label</span>: 'Illumination Wave Length'</li><li>Definition: Wavelength of the illuminator in nm.</li><li><a title="dicom_00220055" href ="#dicom_00220055">dicom:'Illumination Wave Length'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Illumination Wave Length'.label">Label</span>: 'Illumination Wave Length'</li><li>Definition: Nominal wavelength of the illuminator in nm.</li><li><a title="dicom_00220055" href ="#dicom_00220055">dicom:'Illumination Wave Length'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Illumination Power' (dicom_00220056) -->
             <section id="dicom_00220056">
@@ -11921,7 +11248,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Blending Lookup Table Data'"><a title="dicom_00281408" href ="#dicom_00281408">dicom:'Blending Lookup Table Data'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Blending Lookup Table Data'.label">Label</span>: 'Blending Lookup Table Data'</li><li>Definition: Contains the Blending Lookup Table values for this Weight input to the Blending operation.</li><li><a title="dicom_00281408" href ="#dicom_00281408">dicom:'Blending Lookup Table Data'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Blending Lookup Table Data'.label">Label</span>: 'Blending Lookup Table Data'</li><li>Definition: Contains the Blending Lookup Table values for this Weight input to the Blending Operation.</li><li><a title="dicom_00281408" href ="#dicom_00281408">dicom:'Blending Lookup Table Data'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Enhanced Palette Color Lookup Table Sequence' (dicom_0028140B) -->
             <section id="dicom_0028140b">
@@ -12641,7 +11968,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Channel Offset'"><a title="dicom_003A0218" href ="#dicom_003a0218">dicom:'Channel Offset'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Channel Offset'.label">Label</span>: 'Channel Offset'</li><li>Definition: The offset in seconds from the beginning of the channel waveform data to the first sample to be used for presentation. Value may be negative.</li><li><a title="dicom_003A0218" href ="#dicom_003a0218">dicom:'Channel Offset'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Channel Offset'.label">Label</span>: 'Channel Offset'</li><li>Definition: Additional offset of first sample of channel to be used in aligning multiple channels for presentation or analysis, in seconds.</li><li><a title="dicom_003A0218" href ="#dicom_003a0218">dicom:'Channel Offset'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Waveform Bits Stored' (dicom_003A021A) -->
             <section id="dicom_003a021a">
@@ -13633,7 +12960,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Person Name'"><a title="dicom_0040A123" href ="#dicom_0040a123">dicom:'Person Name'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Person Name'.label">Label</span>: 'Person Name'</li><li>Definition: This is the Value component of a Name/Value pair when the Concept implied by Concept Name Code Sequence (0040,A043) is a Person Name. The role of the person could be specified in Concept Name Code Sequence (0040,A043).</li><li><a title="dicom_0040A123" href ="#dicom_0040a123">dicom:'Person Name'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Person Name'.label">Label</span>: 'Person Name'</li><li>Definition: Name of the person observer identified.</li><li><a title="dicom_0040A123" href ="#dicom_0040a123">dicom:'Person Name'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'UID' (dicom_0040A124) -->
             <section id="dicom_0040a124">
@@ -17025,7 +16352,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Range of Freedom'"><a title="dicom_006864A0" href ="#dicom_006864a0">dicom:'Range of Freedom'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Range of Freedom'.label">Label</span>: 'Range of Freedom'</li><li>Definition: Two floating point numbers defining a value range for this degree of freedom.</li><li><a title="dicom_006864A0" href ="#dicom_006864a0">dicom:'Range of Freedom'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Range of Freedom'.label">Label</span>: 'Range of Freedom'</li><li>Definition: Interval of freedom for this degree of freedom. </li><li><a title="dicom_006864A0" href ="#dicom_006864a0">dicom:'Range of Freedom'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'3D Mating Point' (dicom_006864C0) -->
             <section id="dicom_006864c0">
@@ -17441,7 +16768,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Content Creators Identification Code Sequence'"><a title="dicom_00700086" href ="#dicom_00700086">dicom:'Content Creators Identification Code Sequence'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Content Creators Identification Code Sequence'.label">Label</span>: 'Content Creators Identification Code Sequence'</li><li>Definition: Identification of the person who created the content.</li><li><a title="dicom_00700086" href ="#dicom_00700086">dicom:'Content Creators Identification Code Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Content Creators Identification Code Sequence'.label">Label</span>: 'Content Creators Identification Code Sequence'</li><li>Definition: Identification of the most recent person to significantly modify the content of this SOP Instance.</li><li><a title="dicom_00700086" href ="#dicom_00700086">dicom:'Content Creators Identification Code Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Alternate Content Description Sequence' (dicom_00700087) -->
             <section id="dicom_00700087">
@@ -17513,7 +16840,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Compound Graphic Instance ID'"><a title="dicom_00700226" href ="#dicom_00700226">dicom:'Compound Graphic Instance ID'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Compound Graphic Instance ID'.label">Label</span>: 'Compound Graphic Instance ID'</li><li>Definition: The identifier of the Compound Graphic represented, in part, by this Item. The value of this attribute shall be equal to the value of Compound Graphic Instance ID (0070,0226) of the corresponding Item in the Compound Graphic Sequence (0070,0209).</li><li><a title="dicom_00700226" href ="#dicom_00700226">dicom:'Compound Graphic Instance ID'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Compound Graphic Instance ID'.label">Label</span>: 'Compound Graphic Instance ID'</li><li>Definition: A number that identifies the Compound Graphic described in this Item. The value shall be unique within this SOP instance.</li><li><a title="dicom_00700226" href ="#dicom_00700226">dicom:'Compound Graphic Instance ID'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Font Name' (dicom_00700227) -->
             <section id="dicom_00700227">
@@ -19057,7 +18384,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Cine Relative to Real-Time'"><a title="dicom_00720330" href ="#dicom_00720330">dicom:'Cine Relative to Real-Time'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Cine Relative to Real-Time'.label">Label</span>: 'Cine Relative to Real-Time'</li><li>Definition: A positive unitless floating point numeric factor equal to playback rate divided by acquisition rate.</li><li><a title="dicom_00720330" href ="#dicom_00720330">dicom:'Cine Relative to Real-Time'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Cine Relative to Real-Time'.label">Label</span>: 'Cine Relative to Real-Time'</li><li>Definition: A positive dimensionless floating point numeric factor equal to playback rate divided by acquisition rate.</li><li><a title="dicom_00720330" href ="#dicom_00720330">dicom:'Cine Relative to Real-Time'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Filter Operations Sequence' (dicom_00720400) -->
             <section id="dicom_00720400">
@@ -22873,7 +22200,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Beam Limiting Device Rotation Direction'"><a title="dicom_300A0121" href ="#dicom_300a0121">dicom:'Beam Limiting Device Rotation Direction'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Beam Limiting Device Rotation Direction'.label">Label</span>: 'Beam Limiting Device Rotation Direction'</li><li>Definition: Direction of Beam Limiting Device Rotation when viewing beam limiting device (collimator) from radiation source, for segment following Control Point.</li><li><a title="dicom_300A0121" href ="#dicom_300a0121">dicom:'Beam Limiting Device Rotation Direction'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Beam Limiting Device Rotation Direction'.label">Label</span>: 'Beam Limiting Device Rotation Direction'</li><li>Definition: Direction of Beam Limiting Device Rotation when viewing beam limiting device (collimator) from radiation source, for segment beginning at current Control Point.</li><li><a title="dicom_300A0121" href ="#dicom_300a0121">dicom:'Beam Limiting Device Rotation Direction'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Patient Support Angle' (dicom_300A0122) -->
             <section id="dicom_300a0122">
@@ -22913,7 +22240,7 @@
                 <div class="glossary-ref"><p></p>
         <div class="attributes" id="attributes-dicom:'Table Top Eccentric Rotation Direction'"><a title="dicom_300A0126" href ="#dicom_300a0126">dicom:'Table Top Eccentric Rotation Direction'</a> has attributes:
         <ul>
-        <li><span class="attribute" id="dicom:'Table Top Eccentric Rotation Direction'.label">Label</span>: 'Table Top Eccentric Rotation Direction'</li><li>Definition: Direction of Table Top Eccentric Rotation when viewing table from above, for segment following Control Point.</li><li><a title="dicom_300A0126" href ="#dicom_300a0126">dicom:'Table Top Eccentric Rotation Direction'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
+        <li><span class="attribute" id="dicom:'Table Top Eccentric Rotation Direction'.label">Label</span>: 'Table Top Eccentric Rotation Direction'</li><li>Definition: Direction of Table Top Eccentric Rotation when viewing table from above, for segment beginning at current Control Point.</li><li><a title="dicom_300A0126" href ="#dicom_300a0126">dicom:'Table Top Eccentric Rotation Direction'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
             </section></br>
             <!-- dicom:'Table Top Vertical Position' (dicom_300A0128) -->
             <section id="dicom_300a0128">
@@ -24498,22 +23825,6 @@
         <div class="attributes" id="attributes-dicom:'Digital Signatures Sequence'"><a title="dicom_FFFAFFFA" href ="#dicom_fffafffa">dicom:'Digital Signatures Sequence'</a> has attributes:
         <ul>
         <li><span class="attribute" id="dicom:'Digital Signatures Sequence'.label">Label</span>: 'Digital Signatures Sequence'</li><li>Definition: Sequence holding Digital Signatures.</li><li><a title="dicom_FFFAFFFA" href ="#dicom_fffafffa">dicom:'Digital Signatures Sequence'</a> is a <a title="DICOMTag" href ="./index.html#dicomtag">nidm:DICOMTag</a>.</li><li>Type: <a title="DatatypeProperty" href ="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li></ul></div>
-            </section></br><h1 id='objectproperties'>Object Properties</h1>
-            <!-- dicom:'was Part Of' (dicom_xxxx0086) -->
-            <section id="dicom_xxxx0086">
-                <h2 label="dicom_xxxx0086">dicom:'was Part Of'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'was Part Of'"><a title="dicom_xxxx0086" href ="#dicom_xxxx0086">dicom:'was Part Of'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'was Part Of'.label">Label</span>: 'was Part Of'</li><li>Definition: A property used to connect a constituent part to a class.</li><li><a title="dicom_xxxx0086" href ="#dicom_xxxx0086">dicom:'was Part Of'</a> is a <a title="ObjectProperty" href ="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a>.</li><li>Type: <a title="ObjectProperty" href ="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li><li>Editor: Karl Helmer</li></ul></div>
-            </section></br>
-            <!-- dicom:'had Part' (dicom_xxxx0087) -->
-            <section id="dicom_xxxx0087">
-                <h2 label="dicom_xxxx0087">dicom:'had Part'</h2>
-                <div class="glossary-ref"><p></p>
-        <div class="attributes" id="attributes-dicom:'had Part'"><a title="dicom_xxxx0087" href ="#dicom_xxxx0087">dicom:'had Part'</a> has attributes:
-        <ul>
-        <li><span class="attribute" id="dicom:'had Part'.label">Label</span>: 'had Part'</li><li>Definition: A property used to connect a class to a constituent part.</li><li><a title="dicom_xxxx0087" href ="#dicom_xxxx0087">dicom:'had Part'</a> is a <a title="ObjectProperty" href ="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a>.</li><li>Type: <a title="ObjectProperty" href ="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a><li>Curation Status: <a title="IAO_0000428" href ="./obo.html#iao_0000428">obo:IAO_0000428</a></li><li>Editor: Karl Helmer</li></ul></div>
             </section></br>
 	</section>
 <footer class="site-footer">
