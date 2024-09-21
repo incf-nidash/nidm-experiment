@@ -6,7 +6,7 @@
 '''
 
 import warnings
-import vcr
+# import vcr
 import os
 import logging
 import csv
