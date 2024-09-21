@@ -61,7 +61,7 @@ class OwlNidmHtml:
         return top
 
     def create_schema_class_spec(self):
-        prov_types = [OWL['Thing'], None]
+        prov_types = [PROV['Activity'], PROV['Entity'], PROV['Agent'], None]
 
         for prov in prov_types:
             # print('prov: '+str(prov))
@@ -239,7 +239,7 @@ class OwlNidmHtml:
                 text += " a "+self.owl.get_label(prov_class)
             else:
                 #look in NIDM file
-                nidm_file = os.path.join(TERMS_FOLDER, 'nec.owl')
+                nidm_file = os.path.join(TERMS_FOLDER, 'nidm-experiment.owl')
                 nidm_owl = OwlReader(nidm_file)
                 nidm_subclass = self.get_nidm_subclass(class_uri, nidm_owl)
                 if nidm_subclass:
@@ -389,7 +389,7 @@ TERMS_FOLDER = os.path.join(NIDM_ROOT, 'terms')
 RELEASED_TERMS_FOLDER = os.path.join(TERMS_FOLDER, 'releases')
 
 def main():
-    owl_file = os.path.join(TERMS_FOLDER, 'nec.owl')
+    owl_file = os.path.join(TERMS_FOLDER, 'nidm-experiment.owl')
     import_files = glob.glob(os.path.join(IMPORTS_FOLDER, '*.ttl'))
 
     # check the file exists
