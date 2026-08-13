@@ -1446,6 +1446,20 @@ nidm:FastSpinEcho rdf:type owl:Class ;
 
 
 
+###  http://purl.org/nidash/nidm#FieldMap
+
+nidm:FieldMap rdf:type owl:Class ;
+
+               rdfs:label "FieldMap" ;
+
+               obo:IAO_0000115 "FieldMap is a description of the usage of a given acquisition object, indicating that the object is a magnetic-field (B0) map used to characterize and correct susceptibility-induced geometric distortion in MRI (typically of EPI-based functional or diffusion scans). It corresponds to the BIDS field-map data type (fmap) and its suffixes: fieldmap, magnitude, magnitude1, magnitude2, phasediff, phase1, phase2, and epi."^^xsd:string ;
+
+               obo:IAO_0000114 obo:IAO_0000428 ;
+
+               rdfs:subClassOf nidm:ImageUsageType .
+
+
+
 ###  http://purl.org/nidash/nidm#FieldPotential
 
 nidm:FieldPotential rdf:type owl:Class ;
