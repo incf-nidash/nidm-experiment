@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+ @prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dctype: <http://purl.org/dc/dcmitype/> .
@@ -803,6 +803,22 @@ nidm:BloodDraw rdf:type owl:Class ;
 
 
 
+###  http://purl.org/nidash/nidm#B0FieldMap
+
+nidm:B0FieldMap rdf:type owl:Class ;
+                  
+               rdfs:label "B0 Field Map"^^xsd:string ;
+
+               rdfs:subClassOf nidm:NIDM_0000061 ;
+                  
+               obo:IAO_0000115 "A B0 field map is a parameter estimate map in which the parameter is the difference between the actual B0 magnetic field and the expected homogeneous B0 magnetic field."^^xsd:string ;
+
+               rdfs:comment "The units of these parameter maps can be in magnetic field strength (Tesla), frequency (HZ) or parts per million (ppm). The map is often used to correct distortions in magnetic resonance images."^^xsd:string ;
+                  
+               obo:IAO_0000114 obo:IAO_0000428 .
+
+
+
 ###  http://purl.org/nidash/nidm#BloodOxygenLevelDependentWeighted
 
 nidm:BloodOxygenLevelDependentWeighted rdf:type owl:Class ;
@@ -834,6 +850,23 @@ nidm:CalculatedParameter rdf:type owl:Class ;
                obo:IAO_0000114 obo:IAO_0000428 ;
 
                rdfs:subClassOf sio:SIO_000367 .
+
+
+
+###  http://purl.org/nidash/nidm#CalculatedAcquisitionObject
+
+nidm:CalculatedAcquisitionObject rdf:type owl:Class ;
+
+               rdfs:label "Calculated Acquisition Object"^^xsd:string ;
+
+               obo:IAO_0000115 "A calculated acquisition object is an acquisition object whose values are the result of calculations performed on the acquired data."^^xsd:string ;
+                             
+               obo:IAO_0000114 obo:IAO_0000428 ;
+               
+               rdfs:subClassOf nidm:AcquisitionObject ;
+
+               owl:synonym nidm:Rectilinear .
+	       
 
 
 
@@ -1950,6 +1983,22 @@ nidm:Manufacturer rdf:type owl:Class ;
 
 
 
+###  http://purl.org/nidash/nidm#NIDM_0000052
+
+nidm:NIDM_0000052 rdf:type owl:Class ;
+                   
+              rdfs:label "Map" ;
+                   
+              rdfs:subClassOf nidm:NIDM_0000155 ;
+                   
+              obo:IAO_0000115 "Ordered set of values corresponding to the discrete sampling of some process (e.g. brain MRI data measured on a regular 3D lattice; or brain cortical surface data measured irregularly over the cortex."^^xsd:string ;
+
+              obo:IAO_0000116 "Discussed at https://github.com/incf-nidash/nidm/pull/149"^^xsd:string ;
+
+              obo:IAO_0000114 obo:IAO_0000122 .
+
+
+
 ###  http://purl.org/nidash/nidm#MaximumIntensityProjection
 
 nidm:MaximumIntensityProjection rdf:type owl:Class ;
@@ -2162,6 +2211,20 @@ nidm:ParallelImaging rdf:type owl:Class ;
               obo:IAO_0000115 "Parallel imaging is an acquisition method used in magnetic resonance imaging to acquire the k-space data in which multiple coils are employed and the signals from each coil are disambiguated using the coil sensitivity profile."^^xsd:string ;
                            
               obo:IAO_0000114 obo:IAO_0000428 .
+
+
+
+###  http://purl.org/nidash/nidm#NIDM_0000061
+
+nidm:NIDM_0000061 rdf:type owl:Class ;
+                   
+              rdfs:label "Parameter Estimate Map" ;
+                   
+              rdfs:subClassOf nidm:NIDM_0000052 ;
+                   
+              obo:IAO_0000115 "A map whose value at each element (e.g. pixel, voxel, vertex, or face) is a [model parameter estimate] (http:/purlobolibrary.org/obo/STATO_0000144)."^^xsd:string ;
+
+              obo:IAO_0000114 obo:IAO_0000122 .
 
 
 
